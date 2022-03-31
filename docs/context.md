@@ -1,6 +1,10 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Censo relizado em 2013 pelo IBGE aponta uma população de aproximadamente 141milhões de animais de estimação nos lares brasileiros, sendo a maior parcela, 52,2 milhões cães e 22 milhões gatos. A extensão deste número fica ainda mais evidente quando se observa o panorama global, no qual o Brasil é o terceiro maior país em número total de animais domésticos, perdendo apenas para Estados Unidos e China. O país também ocupa a terceira posição no mercado pet mundial, com participação de 5,1%, atrás de Estados Unidos e Reino Unido. 
+
+O mercado PET representa 0,36% do PIB nacional, a frente de setores tradicionais como utilidades domésticas e automação industrial. Em crescente ao longo dos anos, saltou de R$ 3,3 bilhões em 2006 para R$ 32,92 bilhões em 2017. Dados recentes apresentados pelo Instituto Pet Brasil corroboram com essa tendência de progesso de anos anteriores, onde de 2019 para 2020 houve crescimento de 1,7% da população pet mundial. Parte deste aumento advém da procura por conforto da companhia do animal de estimação em momentos de solição devido à pandemia do COVID-19. 
+
+Dado o volume de animais atualmente nos lares brasileiros e com a constante evolução da presença destes, é previsível que muitos pets em algum momento se separem involuntariamente dos seus donos e de seus lares. Um animal de estimação desaparecido é um dos principais receios de muitas pessoas e pode mudar significativamente suas vidas e a dinâmica da casa.
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
