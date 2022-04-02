@@ -39,9 +39,3 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 ## Público-Alvo
 
 Pessoas independente de gênero, idade ou classe que residem na cidade de Belo Horizonte ou região Metropolitana. O enfoque será nas pessoas que perderam algum animal de estimação e necessite de auxílio pela internet para localizá-lo, e também será destinado para as pessoas que encontraram o pet desaparecido e precisam encontrar o respectivo dono.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
