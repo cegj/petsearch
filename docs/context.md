@@ -8,17 +8,15 @@ O universo pet apresenta diversos segmentos, da alimentação à hotelaria, pass
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação.
+A presença dos animais nos lares brasileiros impõe uma rotina aos seus tutores. De acordo com estudos, a presença dos animais nos lares é importante em diversos momentos e evidenciou mais no período da pandemia com o isolamento social, muitas pessoas tiveram seus animais como companhia. Desta forma, os animais são aliados da saúde mental, diminuindo a solidão e facilitando a interação de pessoas.
 
-Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Considerando a maioria dos animais de estimação, os cães (52,2 milhões) e  os gatos (22 milhões ), totalizando 74,2 milhões de animais. 5% desses animais estão em situação de vulnerabilidade (perdidos ou abandonados), isso representa cerca de 3,8 milhões de animais. 
 
-Nesse momento, o grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Da população total dos animais em situação de vulnerabilidade, os cães somam um total de 2,62 milhões (69%) e os gatos somam 1,18 milhões (31%), os dados são do IPB (Instituto Pet Brasil).
 
-> **Links Úteis**:
->
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Os desaparecimentos dos animais são comuns e os seus tutores procuram por meios de buscas que não são centralizadas: os posts em redes sociais e cartazes afixados na região que habitam, são os exemplos comuns  utilizados para encontrarem seus pets. 
+
+É necessário fornecer uma plataforma que centralize o tutor na busca do pet e terceiros que encontram animais perdidos, que forneça essa conexão de ponta a ponta.
 
 ## Objetivos
 
