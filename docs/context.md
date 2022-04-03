@@ -20,13 +20,17 @@ Os desaparecimentos dos animais são comuns e os seus tutores procuram por meios
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima.
+### Objetivo Principal:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+Desenvolver uma aplicação web, a qual auxilie donos de pets a reaver seus animais perdidos.
 
-> **Links Úteis**:
->
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+### Objetivos Específicos:
+
+ - Permitir a criação anúncios para pets desaparecidos.
+
+ - Construir um mural com os anúncios dos pets, no qual seja possível fazer buscas personalizadas.
+
+ - Promover a comunicação entre o terceiro que encontrou o pet e o respectivo seu dono.
 
 ## Justificativa
 
