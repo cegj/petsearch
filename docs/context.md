@@ -30,7 +30,7 @@ Desenvolver uma aplicação web, a qual auxilie donos de pets a reaver seus anim
 
  - Construir um mural com os anúncios dos pets, no qual seja possível fazer buscas personalizadas.
 
- - Promover a comunicação entre o terceiro que encontrou o pet e o respectivo seu dono.
+ - Promover a comunicação entre o terceiro que encontrou o pet e o seu respectivo dono.
 
 ## Justificativa
 
