@@ -22,7 +22,7 @@ Os desaparecimentos dos animais são comuns e os seus tutores procuram por meios
 
 ### Objetivo Principal:
 
-Desenvolver uma aplicação web, a qual auxilie donos de pets a reaver seus animais perdidos.
+Desenvolver uma aplicação web que auxilie donos de pets a reaver seus animais perdidos.
 
 ### Objetivos Específicos:
 
