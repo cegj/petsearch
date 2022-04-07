@@ -10,15 +10,15 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-Brendhal Almeida Silva
-Carlos Eduardo Gaspar Junior
-Eduardo Gomes de Magalhaes
-Joao Victor dos Anjos Sales
-João Vitor Freitas Sousa
+* Brendhal Almeida Silva
+* Carlos Eduardo Gaspar Junior
+* Eduardo Gomes de Magalhaes
+* Joao Victor dos Anjos Sales
+* João Vitor Freitas Sousa
 
 ## Orientador
 
-Hugo Bastos de Paula
+* Hugo Bastos de Paula
 
 # Planejamento
 
