@@ -6,19 +6,10 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+1. Luis Fernando tem 25 anos, é aluno de graduação da PUC-MG e recentemente mudou-se do centro da cidade para uma casa em um bairro periférico. Acostumado com toda a movimentação do centro da cidade e por estar longe de seus amigos, resolveu buscar por um pet pra lhe fazer companhia. Logo ele busca informações para adotar um animal.
+2. Beatriz, mulher de 62 anos, recém aposentada decidiu dedicar parte do seu tempo livre a causas sociais. Ela trabalha meio período em uma ONG belo-horizontina que identifica, recolhe, trata e cuida de animais em situação da abandono. Uma de suas tarefas na organização é promover a adoção dos animais recuperados.
+3. Maria Julia, estudante de 17 anos, mora com os pais na cidade de Belo Horizonte, Minas Gerais. No seu caminho de volta da escola para casa ela encontrou, sob alguns detritos de construção, um filhote de poodle. Ela logo o acolheu e percebeu que ele tinha uma coleira com seu nome, sinal de que poderia ter fugido e estar sendo procurado pelo seu tutor. Sendo assim, Maria Julia gostaria de divulgar o achado para tentar chegar ao dono do cão e devolvê-lo.
+4. José tem 42 anos, é solteiro, e é médico no Hospital João XXIII. Ao voltar chegar em casa, após um longo plantão, ele repara a porta de entrada entreaberta porém todos os seus itens estavam nos seus lugares, tudo parecia bem. Porém, ele logo nota que suas duas gatas de estimação haviam desaparecido. Agora, ele busca desesperadamente por informações sobre o paradeiro das suas pets.
 
 ## Histórias de Usuários
 
