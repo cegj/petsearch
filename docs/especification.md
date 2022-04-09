@@ -35,12 +35,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                                                                                   | Prioridade |
 | ------ | -------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre um animal perdido                                                        | ALTA       |
-| RF-002 | Permitir que o usuário altere um cadastro de um animal perdido                                           | ALTA       |
-| RF-003 | Permitir que o usuário remova um cadastro de um animal perdido                                           | ALTA       |
-| RF-004 | Permitir que o usuário verifique o animal como "encontrado"                                              | ALTA      |
-| RF-005 | Disponibilizar funcionalidade que permita pesquisar animais com filtro personalizado                     | MÉDIA     |
-| RF-006 | Disponibilizar funcionalidade que permita definir se o pet é um animal perdido ou disponível para adoção	| MÉDIA      |
+| RF-001 | Permitir que o usuário cadastre um animal                                                                | ALTA       |
+| RF-002 | Permitir que o usuário altere um cadastro de um animal                                                   | ALTA       |
+| RF-003 | Permitir que o usuário remova um cadastro de um animal                                                   | ALTA       |
+| RF-004 | Permitir que o usuário verifique o animal como "encontrado" ou "adotado"                                 | ALTA      |
+| RF-005 | Disponibilizar funcionalidade que permita pesquisar animais com filtro personalizado                     | ALTA     |
+| RF-006 | Disponibilizar funcionalidade que permita cadastrar o animal como perdido ou disponível para adoção     	| ALTA      |
 | RF-007 | Disponibilizar funcionalidade que permita pesquisar ONG cadastradas                                      | BAIXA     |
 | RF-008 | Disponibilizar sessão com dados para doações às ONGs                                                     | BAIXA      |
 
