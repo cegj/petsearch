@@ -1,0 +1,15 @@
+:root, body, * {
+  background-color: #e5e5e5;
+}
+
+img:not(:first-of-type) {
+  width: 100%;
+}
+
+.tile-1 {
+  display: ;
+  background-image: url(assets/home/tile1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(); 
+}
