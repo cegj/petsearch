@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-  <img src="assets/home/logoBackground.png"/>
-  <img src="assets/home/tile1.png"/>
-  <div
-  <img src="assets/home/tile2.png"/>   
+  <nav class="container-fluid">
+    <ul class="navbar-nav d-flex flex-row mt-2">
+      <li class="nav-item">
+        <a>HOME</a>
+      </li>
+      <li class="nav-item">
+        <a>PERDIDOS</a>
+      </li>
+      <li class="nav-item">
+        <a>ADOÇÃO</a>
+      </li>
+      <li class="nav-item">
+        <a>CONTATO</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="d-flex header-container pl-14">
+    <img class="logo" src="assets/home/Logo_v.png"></img>
+  </div>
+  <div class="d-flex tile-2">
+    <div class="col">
+      <img class="pet-img" src="assets/home/cachorro-01.png" />
+    </div>
+    <div class="col text-white">
+      <div class="row">PET PERDIDO?</div>
+      <div class="row text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida
+        pellentesque purus
+        vel pretium. Fusce nisl metus, viverra id magna et, consectetur venenatis velit. Sed porta lectus eget augue
+        interdum porttitor.</div>
+      <button type="button" class="btn btn-outline-light">Saiba mais</button>
+    </div>
+  </div>
+  <div class="d-flex tile-3">
+    <div class="col text-white">
+      <div class="row">PET PERDIDO?</div>
+      <div class="row text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida
+        pellentesque purus
+        vel pretium. Fusce nisl metus, viverra id magna et, consectetur venenatis velit. Sed porta lectus eget augue
+        interdum porttitor.
+      </div>
+      <button type="button" class="btn btn-outline-light">Saiba mais</button>
+    </div>
+    <div class="col">
+      <img class="pet-img ml-auto" src="assets/home/gato-01.png" />
+    </div>
+  </div>
+  <div>
+    <div class="mt-2 whos-back-title text-center">
+      OLHA SÓ QUEM JÁ VOLTOU PRA CASA
+    </div>
+    <div class="row">
+      <div class="col">
+        <img src="assets/home/carrousel-1.png" />
+      </div>
+      <div class="col">
+        <img src="assets/home/carrousel-2.png" />
+      </div>
+      <div class="col">
+        <img src="assets/home/carrousel-3.png" />
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

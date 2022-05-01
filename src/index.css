@@ -1,15 +1,51 @@
-:root, body, * {
-  background-color: #e5e5e5;
+* {
+  font-family: 'Inter';
 }
 
-img:not(:first-of-type) {
-  width: 100%;
+nav-item {
+  margin: 0px 1rem;
+  font-family: 'Inter';
 }
 
-.tile-1 {
-  display: ;
-  background-image: url(assets/home/tile1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: calc(); 
+.navbar-nav :first-child {
+  margin-left: auto;
+}
+
+.navbar-nav :last-child {
+  margin-right: 1.25rem;
+}
+
+li a {
+  color: #727171 !important;
+}
+
+.header-container {
+  max-height: 300px;
+}
+
+.logo {
+  max-height: 8rem;
+  margin-left: 54px;
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
+.pet-img {
+  background-color: transparent;
+}
+
+.tile-2 {
+  background-color: #3886ad;
+  min-height: 100px;
+}
+
+.tile-3 {
+  background-color: #e5b703;
+  min-height: 100px;
+}
+
+.whos-back-title {
+  color: #252525;
+  font-size: 30px;
+  font-weight: 700;
 }
