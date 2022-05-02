@@ -2,6 +2,12 @@
   font-family: 'Inter';
 }
 
+body {
+  max-width: 1200px !important;
+  align-items: center;
+  margin: 0 auto 100px auto;
+}
+
 nav-item {
   margin: 0px 1rem;
   font-family: 'Inter';
@@ -17,6 +23,11 @@ nav-item {
 
 li a {
   color: #727171 !important;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
 }
 
 .header-container {
@@ -24,10 +35,15 @@ li a {
 }
 
 .logo {
-  max-height: 8rem;
+  max-width: 610px;
   margin-left: 54px;
   margin-top: 32px;
   margin-bottom: 20px;
+}
+
+.header-img {
+  max-width: 250px;
+  object-fit: contain;
 }
 
 .pet-img {
@@ -48,4 +64,17 @@ li a {
   color: #252525;
   font-size: 30px;
   font-weight: 700;
+}
+
+.banner-text {
+  max-width: 400px;
+  margin: 16px 80px;
+}
+
+.btn {
+  width: 200px;
+}
+
+.carousel-icon:hover {
+  background-color: #f5f5f5;
 }
