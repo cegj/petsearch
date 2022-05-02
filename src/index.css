@@ -1,0 +1,54 @@
+* {
+  font-family: 'Inter';
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+img {
+  object-fit: contain;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.logo {
+  margin: 0 40px;
+  max-height: 180px;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    max-width: 100%;
+  }
+
+  .carousel-icon {
+    display: none;
+  }
+}
+
+.bg-blue {
+  background-color: #3886ad;
+}
+
+.bg-yellow {
+  background-color: #e5b703;
+}
+
+.bg-grey {
+  background-color: #f5f8f9;
+}
+
+.side-img {
+  max-height: 340px;
+}
+
+.side-img-text {
+  max-width: 480px;
+}
+
+.carousel-img {
+  max-width: 500px;
+}
