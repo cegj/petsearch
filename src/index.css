@@ -19,7 +19,7 @@ img {
   max-height: 180px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
   .logo {
     max-width: 100%;
   }
@@ -47,4 +47,8 @@ img {
 
 .side-img-text {
   max-width: 480px;
+}
+
+.carousel-img {
+  max-width: 500px;
 }
