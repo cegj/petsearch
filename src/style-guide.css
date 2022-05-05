@@ -19,9 +19,33 @@ img {
 }
 
 .bg-yellow {
-  background-color: #e5b703;
+  background-color: #e5ab04;
 }
 
 .bg-grey {
   background-color: #f5f8f9;
+}
+
+.logo-small {
+  max-height: 100px;
+}
+
+.header-image {
+  max-height: 270px;
+}
+
+.header-title {
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 79px;
+}
+
+@media screen and (min-width: 992px) {
+  .logo-small {
+    margin-left: -32px;
+  }
+
+  .header-right-side {
+    margin-left: 16rem;
+  }
 }
