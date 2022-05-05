@@ -1,0 +1,65 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    width: 80%;
+}
+
+.menu-container{
+    height: 250px;
+    width: 100%;
+    background-color: #3F8AB1;
+}
+
+.page-title{
+    font-style: normal;
+    font-weight: 750;
+    font-size: 50px;
+    line-height: 61px;
+}
+
+.session-type{
+    color:#3F8AB1;
+    font-style: normal;
+    font-weight: 750;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.session-type-container {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+  
+.form-input-line{
+    width: 100%;
+    display: flex;
+}
+
+.form-label{
+    width: 30%;
+    margin-right: 12px;
+    font-weight: 500;
+
+}
+input{
+    width: 100%;
+    background: rgba(196, 196, 196, 0.25);;
+    border-radius: 3px;
+    border: 0
+}
+
+.right {
+    text-align: end;
+    font-weight: 300;
+
+}
+.form-input{
+    width: 70%;
+}
