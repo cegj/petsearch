@@ -1,0 +1,27 @@
+* {
+  font-family: 'Inter';
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+img {
+  object-fit: contain;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.bg-blue {
+  background-color: #3886ad;
+}
+
+.bg-yellow {
+  background-color: #e5b703;
+}
+
+.bg-grey {
+  background-color: #f5f8f9;
+}
