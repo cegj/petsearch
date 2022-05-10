@@ -26,6 +26,14 @@ img {
   background-color: #f5f8f9;
 }
 
+.bg-strong-grey {
+  background-color: #E0E0E0;
+}
+
+.bg-shadow-grey {
+  background-color: #F2F2EF80;
+}
+
 .logo-small {
   max-height: 100px;
 }
@@ -48,4 +56,41 @@ img {
   .header-right-side {
     margin-left: 16rem;
   }
+}
+
+.btn {
+  max-width: 210px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 10px;
+}
+
+.grid-picture {
+  margin: 0 12px;
+  width: 30vh;
+  max-width: 100vh;
+}
+
+.grid-picture > img {
+  border-top-left-radius: 16px;
+}
+
+.grid-picture-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  color: #272727;
+  border-bottom-right-radius: 16px;
+}
+
+.grid-picture-description > p:first-of-type {
+  font-weight: 700;
 }
