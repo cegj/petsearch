@@ -1,0 +1,65 @@
+p {
+    margin: 0;
+  }
+
+iframe {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .container-pet-info {
+      background-color: #F2F2EF;
+  }
+
+  .container-pet-photo {
+      box-shadow: inset 0px -170px 0px 0px #F2F2EF;
+  }
+
+  .main-option {
+      text-transform: uppercase;
+      color: #9C31FE;
+  }
+
+  .main-option::before{
+      content: "";
+      display: block;
+      height: 60px;
+      width: 60px;
+      margin: 0 auto;
+      background-image: url(/src/assets/lost-pets/tutor-ico.png);
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .contact-option::before{
+    content: "";
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    background-image: url(/src/assets/lost-pets/contact-ico.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.report-problem-option::before{
+    content: "";
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    background-image: url(/src/assets/lost-pets/report-problem-ico.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.edit-option::before{
+    content: "";
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    background-image: url(/src/assets/lost-pets/edit-ico.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
