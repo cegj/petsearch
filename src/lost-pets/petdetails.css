@@ -1,23 +1,29 @@
-p {
-    margin: 0;
-  }
-
 iframe {
     width: 100%;
     height: 40vh;
   }
 
-  .container-pet-info {
-      background-color: #F2F2EF;
+  .container-pet-photo {
+      box-shadow: inset 0px -170px 0px 0px #f5f8f9;
   }
 
-  .container-pet-photo {
-      box-shadow: inset 0px -170px 0px 0px #F2F2EF;
+  .tutor-info {
+      color: #1e003a;
   }
+
+  .option {
+    transform: scale(.95);
+}
+
+    .option:hover{
+    transform: scale(1);
+    transition: 0.1s;
+
+}
 
   .main-option {
       text-transform: uppercase;
-      color: #9C31FE;
+      color: #9C31FE !important;
   }
 
   .main-option::before{
@@ -62,4 +68,13 @@ iframe {
     background-image: url(/src/assets/lost-pets/edit-ico.png);
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 992px) {
+    .pet-photo {
+        max-width: calc(100% - 150px);
+    }
+    .container-pet-photo {
+        box-shadow: inset 0px -70px 0px 0px #f5f8f9;        
+    }
 }
