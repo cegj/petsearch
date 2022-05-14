@@ -1,56 +1,147 @@
-<emmet><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetSearch - Contato Tutor</title>
+<emmet>
+    <!DOCTYPE html>
+    <html lang="en">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/src/style-guide.css">
-  <link rel="stylesheet" href="/src/index.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetSearch - Contato Tutor</title>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-yellow text-uppercase"> <!--Atualizar os links-->
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link text-white" aria-current="page" href="/src/index.html">Home</a>
-              <a class="nav-link text-white" href="#">Perdidos</a>
-              <a class="nav-link text-white active" href="#">Adoção</a>
-              <a class="nav-link text-white" href="#">Contato</a>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@50;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/src/style-guide.css">
+        <link rel="stylesheet" href="/src/index.css">
+    </head>
+
+    <body>
+        <!--Menu Superior-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-yellow text-uppercase">
+            <!--***Atualizar os links***-->
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-white" aria-current="page" href="/src/index.html">Home</a>
+                        <a class="nav-link text-white" href="#">Perdidos</a>
+                        <a class="nav-link text-white active" href="#">Adoção</a>
+                        <a class="nav-link text-white" href="#">Contato</a>
+                    </div>
+                </div>
             </div>
-          </div>
+        </nav>
+        <!-- Início Faixa Amarela/Cabeçalho-->
+        <div div
+            class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-yellow mb-4">
+            <img class="header-image" src="/src/assets/gato-01.png" />
+            <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
+                <img class="logo-small mb-4" src="/src/assets/logo-negativa.png"
+                    alt="PetSearch - Ajudamos a [re]encontrar seu pet" />
+                <span class="header-title text-white text-uppercase text-center">Contato</span>
+            </div>
         </div>
-      </nav>
+        <!-- Fim da Faixa Amarela/Cabeçalho-->
+        <main>
+            <div class="container">
+                <div class="col-lg-3"></div><!--Faixa Vazia-->
+                <div class="col-lg-6 bg-grey"> Contato | Direto com Tutor <!--Faixa de Conteúdo-->
+                    <form>
+                        <div class="row mb-3">
+                            <label for="inputName" class="col-lg-3 col-form-label">Nome:</label>
+                            <div class="col-lg-9">
+                                <input type="name" class="form-control" id="inputName">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTelefone" class="col-lg-3 col-form-label">Telefone:</label>
+                            <div class="col-lg-9">
+                              <input type="telefone" class="form-control" id="inputTelefone">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail" class="col-lg-3 col-form-label">Email:</label>
+                            <div class="col-lg-9">
+                              <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputComentario" class="col-lg-3 col-form-label">Mensagem:</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="inputComentario" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="#">
+                            <img class="align-items-center" src="/src/assets/enviar.png" alt="enviar">
+                            
+                        </button>                        
+                    </form>
+                </div>
+                <div class="col-lg-3"></div> <!--Faixa Vazia-->
+            </div>
+        </main>
 
-    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-yellow mb-4">
-        <img class="header-image" src="/src/assets/gato-01.png" />
-        <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
-          <img class="logo-small mb-4" src="/src/assets/logo-negativa.png" alt="PetSearch - Ajudamos a [re]encontrar seu pet"/>
-          <span class="header-title text-white text-uppercase text-center">Contato</span>
-        </div>
-    <br>
-    <div class="container">
-        <div class="form-container">
-            <span class="page-title"> Direto com Tutor</span>
-        </div>
-    </div>
 
-    
 
-</body>
-</html></emmet>
+        <!--
+            <main>
+            <div class="container"><br>
+                <div class="row">
+                    
+                        <div class="col-lg-2">vazio</div>
+                    
+                        <div class="d-Flex flex-column">
+                        <form>
+                        <div class="row">
+                        </div>
+                        <div class="row" class="contatotutor">
+                            <p>Contato | Direto com Tutor</p>
+                        </div>
+                        <div class="row" class="formulariocontato">
+                            <p>Formulário</p>
+                        </div>
+                            <div class="row" class="nomedocontato">
+                                <div class="col-lg-3">
+                                    <label for="inputNomedoContato" class="col-fomr-label">Nome:</label>
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <input type="inputNomedoContato" class="form-control" id="inputNomedoContato">
+                            </div>
+                            <div class="row" class="telefonedocontato">
+                                <div class="col-lg-3">
+                                    <label for="inputTelefonedoContato" class="col-fomr-label">Telefone:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="inputTelefonedoContato" class="form-control" id="inputTelefonedoContato">
+                                </div>
+                    
+                        </div>
+                </div>     
+            </div>
+        </main>
+        -->
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/ulg/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>
+</emmet>
