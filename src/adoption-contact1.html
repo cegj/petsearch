@@ -48,49 +48,51 @@
             <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
                 <img class="logo-small mb-4" src="/src/assets/logo-negativa.png"
                     alt="PetSearch - Ajudamos a [re]encontrar seu pet" />
-                <span class="header-title text-white text-uppercase text-center">ADOÇÃO</span>
+                <span class="header-title text-white text-uppercase text-center">PET PARA ADOÇÃO</span>
             </div>
         </div>
         <!-- Fim da Faixa Amarela/Cabeçalho-->
         <main>
-            <div class="container">
-                <div class="col-lg-2"></div><!--Faixa Vazia-->
-                <div class="col-lg-8"><!--Faixa de Conteúdo-->
-                    <div class="row mb-5">
-                        <p><span class="txtContato">CONTATO</span><span class="txttutor">  |Direto com o Tutor</span></p>
+            <div class="grid">
+                <div class="row">
+                    <div class="col-lg-2 col-2"></div><!--Faixa Vazia-->
+                    <div class="col-lg-8 col-8"><!--Faixa de Conteúdo-->
+                        <div class="row mb-5">
+                            <p><span class="txtContato">CONTATO</span><span class="txttutor">  |Direto com o Tutor</span></p>
+                        </div>
+                        <form>
+                            <div class="row mb-3">
+                                <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
+                                <div class="col-lg-8">
+                                    <input type="name" class="form-control" id="inputName">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputTelefone" class="col-lg-4 col-form-label">Telefone:</label>
+                                <div class="col-lg-8">
+                                    <input type="telefone" class="form-control" id="inputTelefone">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail" class="col-lg-4 col-form-label">Email:</label>
+                                <div class="col-lg-8">
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" id="inputComentario" rows="5"></textarea>
+                                </div>
+                            </div>                        
+                        </form>
+                        <button type="submit" class="btn">
+                            <img class="imgbtn" src="/src/assets/enviar.png" alt="enviar">
+                            <p class="txtbtn">Enviar</p>
+                        </button>
                     </div>
-                    <form>
-                        <div class="row mb-3">
-                            <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
-                            <div class="col-lg-8">
-                                <input type="name" class="form-control" id="inputName">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputTelefone" class="col-lg-4 col-form-label">Telefone:</label>
-                            <div class="col-lg-8">
-                                <input type="telefone" class="form-control" id="inputTelefone">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputEmail" class="col-lg-4 col-form-label">Email:</label>
-                            <div class="col-lg-8">
-                                <input type="email" class="form-control" id="inputEmail">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
-                            <div class="col-lg-8">
-                                <textarea class="form-control" id="inputComentario" rows="5"></textarea>
-                            </div>
-                        </div>                        
-                    </form>
-                    <button type="submit" class="btn">
-                        <img class="imgbtn" src="/src/assets/enviar.png" alt="enviar">
-                        <p class="txtbtn">Enviar</p>
-                    </button>
+                    <div class="col-lg-2 col-2"></div> <!--Faixa Vazia-->
                 </div>
-                <div class="col-lg-2"></div> <!--Faixa Vazia-->
             </div>
         </main>
 
