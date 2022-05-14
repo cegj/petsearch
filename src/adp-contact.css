@@ -62,8 +62,33 @@
     max-width: 210px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     border-radius: 10px;
+    float: right;
+  }
+
+  .txtbtn {
+      color: rgb(143, 143, 143);
+      font-weight: 500;
+  }
+
+   .col-form-label {
+      color: rgb(27,27,27);
+      font-family: Inter;
+      font-size: 22px;
+      font-weight: 800;
+  }
+
+  .txtContato {
+    color: rgb(27,27,27);
+    font-family: 'Inter';
+    font-size: 55px;
+    font-weight: 900;
+  }
+
+  .txttutor {
+    color: rgb(143, 143, 143);
+    font-weight: 400;
+    font-size: 23px;
   }
