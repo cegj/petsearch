@@ -1,0 +1,94 @@
+{
+    font-family: 'Inter';
+  }
+  
+  body {
+    margin-bottom: 80px;
+  }
+  
+  img {
+    object-fit: contain;
+  }
+  
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
+  .bg-blue {
+    background-color: #3886ad;
+  }
+  
+  .bg-yellow {
+    background-color: #e5ab04;
+  }
+  
+  .bg-grey {
+    background-color: #f5f8f9;
+  }
+  
+  .bg-strong-grey {
+    background-color: #E0E0E0;
+  }
+  
+  .bg-shadow-grey {
+    background-color: #F2F2EF80;
+  }
+  
+  .logo-small {
+    max-height: 100px;
+  }
+  
+  .header-image {
+    max-height: 270px;
+  }
+  
+  .header-title {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 79px;
+  }
+  
+  @media screen and (min-width: 992px) {
+    .logo-small {
+      margin-left: -32px;
+    }
+  
+    .header-right-side {
+      margin-left: 16rem;
+    }
+  }
+  
+  .btn {
+    max-width: 210px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 10px;
+    float: right;
+  }
+
+  .txtbtn {
+      color: rgb(143, 143, 143);
+      font-weight: 500;
+  }
+
+   .col-form-label {
+      color: rgb(27,27,27);
+      font-family: Inter;
+      font-size: 22px;
+      font-weight: 800;
+  }
+
+  .txtContato {
+    color: rgb(27,27,27);
+    font-family: 'Inter';
+    font-size: 55px;
+    font-weight: 900;
+  }
+
+  .txttutor {
+    color: rgb(143, 143, 143);
+    font-weight: 400;
+    font-size: 23px;
+  }

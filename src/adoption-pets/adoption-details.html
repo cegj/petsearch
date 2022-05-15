@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../style-guide.css">
+  <link rel="stylesheet" href="../lost-pets/petdetails.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-yellow text-uppercase">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link text-white" href="#">Perdidos</a>
+          <a class="nav-link text-white active" href="#">Adoção</a>
+          <a class="nav-link text-white" href="#">Contato</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-yellow mb-4">
+    <img class="header-image" src="../assets/gato-01.png" />
+    <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
+      <img class="logo-small mb-4" src="../assets/logo-negativa.png" alt="PetSearch - Ajudamos a [re]encontrar seu pet"/>
+      <span class="header-title text-white text-uppercase text-center">Pet para adoção</span>
+    </div>
+  </div>
+  <main class="d-flex flex-column justify-content-center mb-4">
+    <div class="container-pet-photo">
+        <img src="../assets/lost-pets/rabbit.png" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
+    </div>
+    <div class="container-pet-info text-center mb-4 bg-grey">
+        <h1 class="pet-info text-uppercase pt-4 pb-2 fw-bold">Easter</h1>
+        <ul class="list-unstyled">
+          <li class="lh-lg"><span class="fw-bold">Raça: </span>SRD</li>
+          <li class="lh-lg"><span class="fw-bold">Cor: </span>Creme</li>
+          <li class="lh-lg"><span class="fw-bold">Sexo: </span>Macho</li>
+          <li class="lh-lg"><span class="fw-bold">Local: </span>União/BH</li>
+          <li class="lh-lg"><span class="fw-bold">Motivo: </span>Filhote</li>
+          <li class="lh-lg"><span class="fw-bold">Observações: </span>Vacinado</li>
+        </ul>
+        <ul class="tutor-info list-unstyled">
+          <li class="lh-lg"><span class="fw-bold">Tutor: </span>ONG dos Coelhos</li>
+          <li class="lh-lg"><span class="fw-bold">Telefone: </span>31 2515-1525</li>
+          <li class="lh-lg"><span class="fw-bold">Endereço: </span>R. dos Coelhos, 100. Bairro Santo Antônio/MG.</li>
+        </ul>
+    </div>
+    <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
+        <div class="option"><a class="main-option fw-bold text-decoration-none" href="">Quero adotar</a></div>
+        <div class="option"><a class="contact-option text-decoration-none text-secondary" href="">Contato</a></div>
+        <div class="option"><a class="report-problem-option text-decoration-none text-secondary" href="">Algum problema?</a></div>
+        <div class="option"><a class="edit-option text-decoration-none text-secondary" href="" data-bs-toggle="modal" data-bs-target="#editPetModal">Editar</a></div>
+        <!-- Edit Pet Modal -->
+        <div class="modal fade" id="editPetModal" tabindex="-1" aria-labelledby="editPetModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-uppercase fw-bold" id="editPetModalLabel">Editar anúncio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form> 
+                  <div class="row form-text">
+                    <p class="col fs-6 mb-2">Confirme seu e-mail para prosseguir</p>
+                  </div>
+                  <div class="row"> 
+                    <div class="col-3"><label for="email" class="form-label text-start">E-mail:</label></div>
+                    <div class="col-9"><input type="email" name="email" id="email" class="form-control"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="deletePetBtn" class="btn btn-danger" value="delete">Apagar</button>
+                <button type="button" id="editPetBtn" class="btn btn-light" value="edit">Editar</button>
+              </div>  
+              </div>
+            </div>
+          </div>
+        </div> 
+    </section>    
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe id="gmap_canvas"
+          src="https://maps.google.com/maps?q=belo%20horizonte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+          scrolling="no" marginheight="0" marginwidth="0" />
+          <a href="https://123movies-to.org">123movies</a><br>
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            height: 500px;
+            width: 100%;
+          }
+        </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+        <style>
+          .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 500px;
+            width: 100%;
+          }
+        </style>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
