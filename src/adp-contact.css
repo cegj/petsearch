@@ -88,3 +88,9 @@
     font-weight: 400;
     font-size: 23px;
   }
+  .form-control{
+    font-family: 'Inter';
+    color: rgb(27,27,27);
+    font-size: 18px;
+    font-weight: 500;
+  }
