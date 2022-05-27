@@ -17,7 +17,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@50;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="/src/adp-contact.css">
+        <link rel="stylesheet" href="/src/contact/adp-contact.css">
         <link rel="stylesheet" href="/src/index.css">
     </head>
 
@@ -34,9 +34,9 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link text-white" aria-current="page" href="/src/index.html">Home</a>
-                        <a class="nav-link text-white" href="#">Perdidos</a>
-                        <a class="nav-link text-white active" href="#">Adoção</a>
-                        <a class="nav-link text-white" href="#">Contato</a>
+                        <a class="nav-link text-white" href="/src/lost-pets/index.html">Perdidos</a>
+                        <a class="nav-link text-white active" href="/src/adoption-pets/index.html">Adoção</a>
+                        <a class="nav-link text-white" href="/src/contact/index.html">Contato</a>
                     </div>
                 </div>
             </div>
@@ -60,23 +60,23 @@
                         <div class="row mb-5">
                             <p><span class="txtContato">CONTATO</span><span class="txttutor">  |PetSearch - Troubleshooting</span></p>
                         </div>
-                        <form>
+                        <form action="https://formspree.io/f/mayvvezr" method="POST">
                             <div class="row mb-3">
                                 <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
                                 <div class="col-lg-8">
-                                    <input type="name" class="form-control" id="inputName">
+                                    <input type="name" name="name" class="form-control" id="inputName">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputTelefone" class="col-lg-4 col-form-label">Telefone:</label>
                                 <div class="col-lg-8">
-                                    <input type="telefone" class="form-control" id="inputTelefone">
+                                    <input type="telefone" name="telefone" class="form-control" id="inputTelefone">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputEmail" class="col-lg-4 col-form-label">Email:</label>
                                 <div class="col-lg-8">
-                                    <input type="email" class="form-control" id="inputEmail">
+                                    <input type="email" name="email" class="form-control" id="inputEmail">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -94,7 +94,7 @@
                             <div class="row mb-3">
                                 <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
                                 <div class="col-lg-8">
-                                    <textarea class="form-control" id="inputComentario" rows="5"></textarea>
+                                    <textarea class="form-control" type="mensagem" name="mensagem" id="inputComentario" rows="5" placeholder="Digite sua mensagem"></textarea>
                                 </div>
                             </div>                        
                         </form>
