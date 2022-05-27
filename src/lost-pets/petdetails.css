@@ -32,7 +32,7 @@ iframe {
       height: 60px;
       width: 60px;
       margin: 0 auto;
-      background-image: url(/src/assets/lost-pets/tutor-ico.png);
+      background-image: url(../assets/lost-pets/tutor-ico.png);
       background-position: center;
       background-repeat: no-repeat;
   }
@@ -43,7 +43,7 @@ iframe {
     height: 60px;
     width: 60px;
     margin: 0 auto;
-    background-image: url(/src/assets/lost-pets/contact-ico.png);
+    background-image: url(../assets/lost-pets/contact-ico.png);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -54,7 +54,7 @@ iframe {
     height: 60px;
     width: 60px;
     margin: 0 auto;
-    background-image: url(/src/assets/lost-pets/report-problem-ico.png);
+    background-image: url(../assets/lost-pets/report-problem-ico.png);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -65,7 +65,7 @@ iframe {
     height: 60px;
     width: 60px;
     margin: 0 auto;
-    background-image: url(/src/assets/lost-pets/edit-ico.png);
+    background-image: url(../assets/lost-pets/edit-ico.png);
     background-position: center;
     background-repeat: no-repeat;
 }
