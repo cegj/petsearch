@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/src/contact/index.css">
   <link rel="stylesheet" href="../style-guide.css">
 </head>
 
@@ -28,10 +28,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="/lost-pets">Perdidos</a>
-          <a class="nav-link" href="adoption-pets">Adoção</a>
-          <a class="nav-link" href="/contact">Contato</a>
+          <a class="nav-link active" aria-current="page" href="/src/index.html">Home</a>
+          <a class="nav-link" href="/src/lost-pets/index.html">Perdidos</a>
+          <a class="nav-link" href="/src/adoption-pets/index.html">Adoção</a>
+          <a class="nav-link" href="/src/contact/index.html">Contato</a>
         </div>
       </div>
     </div>
@@ -47,36 +47,40 @@
         <!--Faixa Vazia-->
         <div class="col-lg-8 col-8">
           <!--Faixa de Conteúdo-->
+          <div class="row mb-8 mx-auto">
+            <p> A PetSearch nasceu com o objetivo de conectar pessoas aos seus bichinhos perdidos e de fomentar ações de adoção de pets. Nosso lema é “Ajudar a [re]encontrar seu pet” e por isso você pode contar conosco para auxiliá-lo no que for preciso. Qualquer dúvida, elogio, sugestão e reclamações podem ser feitas por meio do formulário abaixo.  </p>
+          </div>
           <div class="row my-5">
             <span class="h1 font-weight-bold">CONTATO </span>
           </div>
-          <form>
+          <form action="https://formspree.io/f/mayvvezr" method="POST">
+
             <div class="row mb-3">
               <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
               <div class="col-lg-8">
-                <input type="name" class="form-control" id="inputName">
+                <input type="name" name="name" class="form-control" id="inputName">
               </div>
             </div>
             <div class="row mb-3">
               <label for="inputTelefone" class="col-lg-4 col-form-label">Telefone:</label>
               <div class="col-lg-8">
-                <input type="telefone" class="form-control" id="inputTelefone">
+                <input type="telefone" name="telefone" class="form-control" id="inputTelefone">
               </div>
             </div>
             <div class="row mb-3">
               <label for="inputEmail" class="col-lg-4 col-form-label">Email:</label>
               <div class="col-lg-8">
-                <input type="email" class="form-control" id="inputEmail">
+                <input type="email" name="email" class="form-control" id="inputEmail">
               </div>
             </div>
             <div class="row mb-3">
               <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
               <div class="col-lg-8">
-                <textarea class="form-control" id="inputComentario" rows="5"></textarea>
+                <textarea class="form-control" type="mensagem" name="mensagem" id="inputComentario" rows="5" placeholder="Digite sua mensagem"></textarea>
               </div>
             </div>
           </form>
-          <button class="ml-auto btn" type="submit">
+          <button class="btn" type="submit">
             <img class="imgbtn" src="../assets/enviar.png" alt="enviar">
             <p class="txtbtn">Enviar</p>
           </button>
