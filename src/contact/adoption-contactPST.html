@@ -82,7 +82,7 @@
                             <div class="row mb-3">
                                 <label for="selecaoform" class="col-lg-4 col-form-label">Problema:</label>
                                 <div class="col-lg-8">
-                                    <select class="form-control" id="selecaoform">
+                                    <select class="form-control" name="selecao" type="selecao" id="selecaoform">
                                         <option value="" selected disabled>Informe o Problema</option>
                                         <option>Anúncio Duplicado</option>
                                         <option>Anúncio Falso</option>
@@ -96,12 +96,13 @@
                                 <div class="col-lg-8">
                                     <textarea class="form-control" type="mensagem" name="mensagem" id="inputComentario" rows="5" placeholder="Digite sua mensagem"></textarea>
                                 </div>
-                            </div>                        
+                            </div> 
+                            <button type="submit" class="btn">
+                                <img class="imgbtn" src="/src/assets/enviar.png" alt="enviar">
+                                <p class="txtbtn">Enviar</p>
+                            </button>                      
                         </form>
-                        <button type="submit" class="btn">
-                            <img class="imgbtn" src="/src/assets/enviar.png" alt="enviar">
-                            <p class="txtbtn">Enviar</p>
-                        </button>
+                       
                     </div>
                     <div class="col-lg-2 col-2"></div> <!--Faixa Vazia-->
                 </div>
