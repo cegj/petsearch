@@ -1,227 +1,230 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="Brendhal">
-        <link rel="stylesheet" href="form-lost-my-pet.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+
+<head>
+    <meta name="Brendhal">
+    <link rel="stylesheet" href="form-lost-my-pet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    </head>
-    <body>
-        <!-- <div class="menu-container"> -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
-                <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                      <a class="nav-link text-white" aria-current="page" href="#">Home</a>
-                      <a class="nav-link text-white active" href="#">Perdidos</a>
-                      <a class="nav-link text-white" href="#">Adoção</a>
-                      <a class="nav-link text-white" href="#">Contato</a>
-                    </div>
-                  </div>
+</head>
+
+<body>
+    <!-- <div class="menu-container"> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+                    <a class="nav-link text-white active" href="/lost-pets">Perdidos</a>
+                    <a class="nav-link text-white" href="/adoption-pets">Adoção</a>
+                    <a class="nav-link text-white" href="/contact">Contato</a>
                 </div>
-              </nav>
-              <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-blue">
-                <img class="header-image" src="../../assets/cachorro-01.png" />
-                <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
-                  <img class="logo-small mb-4" src="../../assets/logo-negativa.png" />
-                  <span class="header-title text-white text-uppercase text-center">Perdi meu pet</span>
-                </div>
-              </div>
-        <!-- </div> -->
-        <div class="container">
-            <div class="form-container">
-                <form>
-                    <div class="session-type-container">
-                        <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
-                    </div>
-                    
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Nome:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Espécie:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <select name="especie" id="especie">
-                                <option value="" selected disabled>Selecione...</option>
-                                <option value="canino">Cachorro</option>
-                                <option value="felino">Gato</option>
-                                <option value="aves">Ave</option>
-                                <option value="outro">Outro</option>
-                              </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Raça:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Cor:</label>
-                        </div>
-
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Data da perda:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input type="date">
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Local da perda:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-input-line">
-                        <div class="form-label right">
-                            <label>CEP:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input type="number">
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-input-line">
-                        <div class="form-label right">
-                            <label>Cidade:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-                    
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Observações:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <textarea rows="7"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Imagem:</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="file" accept="image/png, image/jpeg">
-                        </div>
-                    </div>
-                    
-                    <div class="session-type-container">
-                        <span class="session-type">INFORMAÇÕES DO DONO</span>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Nome:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input>
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Telefone:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input type="number">                         
-                        </div>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                        </div>
-                        <div class="form-input-checkbox">
-                            <label> Tornar público?</label><input type="checkbox">   
-                        </div>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>E-mail:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <input type="email">
-                        </div>
-                    </div>
-                    
-                    <div class="form-input-line">
-                        <div class="form-label">
-                        </div>
-                        <div class="form-input-checkbox">
-                            <label> Tornar público?</label><input type="checkbox">   
-                        </div>
-                    </div>
-
-                    <div class="form-input-line">
-                        <div class="form-label">
-                            <label>Observações:</label>
-                        </div>
-    
-                        <div class="form-input">
-                            <textarea rows=""></textarea>
-                        </div>
-                    </div>
-                    
-                    <button class="button_img" type="submit">
-                        <img src="../../assets/enviar.png"> <br>
-                        enviar
-                    </button>
-                </form>
             </div>
         </div>
-        <div class="grey-bar"></div>
-    </body>
+    </nav>
+    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-blue">
+        <img class="header-image" src="../../assets/cachorro-01.png" />
+        <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
+            <img class="logo-small mb-4" src="../../assets/logo-negativa.png" />
+            <span class="header-title text-white text-uppercase text-center">Perdi meu pet</span>
+        </div>
+    </div>
+    <!-- </div> -->
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <div class="session-type-container">
+                    <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Nome:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Espécie:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <select name="especie" id="especie">
+                            <option value="" selected disabled>Selecione...</option>
+                            <option value="canino">Cachorro</option>
+                            <option value="felino">Gato</option>
+                            <option value="aves">Ave</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Raça:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Cor:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Data da perda:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input type="date">
+                    </div>
+                </div>
+
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Local da perda:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+
+                <div class="form-input-line">
+                    <div class="form-label right">
+                        <label>CEP:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input type="number">
+                    </div>
+                </div>
+
+
+                <div class="form-input-line">
+                    <div class="form-label right">
+                        <label>Cidade:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Observações:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <textarea rows="7"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Imagem:</label>
+                    </div>
+                    <div class="form-input">
+                        <input type="file" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+
+                <div class="session-type-container">
+                    <span class="session-type">INFORMAÇÕES DO DONO</span>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Nome:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input>
+                    </div>
+                </div>
+
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Telefone:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                    </div>
+                    <div class="form-input-checkbox">
+                        <label> Tornar público?</label><input type="checkbox">
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>E-mail:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <input type="email">
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                    </div>
+                    <div class="form-input-checkbox">
+                        <label> Tornar público?</label><input type="checkbox">
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Observações:</label>
+                    </div>
+
+                    <div class="form-input">
+                        <textarea rows=""></textarea>
+                    </div>
+                </div>
+
+                <button class="button_img" type="submit">
+                    <img src="../../assets/enviar.png"> <br>
+                    enviar
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="grey-bar"></div>
+</body>
+
 </html>
