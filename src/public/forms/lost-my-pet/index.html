@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -42,7 +43,7 @@
     <!-- </div> -->
     <div class="container">
         <div class="form-container">
-            <form>
+            <form id="lostForm">
                 <div class="session-type-container">
                     <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
                 </div>
@@ -53,7 +54,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input name="name" id="name" />
                     </div>
                 </div>
 
@@ -63,7 +64,7 @@
                     </div>
 
                     <div class="form-input">
-                        <select name="especie" id="especie">
+                        <select name="species" id="species" id="especie">
                             <option value="" selected disabled>Selecione...</option>
                             <option value="canino">Cachorro</option>
                             <option value="felino">Gato</option>
@@ -79,7 +80,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input name="race" id="race" />
                     </div>
                 </div>
 
@@ -90,7 +91,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input name="color" id="color" />
                     </div>
                 </div>
 
@@ -100,7 +101,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="date">
+                        <input type="date" name="foundDate" id="foundDate" />
                     </div>
                 </div>
 
@@ -111,7 +112,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input type="text" />
                     </div>
                 </div>
 
@@ -122,7 +123,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="number">
+                        <input type="text" name="cep" id="cep" />
                     </div>
                 </div>
 
@@ -143,7 +144,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows="7"></textarea>
+                        <textarea name="observations" id="observations" rows="7"></textarea>
                     </div>
                 </div>
 
@@ -152,7 +153,8 @@
                         <label>Imagem:</label>
                     </div>
                     <div class="form-input">
-                        <input type="file" accept="image/png, image/jpeg">
+                        <!-- <input type="file" accept="image/png, image/jpeg"> -->
+                        <input type="text" name="imageUrl" id="imageUrl" />
                     </div>
                 </div>
 
@@ -166,7 +168,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input type="text" name="tutorName" id="tutorName" />
                     </div>
                 </div>
 
@@ -177,7 +179,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="number">
+                        <input type="text" name="tutorPhone" id="tutorPhone">
                     </div>
                 </div>
 
@@ -195,7 +197,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="email">
+                        <input type="email" name="tutorEmail" id="tutorEmail">
                     </div>
                 </div>
 
@@ -213,7 +215,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows=""></textarea>
+                        <textarea rows="" name="tutorObservations" id="tutorObservations"></textarea>
                     </div>
                 </div>
 
@@ -225,6 +227,62 @@
         </div>
     </div>
     <div class="grey-bar"></div>
+    <script>
+        function submitForm ( e ) {
+            e.preventDefault()
+
+            const form = document.getElementById( 'lostForm' )
+
+            const name = document.getElementById( 'name' ).value
+            const species = document.getElementById( 'species' ).value
+            const race = document.getElementById( 'race' ).value
+            const color = document.getElementById( 'color' ).value
+            const foundDate = document.getElementById( 'foundDate' ).value
+            const cep = document.getElementById( 'cep' ).value
+            const observations = document.getElementById( 'observations' ).value
+            const imageUrl = document.getElementById( 'imageUrl' ).value
+            const tutorName = document.getElementById( 'tutorName' ).value
+            const tutorPhone = document.getElementById( 'tutorPhone' ).value
+            const tutorEmail = document.getElementById( 'tutorEmail' ).value
+            const tutorObservations = document.getElementById( 'tutorObservations' ).value
+
+            const body = {
+                name,
+                species,
+                race,
+                color,
+                foundDate,
+                cep,
+                observations,
+                imageUrl,
+                tutorName,
+                tutorPhone,
+                tutorEmail,
+                tutorObservations,
+            }
+
+            const host = window.location.hostname
+            const port = window.location.port
+            const url = port ? `http://${host}:${port}/api/lost-pets` : `http://${host}/api/lost-pets`
+
+            console.log( JSON.stringify( body ) )
+
+            fetch( url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify( body )
+            } )
+                .then( response => response.json() )
+                .then( data => {
+                    console.log( data )
+                    form.reset()
+                } )
+
+        }
+        document.getElementById( 'lostForm' ).addEventListener( "submit", submitForm );
+    </script>
 </body>
 
 </html>

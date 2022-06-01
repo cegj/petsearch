@@ -1,6 +1,7 @@
 {
   "lost-pets": [
     {
+      "id": 1,
       "name": "Buddy",
       "species": "Cachorro",
       "race": "Caramelo",
@@ -13,10 +14,41 @@
       "tutorPhone": "21 994677053",
       "tutorEmail": "joaovfsousa@gmail.com",
       "tutorObservations": ""
+    },
+    {
+      "name": "a",
+      "species": "canino",
+      "race": "",
+      "color": "",
+      "foundDate": "",
+      "cep": "",
+      "observations": "",
+      "imageUrl": "",
+      "tutorName": "",
+      "tutorPhone": "",
+      "tutorEmail": "",
+      "tutorObservations": "",
+      "id": 2
+    },
+    {
+      "name": "a",
+      "species": "canino",
+      "race": "",
+      "color": "",
+      "foundDate": "",
+      "cep": "",
+      "observations": "",
+      "imageUrl": "",
+      "tutorName": "",
+      "tutorPhone": "",
+      "tutorEmail": "",
+      "tutorObservations": "",
+      "id": 3
     }
   ],
   "adoption-pets": [
     {
+      "id": 1,
       "name": "Buddy Adoção",
       "species": "Cachorro",
       "race": "Caramelo",
