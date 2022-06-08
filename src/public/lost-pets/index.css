@@ -15,6 +15,13 @@
   color: #272727;
 }
 
+.btn.btn-outline-secondary.mt-4:hover{
+  background-color: #94b3c2;
+  color: #272727;
+  border-color: transparent;
+}
+
+
 p {
   margin: 0;
 }
@@ -31,6 +38,6 @@ iframe {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-
+  text-decoration: none;
   color: #727171;
 }
