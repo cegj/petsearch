@@ -15,6 +15,12 @@
   color: #272727;
 }
 
+.btn.btn-outline-secondary.mt-4:hover{
+  background-color: #eec857;
+  color: #272727;
+  border-color: transparent;
+}
+
 p {
   margin: 0;
 }
@@ -24,13 +30,13 @@ iframe {
   height: 40vh;
 }
 
-.see-gallery-text {
+a.see-gallery-text {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-
+  text-decoration: none;
   color: #727171;
 }
