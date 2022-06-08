@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="../../../assets/API/busca-cep.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,7 @@
     <!-- </div> -->
     <div class="container">
         <div class="form-container">
-            <form>
+            <form method="get" action=".">
                 <div class="session-type-container">
                     <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
                 </div>
@@ -107,7 +108,7 @@
                 </div>
 
 
-                <div class="form-input-line">
+                <!-- <div class="form-input-line">
                     <div class="form-label">
                         <label>Local da perda:</label>
                     </div>
@@ -116,19 +117,15 @@
                         <input>
                     </div>
                 </div>
-
-
                 <div class="form-input-line">
                     <div class="form-label right">
                         <label>CEP:</label>
                     </div>
 
                     <div class="form-input">
-                        <input type="number">
+                        <input type="text">
                     </div>
                 </div>
-
-
                 <div class="form-input-line">
                     <div class="form-label right">
                         <label>Cidade:</label>
@@ -136,6 +133,50 @@
 
                     <div class="form-input">
                         <input>
+                    </div>
+                </div> -->
+                <div class="form-input-line">
+                    <div class="form-label"> 
+                        <label>Cep: </label>
+                    </div>
+                    <div class="form-input">
+                        <input name="cep"  type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Rua: </label>
+                    </div>
+                    <div class="form-input">
+                    <input name="rua"  type="text" id="rua" size="60" />
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label"> 
+                        <label>Bairro:</label>
+                    </div>
+                    <div class="form-input">
+                        <input name="bairro"  type="text" id="bairro" size="40" />
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label">
+                        <label>Cidade:</label>
+                    </div>
+                    <div class="form-input">
+                        <input name="cidade"  type="text" id="cidade" size="40" />
+                    </div>
+                </div>
+
+                <div class="form-input-line">
+                    <div class="form-label"> 
+                        <label>Estado:</label>
+                    </div>
+                    <div class="form-input">
+                        <input name="uf"  type="text" id="uf" size="2" />
                     </div>
                 </div>
 
