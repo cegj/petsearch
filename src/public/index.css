@@ -24,3 +24,22 @@
 .carousel-img {
   max-width: 500px;
 }
+
+.btn {
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+.btn.btn-outline-secondary.mt-2:hover{
+  background-color: #ffffff;
+  color: #3886ad;
+  border-color: transparent;
+}
+
+.btn.btn-outline-secondary.mt-4:hover{
+  background-color: #ffffff;
+  color: #e5ab04;
+  border-color: transparent;
+ 
+}
