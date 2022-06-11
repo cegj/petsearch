@@ -25,10 +25,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link text-white" aria-current="page" href="/">Home</a>
-                    <a class="nav-link text-white active" href="/lost-pets">Perdidos</a>
-                    <a class="nav-link text-white" href="/adoption-pets">Adoção</a>
-                    <a class="nav-link text-white" href="/contact">Contato</a>
+                    <a class="nav-link text-white" aria-current="page" href="/src/public/index.html">Home</a>
+                    <a class="nav-link text-white active" href="/src/public/lost-pets/index.html">Perdidos</a>
+                    <a class="nav-link text-white" href="/src/public/adoption-pets/index.html">Adoção</a>
+                    <a class="nav-link text-white" href="/src/public/contact/index.html">Contato</a>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
     <!-- </div> -->
     <div class="container">
         <div class="form-container">
-            <form id="lostForm">
+            <form id="formulario" action="https://formspree.io/f/mzbowaaz" method="POST" >
                 <div class="session-type-container">
                     <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
                 </div>
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input name="name" id="name" />
+                        <input name="name" type="name" id="name" />
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="form-input">
-                        <select name="species" id="species" id="especie">
+                        <select name="especies" id="especies" id="especie">
                             <option value="" selected disabled>Selecione...</option>
                             <option value="canino">Cachorro</option>
                             <option value="felino">Gato</option>
@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="text" />
+                        <input name="localperda" type="text" />
                     </div>
                 </div>
 
@@ -188,7 +188,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea name="observations" id="observations" rows="7"></textarea>
+                        <textarea name="observations" id="observations" rows="7" placeholder="Digite sua mensagem"></textarea>
                     </div>
                 </div>
 
@@ -259,7 +259,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows="" name="tutorObservations" id="tutorObservations"></textarea>
+                        <textarea rows="" name="tutorObservations" id="tutorObservations" placeholder="Digite sua mensagem"></textarea>
                     </div>
                 </div>
 
