@@ -24,10 +24,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link text-white" aria-current="page" href="/">Home</a>
-                    <a class="nav-link text-white" href="/lost-pets">Perdidos</a>
-                    <a class="nav-link text-white active" href="/adoption-pets">Adoção</a>
-                    <a class="nav-link text-white" href="/contact">Contato</a>
+                    <a class="nav-link text-white" aria-current="page" href="/src/public/index.html">Home</a>
+                    <a class="nav-link text-white active" href="/src/public/lost-pets/index.html">Perdidos</a>
+                    <a class="nav-link text-white" href="/src/public/adoption-pets/index.html">Adoção</a>
+                    <a class="nav-link text-white" href="/src/public/contact/index.html">Contato</a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <!-- </div> -->
     <div class="container">
         <div class="form-container">
-            <form method="get" action=".">
+            <form id="formulario" action="https://formspree.io/f/xdobjldv" method="POST" method="get" action=".">
                 <div class="session-type-container">
                     <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input type="animal-apelido" name="animal-apelido">
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="form-input">
-                        <select name="especie" id="especie">
+                        <select name="especie" id="especie" type="especie">
                             <option value="" selected disabled>Selecione...</option>
                             <option value="canino">Cachorro</option>
                             <option value="felino">Gato</option>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input type="animal-raca" name="animal-raca">
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input type="animal-cor" name="animal-cor">
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="date">
+                        <input type="date" name="animal-data">
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                         <label>Cep: </label>
                     </div>
                     <div class="form-input">
-                        <input name="cep"  type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
                     </div>
                 </div>
 
@@ -185,7 +185,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows="7"></textarea>
+                        <textarea rows="7" placeholder="Digite sua mensagem" name="observacao"></textarea>
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@
                         <label>Imagem:</label>
                     </div>
                     <div class="form-input">
-                        <input type="file" accept="image/png, image/jpeg">
+                        <input type="file" accept="image/png, image/jpeg" name="imagem">
                     </div>
                 </div>
 
@@ -208,7 +208,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input>
+                        <input name="tutor-nome">
                     </div>
                 </div>
 
@@ -219,7 +219,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="number">
+                        <input type="number" name="tutor-telefone">
                     </div>
                 </div>
 
@@ -237,7 +237,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="email">
+                        <input type="email" name="tutor-email">
                     </div>
                 </div>
 
@@ -255,7 +255,7 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows=""></textarea>
+                        <textarea rows="" placeholder="Digite sua mensagem" name="tutor-observacao"></textarea>
                     </div>
                 </div>
 
