@@ -43,7 +43,8 @@
     <!-- </div> -->
     <div class="container">
         <div class="form-container">
-            <form id="formulario" action="https://formspree.io/f/mzbowaaz" method="POST" >
+            <!-- <form id="formulario" action="https://formspree.io/f/mzbowaaz" method="POST"> -->
+            <form id="lostForm" name="lostForm">
                 <div class="session-type-container">
                     <span class="session-type">INFORMAÇÕES DO ANIMAL</span>
                 </div>
@@ -64,7 +65,7 @@
                     </div>
 
                     <div class="form-input">
-                        <select name="especies" id="especies" id="especie">
+                        <select name="species" id="species" id="species">
                             <option value="" selected disabled>Selecione...</option>
                             <option value="canino">Cachorro</option>
                             <option value="felino">Gato</option>
@@ -138,11 +139,12 @@
                     </div>
                 </div> -->
                 <div class="form-input-line">
-                    <div class="form-label"> 
+                    <div class="form-label">
                         <label>Cep: </label>
                     </div>
                     <div class="form-input">
-                        <input name="cep"  type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                            onblur="pesquisacep(this.value);" />
                     </div>
                 </div>
 
@@ -151,16 +153,16 @@
                         <label>Rua: </label>
                     </div>
                     <div class="form-input">
-                    <input name="rua"  type="text" id="rua" size="60" />
+                        <input name="rua" type="text" id="rua" size="60" />
                     </div>
                 </div>
 
                 <div class="form-input-line">
-                    <div class="form-label"> 
+                    <div class="form-label">
                         <label>Bairro:</label>
                     </div>
                     <div class="form-input">
-                        <input name="bairro"  type="text" id="bairro" size="40" />
+                        <input name="bairro" type="text" id="bairro" size="40" />
                     </div>
                 </div>
 
@@ -169,16 +171,16 @@
                         <label>Cidade:</label>
                     </div>
                     <div class="form-input">
-                        <input name="cidade"  type="text" id="cidade" size="40" />
+                        <input name="cidade" type="text" id="cidade" size="40" />
                     </div>
                 </div>
 
                 <div class="form-input-line">
-                    <div class="form-label"> 
+                    <div class="form-label">
                         <label>Estado:</label>
                     </div>
                     <div class="form-input">
-                        <input name="uf"  type="text" id="uf" size="2" />
+                        <input name="uf" type="text" id="uf" size="2" />
                     </div>
                 </div>
 
@@ -188,7 +190,8 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea name="observations" id="observations" rows="7" placeholder="Digite sua mensagem"></textarea>
+                        <textarea name="observations" id="observations" rows="7"
+                            placeholder="Digite sua mensagem"></textarea>
                     </div>
                 </div>
 
@@ -259,7 +262,8 @@
                     </div>
 
                     <div class="form-input">
-                        <textarea rows="" name="tutorObservations" id="tutorObservations" placeholder="Digite sua mensagem"></textarea>
+                        <textarea rows="" name="tutorObservations" id="tutorObservations"
+                            placeholder="Digite sua mensagem"></textarea>
                     </div>
                 </div>
 
@@ -272,23 +276,45 @@
     </div>
     <div class="grey-bar"></div>
     <script>
+        function validateBody ( body ) {
+            for ( field of Object.keys( body ) ) {
+                if ( body[ field ] == "" ) {
+                    alert( "Preencha todos os campos" );
+                    return false;
+                }
+            }
+            return true
+        }
+
         function submitForm ( e ) {
             e.preventDefault()
 
             const form = document.getElementById( 'lostForm' )
 
             const name = document.getElementById( 'name' ).value
+            console.log( 'name' )
             const species = document.getElementById( 'species' ).value
+            console.log( 'species' )
             const race = document.getElementById( 'race' ).value
+            console.log( 'race' )
             const color = document.getElementById( 'color' ).value
+            console.log( 'color' )
             const foundDate = document.getElementById( 'foundDate' ).value
+            console.log( 'foundDate' )
             const cep = document.getElementById( 'cep' ).value
+            console.log( 'cep' )
             const observations = document.getElementById( 'observations' ).value
+            console.log( 'observations' )
             const imageUrl = document.getElementById( 'imageUrl' ).value
+            console.log( 'imageUrl' )
             const tutorName = document.getElementById( 'tutorName' ).value
+            console.log( 'tutorName' )
             const tutorPhone = document.getElementById( 'tutorPhone' ).value
+            console.log( 'tutorPhone' )
             const tutorEmail = document.getElementById( 'tutorEmail' ).value
+            console.log( 'tutorEmail' )
             const tutorObservations = document.getElementById( 'tutorObservations' ).value
+            console.log( 'tutorObservations' )
 
             const body = {
                 name,
@@ -305,94 +331,95 @@
                 tutorObservations,
             }
 
-            const host = window.location.hostname
-            const port = window.location.port
-            const url = port ? `http://${host}:${port}/api/lost-pets` : `http://${host}/api/lost-pets`
+            if ( validateBody( body ) ) {
+                const host = window.location.hostname
+                const port = window.location.port
+                const url = port ? `http://${host}:${port}/api/lost-pets` : `http://${host}/api/lost-pets`
 
-            console.log( JSON.stringify( body ) )
-
-            fetch( url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify( body )
-            } )
-                .then( response => response.json() )
-                .then( data => {
-                    console.log( data )
-                    form.reset()
+                fetch( url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify( body )
                 } )
+                    .then( response => response.json() )
+                    .then( data => {
+                        console.log( data )
+                        alert( 'Pet cadastrado com sucesso!' )
+                        form.reset()
+                    } )
+            }
 
         }
         document.getElementById( 'lostForm' ).addEventListener( "submit", submitForm );
     </script>
-        <script>
-            function limpa_formulário_cep() {
+    <script>
+        function limpa_formulário_cep () {
             //Limpa valores do formulário de cep.
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-            document.getElementById('uf').value=("");
+            document.getElementById( 'rua' ).value = ( "" );
+            document.getElementById( 'bairro' ).value = ( "" );
+            document.getElementById( 'cidade' ).value = ( "" );
+            document.getElementById( 'uf' ).value = ( "" );
+        }
+
+        function meu_callback ( conteudo ) {
+            if ( !( "erro" in conteudo ) ) {
+                //Atualiza os campos com os valores.
+                document.getElementById( 'rua' ).value = ( conteudo.logradouro );
+                document.getElementById( 'bairro' ).value = ( conteudo.bairro );
+                document.getElementById( 'cidade' ).value = ( conteudo.localidade );
+                document.getElementById( 'uf' ).value = ( conteudo.uf );
+            } //end if.
+            else {
+                //CEP não Encontrado.
+                limpa_formulário_cep();
+                alert( "CEP não encontrado." );
             }
-    
-            function meu_callback(conteudo) {
-                if (!("erro" in conteudo)) {
-                    //Atualiza os campos com os valores.
-                    document.getElementById('rua').value=(conteudo.logradouro);
-                    document.getElementById('bairro').value=(conteudo.bairro);
-                    document.getElementById('cidade').value=(conteudo.localidade);
-                    document.getElementById('uf').value=(conteudo.uf);
+        }
+
+        function pesquisacep ( valor ) {
+
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor.replace( /\D/g, '' );
+
+            //Verifica se campo cep possui valor informado.
+            if ( cep != "" ) {
+
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if ( validacep.test( cep ) ) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById( 'rua' ).value = "...";
+                    document.getElementById( 'bairro' ).value = "...";
+                    document.getElementById( 'cidade' ).value = "...";
+                    document.getElementById( 'uf' ).value = "...";
+
+                    //Cria um elemento javascript.
+                    var script = document.createElement( 'script' );
+
+                    //Sincroniza com o callback.
+                    script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild( script );
+
                 } //end if.
                 else {
-                    //CEP não Encontrado.
+                    //cep é inválido.
                     limpa_formulário_cep();
-                    alert("CEP não encontrado.");
+                    alert( "Formato de CEP inválido." );
                 }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
             }
-    
-            function pesquisacep(valor) {
-    
-                //Nova variável "cep" somente com dígitos.
-                var cep = valor.replace(/\D/g, '');
-    
-                //Verifica se campo cep possui valor informado.
-                if (cep != "") {
-    
-                    //Expressão regular para validar o CEP.
-                    var validacep = /^[0-9]{8}$/;
-    
-                    //Valida o formato do CEP.
-                    if(validacep.test(cep)) {
-    
-                        //Preenche os campos com "..." enquanto consulta webservice.
-                        document.getElementById('rua').value="...";
-                        document.getElementById('bairro').value="...";
-                        document.getElementById('cidade').value="...";
-                        document.getElementById('uf').value="...";
-    
-                        //Cria um elemento javascript.
-                        var script = document.createElement('script');
-    
-                        //Sincroniza com o callback.
-                        script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-    
-                        //Insere script no documento e carrega o conteúdo.
-                        document.body.appendChild(script);
-    
-                    } //end if.
-                    else {
-                        //cep é inválido.
-                        limpa_formulário_cep();
-                        alert("Formato de CEP inválido.");
-                    }
-                } //end if.
-                else {
-                    //cep sem valor, limpa formulário.
-                    limpa_formulário_cep();
-                }
-            };
-        </script>
+        };
+    </script>
 </body>
 
 </html>
