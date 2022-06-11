@@ -57,58 +57,54 @@
     </div>
   </div>
   <div class="d-flex justify-content-center px-5 py-5 bg-shadow-grey">
-    <div class="row justify-content-evenly">
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
+    <div class="row justify-content-evenly" id="pets-gallery">
     </div>
   </div>
   <div class="d-flex flex-column justify-content-center align-items-center py-3">
     <a href="./lost-gallery.html" class="see-gallery-text">ver galeria completa</a>
     <img width="30" class="mt-2" src="../assets/home/forward-icon.png" />
   </div>
+  <script type="text/javascript">
+    function insertPet ( pet ) {
+      try {
+        const petsElement = document.getElementById( 'pets-gallery' );
+
+        petsElement.insertAdjacentHTML( 'beforeend', `
+          <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
+            <img src="${pet.imageUrl}" />
+            <div
+              class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
+              <p>${pet.name}</p>
+              <p>${pet.race} ${pet.color}</p>
+              <p>${pet.city}/${pet.state}</p>
+            </div>
+          </div>
+        `)
+      } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+      }
+    }
+
+    async function fetchPets () {
+      try {
+        const host = window.location.hostname
+        const port = window.location.port
+        const url = port ? `http://${host}:${port}/api/lost-pets?_limit=5` : `http://${host}/api/lost-pets?_limit=5`
+
+        const response = await fetch( url );
+        const pets = await response.json();
+        pets.forEach( pet => {
+          insertPet( pet );
+        } )
+      } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+      }
+    }
+
+    fetchPets()
+  </script>
   <div class="mapouter">
     <div class="gmap_canvas">
       <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=belo%20horizonte&t=&z=13&ie=UTF8&iwloc=&output=embed"

@@ -299,6 +299,10 @@
             console.log( 'foundDate' )
             const cep = document.getElementById( 'cep' ).value
             console.log( 'cep' )
+            const state = document.getElementById( 'uf' ).value
+            console.log( 'uf' )
+            const city = document.getElementById( 'cidade' ).value
+            console.log( 'cidade' )
             const observations = document.getElementById( 'observations' ).value
             console.log( 'observations' )
             const imageUrl = document.getElementById( 'imageUrl' ).value
@@ -325,6 +329,8 @@
                 tutorPhone,
                 tutorEmail,
                 tutorObservations,
+                city,
+                state
             }
 
             if ( validateBody( body ) ) {
