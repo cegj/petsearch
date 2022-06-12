@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="file" name="imgFile" id="imgFile" />
+			<input type="submit" value="Enviar" />
+		</form>
+
+		<script>
+			document.forms[0].addEventListener("submit", formSubmit);
+
+			async function formSubmit(e) {
+				e.preventDefault();
+				const imgUrl = await hostImage();
+				console.log(imgUrl.data.link);
+			}
+
+			async function hostImage() {
+				let file = document.getElementById("imgFile").files[0];
+				let imgUrl;
+
+				const formData = new FormData();
+				formData.append("image", file);
+				formData.append("album", "S9DeXFb");
+
+				const response = await fetch("https://api.imgur.com/3/upload/", {
+					method: "post",
+					headers: {
+						Authorization: "###",
+					},
+					body: formData,
+				});
+
+				const json = await response.json();
+
+				return json;
+			}
+		</script>
+	</body>
+</html>
