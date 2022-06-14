@@ -283,7 +283,21 @@
         }
 
         function submitForm ( e ) {
-            e.preventDefault()
+            e.preventDefault();
+
+            let imgFile = document.getElementById("imgFile").files[0];
+			let imageUrl;
+
+            if (imgFile){
+                imageUrl = await hostImage(imgFile);
+                if(!imageUrl){
+                    alert("Erro ao enviar imagem. Por favor, tente novamente.\nCaso o erro persista, entre em contato conosco.");
+                    return;
+                }
+            } else {
+                alert('Por favor, selecione uma imagem do pet para enviar.')
+                return;
+            }
 
             const form = document.getElementById( 'adoptPet' )
 
@@ -305,8 +319,6 @@
             console.log( 'cidade' )
             const observations = document.getElementById( 'observations' ).value
             console.log( 'observations' )
-            const imageUrl = document.getElementById( 'imageUrl' ).value
-            console.log( 'imageUrl' )
             const tutorName = document.getElementById( 'tutorName' ).value
             console.log( 'tutorName' )
             const tutorPhone = document.getElementById( 'tutorPhone' ).value
@@ -421,6 +433,27 @@
                 limpa_formulário_cep();
             }
         };
+    </script>
+    <script>
+        async function hostImage(imgFile) {
+            const formData = new FormData();
+            formData.append("image", imgFile);
+            formData.append("album", "S9DeXFb");
+
+            const response = await fetch("https://api.imgur.com/3/upload/", {
+                method: "post",
+                headers: {
+                    Authorization: process.env.IMGUR_TOKEN,
+                },
+                body: formData,
+            });
+
+            const json = await response.json();
+
+            console.log(json);
+
+            return json.success === true ? json.data.link : false;
+        }
     </script>
 </body>
 
