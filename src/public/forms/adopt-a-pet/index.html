@@ -272,6 +272,7 @@
     </div>
     <div class="grey-bar"></div>
     <script>
+        
         function validateBody ( body ) {
             for ( field of Object.keys( body ) ) {
                 if ( body[ field ] == "" ) {
@@ -282,7 +283,7 @@
             return true
         }
 
-        function submitForm ( e ) {
+        async function submitForm ( e ) {
             e.preventDefault();
 
             let imgFile = document.getElementById("imgFile").files[0];
