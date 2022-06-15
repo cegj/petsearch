@@ -78,3 +78,7 @@ iframe {
         box-shadow: inset 0px -70px 0px 0px #f5f8f9;        
     }
 }
+
+#map { 
+    height: 400px;
+}
