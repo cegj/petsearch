@@ -18,6 +18,11 @@ router.use('/api', jsonRouter)
 
 server.use(middlewares)
 server.use(router)
+
+server.get('/imgur-token', (req, res) => {
+  res.send(process.env.IMGUR_TOKEN);
+})
+
 server.listen(PORT, () => {
   console.log(`JSON server running on port ${PORT}`)
 })
