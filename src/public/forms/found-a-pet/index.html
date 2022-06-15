@@ -435,6 +435,7 @@
     </script>
     <script>
         async function hostImage(imgFile) {
+            const imgurToken = await fetch("/imgur-token").then((res) => res.text());
             const formData = new FormData();
             formData.append("image", imgFile);
             formData.append("album", "S9DeXFb");
@@ -442,7 +443,7 @@
             const response = await fetch("https://api.imgur.com/3/upload/", {
                 method: "post",
                 headers: {
-                    Authorization: process.env.IMGUR_TOKEN,
+                    Authorization: imgurToken,
                 },
                 body: formData,
             });

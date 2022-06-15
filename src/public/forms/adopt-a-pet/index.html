@@ -439,8 +439,6 @@
 
         async function hostImage(imgFile) {
             const imgurToken = await fetch("/imgur-token").then((res) => res.text());
-            console.log(imgurToken);
-
             const formData = new FormData();
             formData.append("image", imgFile);
             formData.append("album", "S9DeXFb");
