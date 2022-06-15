@@ -120,7 +120,7 @@
                     }).addTo(map);
 
                     L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
-                        .bindPopup(address)
+                        .bindPopup(address + "\n(localização estimada)")
                         .openPopup();
 
                         setTimeout(function () {
