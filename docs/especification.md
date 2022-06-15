@@ -35,14 +35,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                                                                                   | Prioridade |
 | ------ | -------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre um animal                                                                | ALTA       |
-| RF-002 | Permitir que o usuário altere um cadastro de um animal                                                   | ALTA       |
-| RF-003 | Permitir que o usuário remova um cadastro de um animal                                                   | ALTA       |
-| RF-004 | Permitir que o usuário verifique o animal como "encontrado" ou "adotado"                                 | ALTA      |
-| RF-005 | Disponibilizar funcionalidade que permita pesquisar animais com filtro personalizado                     | ALTA     |
-| RF-006 | Disponibilizar funcionalidade que permita cadastrar o animal como perdido ou disponível para adoção     	| ALTA      |
-| RF-007 | Disponibilizar funcionalidade que permita pesquisar ONG cadastradas                                      | BAIXA     |
-| RF-008 | Disponibilizar sessão com dados para doações às ONGs                                                     | BAIXA      |
+| RF-001 | Permitir que o usuário cadastre um animal para adoção                                                    | ALTA       |
+| RF-002 | Permitir que o usuário cadastre um animal perdido                                                        | ALTA       |
+| RF-003 | Permitir que o usuário marque o animal como "encontrado"                                                 | ALTA       |
+| RF-004 | Permitir que o usuário marque o animal como "adotado"                                                    | ALTA       |
+| RF-005 | Disponibilizar funcionalidade que permita pesquisar animais com filtro personalizado                     | ALTA       |
+| RF-006 | Disponibilizar funcionalidade que permita pesquisar ONG cadastradas                                      | BAIXA      |
+| RF-007 | Disponibilizar sessão com dados para doações às ONGs                                                     | BAIXA      |
 
 ### Requisitos não Funcionais
 
