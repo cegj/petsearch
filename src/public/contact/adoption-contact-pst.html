@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PetSearch - Contato Tutor</title>
+        <title>PetSearch</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,13 +17,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@50;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="/src/public/contact/lost-contact.css">
-        <link rel="stylesheet" href="/src/public/index.css">
+        <link rel="stylesheet" href="/contact/adp-contact.css">
+        <link rel="stylesheet" href="/index.css">
     </head>
 
     <body>
         <!--Menu Superior-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
+        <nav class="navbar navbar-expand-lg navbar-light bg-yellow text-uppercase">
             <!--***Atualizar os links***-->
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,25 +33,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link text-white" aria-current="page" href="/src/public/index.html">Home</a>
-                        <a class="nav-link text-white active" href="/src/public/lost-pets/index.html">Perdidos</a>
-                        <a class="nav-link text-white" href="/src/public/adoption-pets/index.html">Adoção</a>
-                        <a class="nav-link text-white" href="/src/public/contact/index.html">Contato</a>
+                        <a class="nav-link text-white" href="/">Home</a>
+                        <a class="nav-link text-white" href="/lost-pets">Perdidos</a>
+                        <a class="nav-link text-white active" aria-current="page" href="/adoption-pets">Adoção</a>
+                        <a class="nav-link text-white" href="/contact">Contato</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <!-- Início Faixa Azul/Cabeçalho-->
+        <!-- Início Faixa Amarela/Cabeçalho-->
         <div div
-            class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-blue">
-            <img class="header-image" src="/src/public/assets/cachorro-01.png" />
+            class="d-flex flex-column flex-lg-row justify-content-center align-items-center px-5 px-lg-0 pb-4 bg-yellow mb-4">
+            <img class="header-image" src="/assets/gato-01.png" />
             <div class="d-flex flex-column align-items-center align-items-lg-start header-right-side">
-                <img class="logo-small mb-4" src="/src/public/assets/logo-negativa.png"
+                <img class="logo-small mb-4" src="/assets/logo-negativa.png"
                     alt="PetSearch - Ajudamos a [re]encontrar seu pet" />
-                <span class="header-title text-white text-uppercase text-center">PET PERDIDO</span>
+                <span class="header-title text-white text-uppercase text-center">PET PARA ADOÇÃO</span>
             </div>
         </div>
-        <!-- Fim da Faixa Azul/Cabeçalho-->
+        <!-- Fim da Faixa Amarela/Cabeçalho-->
         <main>
             <div class="grid">
                 <div class="row">
@@ -60,10 +60,9 @@
                     <div class="col-lg-8 col-8">
                         <!--Faixa de Conteúdo-->
                         <div class="row mb-5">
-                            <p><span class="txtContato">CONTATO </span><span class="txttutor"> |Direto com Tutor</span>
-                            </p>
+                            <p><span class="txtContato">CONTATO</span><span class="txttutor"> |Comunicar problema com o anúncio</span></p>
                         </div>
-                        <form id="formulario" action="https://formspree.io/f/mayvvezr" method="POST">
+                        <form action="https://formspree.io/f/mayvvezr" method="POST">
                             <div class="row mb-3">
                                 <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
                                 <div class="col-lg-8">
@@ -83,14 +82,26 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <label for="selecaoform" class="col-lg-4 col-form-label">Problema:</label>
+                                <div class="col-lg-8">
+                                    <select class="form-control" name="selecao" type="selecao" id="selecaoform">
+                                        <option value="" selected disabled>Informe o Problema</option>
+                                        <option>Anúncio Duplicado</option>
+                                        <option>Anúncio Falso</option>
+                                        <option>Não responde ao Contato</option>
+                                        <option>Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
                                 <div class="col-lg-8">
-                                    <textarea class="form-control" type="mensagem" name="mensagem" class="form-control"
-                                        placeholder="Digite sua mensagem" id="inputComentario" rows="5"></textarea>
+                                    <textarea class="form-control" type="mensagem" name="mensagem" id="inputComentario"
+                                        rows="5" placeholder="Digite sua mensagem"></textarea>
                                 </div>
                             </div>
                             <button type="submit" class="btn">
-                                <img class="imgbtn" src="/src/public/assets/enviar.png" alt="enviar">
+                                <img class="imgbtn" src="/assets/enviar.png" alt="enviar">
                                 <p class="txtbtn">Enviar</p>
                             </button>
                         </form>

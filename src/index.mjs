@@ -1,7 +1,7 @@
 import express from 'express'
 import jsonServer from 'json-server'
 import path from 'path'
-import {fileURLToPath} from 'url';
+import { fileURLToPath } from 'url';
 
 const PORT = process.env.PORT || 3000
 const __filename = fileURLToPath(import.meta.url);
