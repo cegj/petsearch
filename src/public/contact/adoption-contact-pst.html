@@ -54,7 +54,7 @@
         <!-- Fim da Faixa Amarela/Cabeçalho-->
         <main>
             <div class="grid">
-                <div class="row">
+                <div class="row m-0">
                     <div class="col-lg-2 col-2"></div>
                     <!--Faixa Vazia-->
                     <div class="col-lg-8 col-8">
@@ -63,6 +63,18 @@
                             <p><span class="txtContato">CONTATO</span><span class="txttutor"> |Comunicar problema com o anúncio</span></p>
                         </div>
                         <form action="https://formspree.io/f/mayvvezr" method="POST">
+                            <div class="row mb-3">
+                                <label for="inputName" class="col-lg-4 col-form-label">Id do anúncio:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="petId" class="form-control" id="petId" disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputName" class="col-lg-4 col-form-label">Nome do pet:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="petName" class="form-control" id="petName" disabled>
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
                                 <div class="col-lg-8">
@@ -119,6 +131,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
+
+        <script>
+            function setPetInfos(){
+                const urlParams = new URLSearchParams(window.location.search);
+                const petId = document.getElementById('petId');
+                const petName = document.getElementById('petName');
+                petId.value = urlParams.get('id');
+                petName.value = urlParams.get('name');
+            }
+
+            setPetInfos();
+        </script>
 
     </body>
 
