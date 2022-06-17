@@ -318,46 +318,37 @@
             const form = document.getElementById( 'foundPet' )
 
             const name = document.getElementById( 'name' ).value
-            console.log( 'name' )
             const species = document.getElementById( 'species' ).value
-            console.log( 'species' )
             const race = document.getElementById( 'race' ).value
-            console.log( 'race' )
             const color = document.getElementById( 'color' ).value
-            console.log( 'color' )
             const foundDate = document.getElementById( 'foundDate' ).value
-            console.log( 'foundDate' )
             const cep = document.getElementById( 'cep' ).value
-            console.log( 'cep' )
-            const state = document.getElementById( 'uf' ).value
-            console.log( 'uf' )
+            const street = document.getElementById( 'rua' ).value
+            const neighborhood = document.getElementById( 'bairro' ).value
             const city = document.getElementById( 'cidade' ).value
-            console.log( 'cidade' )
+            const state = document.getElementById( 'uf' ).value
             const observations = document.getElementById( 'observations' ).value
-            console.log( 'observations' )
             const tutorName = document.getElementById( 'tutorName' ).value
-            console.log( 'tutorName' )
             const tutorPhone = document.getElementById( 'tutorPhone' ).value
-            console.log( 'tutorPhone' )
             const tutorEmail = document.getElementById( 'tutorEmail' ).value
-            console.log( 'tutorEmail' )
             const tutorObservations = document.getElementById( 'tutorObservations' ).value
-            console.log( 'tutorObservations' )
 
             const body = {
                 name,
                 species,
                 race,
                 color,
-                foundDate,
-                cep,
+                lostDate,
                 observations,
                 tutorName,
                 tutorPhone,
                 tutorEmail,
                 tutorObservations,
+                cep,
+                street,
+                neighborhood,
                 city,
-                state
+                state,
             }
 
             if ( validateBody( body ) ) {
