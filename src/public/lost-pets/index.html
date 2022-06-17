@@ -70,15 +70,15 @@
         const petsElement = document.getElementById( 'pets-gallery' );
 
         petsElement.insertAdjacentHTML( 'beforeend', `
-          <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-            <img src="${pet.imageUrl}" />
+          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="lost-details.html?id=${pet.id}">
+            <img class="gallery-img" src="${pet.imageUrl}" />
             <div
               class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
               <p>${pet.name}</p>
               <p>${pet.race} ${pet.color}</p>
               <p>${pet.city}/${pet.state}</p>
             </div>
-          </div>
+          </a>
         `)
       } catch ( e ) {
         console.log( 'erro' )

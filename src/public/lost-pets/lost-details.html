@@ -49,17 +49,16 @@
       </div>
       <main class="d-flex flex-column justify-content-center mb-4">
     <div class="container-pet-photo">
-        <img src="../assets/lost-pets/cat.png" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
+        <img id="image" src="" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
     </div>
     <div class="container-pet-info text-center mb-4 bg-grey">
-        <h1 class="text-uppercase pt-4 pb-2 fw-bold">Garfield</h1>
+        <h1 class="text-uppercase pt-4 pb-2 fw-bold" id="name"></h1>
         <ul class="pet-info list-unstyled">
-          <li class="lh-lg"><span class="fw-bold">Raça: </span>Red Exotic Shorthair</li>
-          <li class="lh-lg"><span class="fw-bold">Cor: </span>Laranja</li>
-          <li class="lh-lg"><span class="fw-bold">Sexo: </span>Macho</li>
-          <li class="lh-lg"><span class="fw-bold">Local: </span><span id="address">Rua Perpétuo Socorro, Ipiranga, Belo Horizonte/MG</span></li>
-          <li class="lh-lg"><span class="fw-bold">Perdido em: </span>21/04/2022</li>
-          <li class="lh-lg"><span class="fw-bold">Observações: </span>Fugiu durante a noite</li>
+          <li class="lh-lg"><span class="fw-bold">Raça: </span><span id="race"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Cor: </span><span id="color"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Local: </span><span id="place"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Perdido em: </span><span id="lostDate"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Observações: </span><span id="observations"></span></li>
         </ul>
     </div>
     <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
@@ -71,38 +70,75 @@
   </main>
 
   <script>
-    function renderMap(){
-            const address = document.getElementById("address").innerText;
+    function renderMap(address){
 
-            fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
-                .then(res => res.json())
-                .then((addressInfo) => {
-                    addressInfo = addressInfo[0]
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
+          .then(res => res.json())
+          .then((addressInfo) => {
+              addressInfo = addressInfo[0]
 
-                    console.log(addressInfo)
+              var map = L.map('map', {
+                center: [addressInfo.lat, addressInfo.lon],
+                zoom: 17,
+                scrollWheelZoom: false 
+              })
+            
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
 
-                    var map = L.map('map', {
-                      center: [addressInfo.lat, addressInfo.lon],
-                      zoom: 17,
-                      scrollWheelZoom: false 
-                    })
-                  
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    }).addTo(map);
+              L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
+                  .bindPopup(address)
+                  .openPopup();
 
-                    L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
-                        .bindPopup(address)
-                        .openPopup();
-
-                        setTimeout(function () {
-                            map.invalidateSize(true);
-                        }, 100);
-             })
-
-             document.scrol
+                  setTimeout(function () {
+                      map.invalidateSize(true);
+                  }, 100);
+        })
         }
-        renderMap();
+
+    async function fetchPet () {
+      try {
+        const id = window.location.search.split("?id=")[1]
+        const host = window.location.hostname
+        const port = window.location.port
+        const url = port ? `http://${host}:${port}/api/lost-pets?id=${id}` : `http://${host}/api/lost-pets?id=${id}`
+
+        const response = await fetch( url );
+        const pets = await response.json();
+        pets.forEach( pet => {
+          insertPetData(pet);
+        } )
+      } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+      }
+    }
+
+    function insertPetData(pet){
+      const name = document.getElementById("name");
+      const race = document.getElementById("race");
+      const color = document.getElementById("color");
+      const place = document.getElementById("place") 
+      const lostDate = document.getElementById("lostDate");
+      const observations = document.getElementById("observations");
+      const image = document.getElementById("image");
+
+      const date = new Date(pet.lostDate);
+
+      image.src = pet.imageUrl;
+      name.innerText = pet.name;
+      race.innerText = pet.race;
+      color.innerText = pet.color;
+      place.innerHTML = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state} (CEP: ${pet.cep})`
+      lostDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      observations.innerText = pet.observations;
+
+      renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
+    }
+
+    fetchPet();
+        
   </script>
 </body>
 

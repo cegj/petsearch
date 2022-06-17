@@ -1,43 +1,51 @@
 iframe {
     width: 100%;
     height: 40vh;
-  }
+}
 
-  .container-pet-photo {
-      box-shadow: inset 0px -170px 0px 0px #f5f8f9;
-  }
+.container-pet-photo {
+    box-shadow: inset 0px -140px 0px 0px #f5f8f9;
+}
 
-  .tutor-info {
-      color: #1e003a;
-  }
+.pet-photo {
+    height: 400px;
+    max-width: 40%;
+    object-fit: cover;
+    border-radius: 20px 0px 20px 0px !important;
 
-  .option {
+}
+
+.tutor-info {
+    color: #1e003a;
+}
+
+.option {
     transform: scale(.95);
 }
 
-    .option:hover{
+.option:hover {
     transform: scale(1);
     transition: 0.1s;
 
 }
 
-  .main-option {
-      text-transform: uppercase;
-      color: #9C31FE !important;
-  }
+.main-option {
+    text-transform: uppercase;
+    color: #9C31FE !important;
+}
 
-  .main-option::before{
-      content: "";
-      display: block;
-      height: 60px;
-      width: 60px;
-      margin: 0 auto;
-      background-image: url(../assets/lost-pets/tutor-ico.png);
-      background-position: center;
-      background-repeat: no-repeat;
-  }
+.main-option::before {
+    content: "";
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    background-image: url(../assets/lost-pets/tutor-ico.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-  .contact-option::before{
+.contact-option::before {
     content: "";
     display: block;
     height: 60px;
@@ -48,7 +56,7 @@ iframe {
     background-repeat: no-repeat;
 }
 
-.report-problem-option::before{
+.report-problem-option::before {
     content: "";
     display: block;
     height: 60px;
@@ -59,7 +67,7 @@ iframe {
     background-repeat: no-repeat;
 }
 
-.edit-option::before{
+.edit-option::before {
     content: "";
     display: block;
     height: 60px;
@@ -72,13 +80,15 @@ iframe {
 
 @media screen and (max-width: 992px) {
     .pet-photo {
-        max-width: calc(100% - 150px);
+        max-width: calc(100% - 50px);
+        max-height: 300px;
     }
+
     .container-pet-photo {
-        box-shadow: inset 0px -70px 0px 0px #f5f8f9;        
+        box-shadow: inset 0px -70px 0px 0px #f5f8f9;
     }
 }
 
-#map { 
-    height: 400px;
+#map {
+    height: 300px;
 }
