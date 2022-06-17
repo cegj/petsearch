@@ -1,5 +1,92 @@
 {
-  "lost-pets": [],
+  "lost-pets": [
+    {
+      "name": "Rex",
+      "species": "canino",
+      "race": "Vira-lata",
+      "color": "Caramelo",
+      "lostDate": "2022-06-10",
+      "cep": "31720-300",
+      "observations": "Cão dócil e amigável",
+      "imageUrl": "https://i.imgur.com/CxxDqIR.jpg",
+      "tutorName": "Marcelo da Silva",
+      "tutorPhone": "31 3000-3111",
+      "tutorEmail": "marcelosilva@email.com",
+      "tutorObservations": "Disponível no WhatsApp",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 1
+    },
+    {
+      "name": "Amora",
+      "species": "felino",
+      "race": "Persa",
+      "color": "Preto",
+      "lostDate": "2022-05-13",
+      "cep": "31560-300",
+      "observations": "Fugiu do apartamento durante a noite",
+      "imageUrl": "https://i.imgur.com/QQJ8Hdw.jpg",
+      "tutorName": "Janaína Pereira",
+      "tutorPhone": "31 3525-1525",
+      "tutorEmail": "janaina@email.com",
+      "tutorObservations": "Ofereço recompensa",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 2
+    },
+    {
+      "name": "Pernalonga",
+      "species": "outro",
+      "race": "SRD",
+      "color": "Branco",
+      "lostDate": "2022-05-31",
+      "cep": "30150-333",
+      "observations": "Alimenta-se com vegetais",
+      "imageUrl": "https://i.imgur.com/dpjgSwg.jpg",
+      "tutorName": "Ana Paula Souza",
+      "tutorPhone": "31 3000-3111",
+      "tutorEmail": "cegasparjr@gmail.com",
+      "tutorObservations": "N/A",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 3
+    },
+    {
+      "name": "Frajola",
+      "species": "aves",
+      "race": "Desconhecida",
+      "color": "Cinza e amarelo",
+      "lostDate": "2022-06-05",
+      "cep": "30140-010",
+      "observations": "Acostumada a interagir com humanos",
+      "tutorName": "Paulo da Costa",
+      "tutorPhone": "(31) 90000-0000",
+      "tutorEmail": "paulodacosta@email.com",
+      "tutorObservations": "Pode entrar em contato a qualquer hora",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/lDKSAZQ.jpg",
+      "id": 4
+    }
+  ],
   "adoption-pets": [],
-  "found-pets": []
+  "found-pets": [
+    {
+      "name": "Pug",
+      "species": "canino",
+      "race": "Pug",
+      "color": "Marrom",
+      "foundDate": "2022-06-12",
+      "cep": "30120-000",
+      "observations": "Sem sinais de maus tratos",
+      "tutorName": "Rodrigo Castanhare",
+      "tutorPhone": "(31) 90000-0000",
+      "tutorEmail": "rcastanhare@email.com",
+      "tutorObservations": "Entrar em contato para combinar",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/B982m9O.jpg",
+      "id": 1
+    }
+  ]
 }
