@@ -77,6 +77,45 @@
       "id": 4
     }
   ],
-  "adoption-pets": [],
+  "adoption-pets": [
+    {
+      "name": "Coelhinho",
+      "species": "outro",
+      "race": "SRD",
+      "color": "Branco/marrom",
+      "foundDate": "2022-06-16",
+      "observations": "Vacinado",
+      "tutorName": "Humberto Soares",
+      "tutorPhone": "(31) 90000-0000",
+      "tutorEmail": "humbertosoares10@email.com",
+      "tutorObservations": "Disponível para visitação",
+      "cep": "30390-180",
+      "street": "Rua Adelaide Rocha",
+      "neighborhood": "Pilar",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/nTpgwoP.jpg",
+      "id": 1
+    },
+    {
+      "name": "Thor",
+      "species": "canino",
+      "race": "SRD",
+      "color": "Branco/marrom",
+      "foundDate": "2022-06-16",
+      "observations": "Vacinado",
+      "tutorName": "Humberto Soares",
+      "tutorPhone": "(31) 90000-0000",
+      "tutorEmail": "humbertosoares10@email.com",
+      "tutorObservations": "Disponível para visitação",
+      "cep": "30390-180",
+      "street": "Rua Adelaide Rocha",
+      "neighborhood": "Pilar",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/nTpgwoP.jpg",
+      "id": 1
+    }
+  ],
   "found-pets": []
 }
