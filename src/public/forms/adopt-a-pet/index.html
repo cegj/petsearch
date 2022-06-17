@@ -373,9 +373,10 @@
 
                 body["imageUrl"] = imageUrl;
 
+                const protocol = window.location.protocol
                 const host = window.location.hostname
                 const port = window.location.port
-                const url = port ? `http://${host}:${port}/api/adoption-pets` : `http://${host}/api/adoption-pets`
+                const url = port ? `${protocol}//${host}:${port}/api/adoption-pets` : `http://${host}/api/adoption-pets`
 
                 fetch( url, {
                     method: 'POST',
