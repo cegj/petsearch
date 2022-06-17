@@ -69,9 +69,9 @@
         </ul>
       </div>
     <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
-        <div class="option"><a id="foundBtn" class="main-option fw-bold text-decoration-none" href="../contact/lost-contact-owner.html">Encontrei</a></div>
+        <div class="option"><a id="foundBtn" class="main-option fw-bold text-decoration-none" href="">Encontrei</a></div>
         <div class="option"><a class="contact-option text-decoration-none text-secondary" href="../contact/">Contato</a></div>
-        <div class="option"><a class="report-problem-option text-decoration-none text-secondary" href="../contact/lost-contact-pst.html">Algum problema?</a></div>
+        <div class="option"><a id="troubleBtn" class="report-problem-option text-decoration-none text-secondary" href="">Algum problema?</a></div>
     </section>    
     <div id="map"></div>
   </main>
@@ -135,13 +135,10 @@
       const tutorPhone = document.getElementById("tutorPhone");
       const tutorEmail = document.getElementById("tutorEmail");
       const tutorObservations = document.getElementById("tutorObservations");
-
+      const foundBtn = document.getElementById("foundBtn");
+      const troubleBtn = document.getElementById("troubleBtn");
 
       const date = new Date(pet.lostDate);
-
-      const foundBtn = document.getElementById("foundBtn");
-      const foundHref = `${foundBtn.href}?dest=${pet.tutorEmail}`
-      foundBtn.href = foundHref;
 
       image.src = pet.imageUrl;
       name.innerText = pet.name;
@@ -155,11 +152,13 @@
       tutorEmail.innerText = pet.tutorEmail;
       tutorObservations.innerText = pet.tutorObservations;
 
+      foundBtn.href = `../contact/adoption-contact.html?id=${pet.id}&name=${pet.name}&d=${pet.tutorEmail}`
+      troubleBtn.href = `../contact/adoption-contact-pst.html?id=${pet.id}&name=${pet.name}`
+
       renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
     }
 
     fetchPet();
-        
   </script>
 </body>
 

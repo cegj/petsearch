@@ -67,18 +67,6 @@
     <a href="./adoption-gallery.html" class="see-gallery-text">ver galeria completa</a>
     <img width="30" class="mt-2" src="../assets/home/forward-icon.png" />
   </div>
-  <div class="d-flex flex-column align-items-center bg-grey pb-5">
-    <h2 class="mx-2 my-4 text-uppercase text-center">
-      ONGs PARCEIRAS
-    </h2>
-    <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-lg-evenly px-4">
-      <img width="30" class="carousel-icon" src="../assets/home/back-icon.png" />
-      <img class="carousel-img" src="../assets/adoption-pets/carrousel-1.png" />
-      <img class="carousel-img" src="../assets/adoption-pets/carrousel-2.png" />
-      <img class="carousel-img" src="../assets/adoption-pets/carrousel-3.png" />
-      <img width="30" class="carousel-icon" src="../assets/home/forward-icon.png" />
-    </div>
-  </div>
   <div id="map"></div>
 
   <script type="text/javascript">
@@ -151,7 +139,7 @@
             const marker = L.marker([addressInfo.lat, addressInfo.lon])
                             .addTo(map)
                             .bindPopup(
-                              `<a href="lost-details.html?id=${pet.id}">${pet.name}</a>
+                              `<a href="details.html?id=${pet.id}">${pet.name}</a>
                               <br>
                               Espécie: ${pet.species}
                               <br>
