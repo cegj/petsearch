@@ -58,11 +58,18 @@
           <li class="lh-lg"><span class="fw-bold">Cor: </span><span id="color"></span></li>
           <li class="lh-lg"><span class="fw-bold">Local: </span><span id="place"></span></li>
           <li class="lh-lg"><span class="fw-bold">Perdido em: </span><span id="lostDate"></span></li>
-          <li class="lh-lg"><span class="fw-bold">Observações: </span><span id="observations"></span></li>
+          <li class="lh-lg"><span id="observations"></span></li>
         </ul>
-    </div>
+        <hr>
+        <ul class="pet-info list-unstyled">
+          <li class="lh-lg"><span class="fw-bold">Nome do responsável: </span><span id="tutorName"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Telefone: </span><span id="tutorPhone"></span></li>
+          <li class="lh-lg"><span class="fw-bold">E-mail: </span><span id="tutorEmail"></span></li>
+          <li class="lh-lg"><span id="tutorObservations"></span></li>
+        </ul>
+      </div>
     <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
-        <div class="option"><a class="main-option fw-bold text-decoration-none" href="../contact/lost-contact-owner.html">Encontrei</a></div>
+        <div class="option"><a id="foundBtn" class="main-option fw-bold text-decoration-none" href="../contact/lost-contact-owner.html">Encontrei</a></div>
         <div class="option"><a class="contact-option text-decoration-none text-secondary" href="../contact/">Contato</a></div>
         <div class="option"><a class="report-problem-option text-decoration-none text-secondary" href="../contact/lost-contact-pst.html">Algum problema?</a></div>
     </section>    
@@ -77,7 +84,7 @@
           .then((addressInfo) => {
               addressInfo = addressInfo[0]
 
-              var map = L.map('map', {
+              const map = L.map('map', {
                 center: [addressInfo.lat, addressInfo.lon],
                 zoom: 17,
                 scrollWheelZoom: false 
@@ -123,8 +130,17 @@
       const lostDate = document.getElementById("lostDate");
       const observations = document.getElementById("observations");
       const image = document.getElementById("image");
+      const tutorName = document.getElementById("tutorName");
+      const tutorPhone = document.getElementById("tutorPhone");
+      const tutorEmail = document.getElementById("tutorEmail");
+      const tutorObservations = document.getElementById("tutorObservations");
+
 
       const date = new Date(pet.lostDate);
+
+      const foundBtn = document.getElementById("foundBtn");
+      const foundHref = `${foundBtn.href}?dest=${pet.tutorEmail}`
+      foundBtn.href = foundHref;
 
       image.src = pet.imageUrl;
       name.innerText = pet.name;
@@ -133,6 +149,10 @@
       place.innerHTML = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state} (CEP: ${pet.cep})`
       lostDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
       observations.innerText = pet.observations;
+      tutorName.innerText = pet.tutorName;
+      tutorPhone.innerText = pet.tutorPhone;
+      tutorEmail.innerText = pet.tutorEmail;
+      tutorObservations.innerText = pet.tutorObservations;
 
       renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
     }

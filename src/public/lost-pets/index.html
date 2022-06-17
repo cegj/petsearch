@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <!-- Carrega plugin LeafLet para renderizar mapa -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>  
+
   <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -64,6 +68,7 @@
     <a href="./lost-gallery.html" class="see-gallery-text">ver galeria completa</a>
     <img width="30" class="mt-2" src="../assets/home/forward-icon.png" />
   </div>
+  <div id="map"></div>
   <script type="text/javascript">
     function insertPet ( pet ) {
       try {
@@ -79,7 +84,9 @@
               <p>${pet.city}/${pet.state}</p>
             </div>
           </a>
-        `)
+        `);
+
+        insertMapMarker ( pet );
       } catch ( e ) {
         console.log( 'erro' )
         console.log( e );
@@ -96,38 +103,51 @@
         const pets = await response.json();
         pets.forEach( pet => {
           insertPet( pet );
-        } )
+        })
       } catch ( e ) {
         console.log( 'erro' )
         console.log( e );
       }
     }
 
-    fetchPets()
+    function renderMap(){
+      const map = L.map('map', {
+                center: [-19.912998, -43.940933],
+                zoom: 11,
+                scrollWheelZoom: false 
+              })
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      return map;
+    }
+
+    function insertMapMarker(pet){
+
+      const address = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`;
+
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
+        .then(res => res.json())
+        .then((addressInfo) => {
+            addressInfo = addressInfo[0]
+            const marker = L.marker([addressInfo.lat, addressInfo.lon])
+                            .addTo(map)
+                            .bindPopup(
+                              `<a href="lost-details.html?id=${pet.id}">${pet.name}</a>
+                              <br>
+                              Espécie: ${pet.species}
+                              <br>
+                              ${pet.street}, ${pet.neighborhood}
+                              `)
+            })
+      }
+
+    const map = renderMap();
+    fetchPets();
+
   </script>
-  <div class="mapouter">
-    <div class="gmap_canvas">
-      <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=belo%20horizonte&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" />
-      <a href="https://123movies-to.org">123movies</a><br>
-      <style>
-        .mapouter {
-          position: relative;
-          text-align: right;
-          height: 500px;
-          width: 100%;
-        }
-      </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-      <style>
-        .gmap_canvas {
-          overflow: hidden;
-          background: none !important;
-          height: 500px;
-          width: 100%;
-        }
-      </style>
-    </div>
-  </div>
 </body>
 
 </html>
