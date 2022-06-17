@@ -107,9 +107,10 @@
     async function fetchPet () {
       try {
         const id = window.location.search.split("?id=")[1]
+        const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `http://${host}:${port}/api/lost-pets?id=${id}` : `http://${host}/api/lost-pets?id=${id}`
+        const url = port ? `${protocol}//${host}:${port}/api/lost-pets?id=${id}` : `http://${host}/api/lost-pets?id=${id}`
 
         const response = await fetch( url );
         const pets = await response.json();
