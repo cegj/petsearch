@@ -43,55 +43,91 @@
       <span class="header-title text-white text-uppercase text-center">Adoção de pets</span>
     </div>
   </div>
+  <div class="form-input d-flex justify-content-center bg-shadow-grey">
+    <select name="species" id="species" class="my-3">
+      <option value="" selected>Selecione a raça</option>
+      <option value="canino">Cachorro</option>
+      <option value="felino">Gato</option>
+      <option value="aves">Ave</option>
+      <option value="outro">Outro</option>
+    </select>
+  </div>
   <div class="d-flex justify-content-center px-5 py-5 bg-shadow-grey">
-    <div class="row justify-content-evenly">
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture">
-        <img src="../assets/lost-pets/cat.png" />
-        <div
-          class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
-          <p>Garfield</p>
-          <p>Red Exotic Shorthair</p>
-          <p>União/BH</p>
-        </div>
-      </div>
+    <div class="row justify-content-evenly" id="pets-gallery">
     </div>
   </div>
+  <script type="text/javascript">
+    function insertPet(pet) {
+      try {
+        const petsElement = document.getElementById('pets-gallery');
+
+        petsElement.insertAdjacentHTML('beforeend', `
+          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="lost-details.html?id=${pet.id}">
+            <img class="gallery-img" src="${pet.imageUrl}" />
+            <div
+              class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
+              <p>${pet.name}</p>
+              <p>${pet.race} ${pet.color}</p>
+              <p>${pet.city}/${pet.state}</p>
+            </div>
+          </a>
+        `);
+
+        insertMapMarker(pet);
+      } catch (e) {
+        console.log('erro')
+        console.log(e);
+      }
+    }
+
+    async function fetchPets() {
+      try {
+        const protocol = window.location.protocol
+        const host = window.location.hostname
+        const port = window.location.port
+        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets` : `${protocol}//${host}/api/adoption-pets`
+
+        const response = await fetch(url);
+        const pets = await response.json();
+        return pets
+      } catch (e) {
+        console.log('erro')
+        console.log(e);
+      }
+    }
+
+    function cleanPetsGallery() {
+      const petsElement = document.getElementById('pets-gallery');
+      while (petsElement.firstChild) {
+        petsElement.removeChild(petsElement.lastChild);
+      }
+    }
+
+    function renderPets(pets) {
+      cleanPetsGallery()
+      pets.forEach(pet => {
+        insertPet(pet);
+      })
+    }
+
+    async function main() {
+      const pets = await fetchPets();
+      renderPets(pets)
+
+      const species = document.getElementById('species')
+      species.addEventListener('change', function () {
+        if (this.value) {
+          console.log(this.value)
+          renderPets(pets.filter((pet) => {
+            return pet.species === this.value
+          }))
+        } else {
+          renderPets(pets)
+        }
+      });
+    }
+    main()
+  </script>
 </body>
 
 </html>
