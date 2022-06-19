@@ -22,8 +22,8 @@
 <body>
   <!-- Carrega plugin LeafLet para renderizar mapa -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>  
-  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
   <nav class="navbar navbar-expand-lg navbar-light bg-yellow text-uppercase">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -70,11 +70,11 @@
   <div id="map"></div>
 
   <script type="text/javascript">
-    function insertPet ( pet ) {
+    function insertPet(pet) {
       try {
-        const petsElement = document.getElementById( 'pets-gallery' );
+        const petsElement = document.getElementById('pets-gallery');
 
-        petsElement.insertAdjacentHTML( 'beforeend', `
+        petsElement.insertAdjacentHTML('beforeend', `
           <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="details.html?id=${pet.id}">
             <img class="gallery-img" src="${pet.imageUrl}" />
             <div
@@ -86,46 +86,46 @@
           </a>
         `);
 
-        insertMapMarker ( pet );
-      } catch ( e ) {
-        console.log( 'erro' )
-        console.log( e );
+        insertMapMarker(pet);
+      } catch (e) {
+        console.log('erro')
+        console.log(e);
       }
     }
 
-    async function fetchPets () {
+    async function fetchPets() {
       try {
         const protocol = window.location.protocol;
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?_limit=5` : `${protocol}//${host}/api/adoption-pets?_limit=5`
+        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?_limit=5&adopted=false` : `${protocol}//${host}/api/adoption-pets?_limit=5&adopted=false`
 
-        const response = await fetch( url );
+        const response = await fetch(url);
         const pets = await response.json();
-        pets.forEach( pet => {
-          insertPet( pet );
-        } )
-      } catch ( e ) {
-        console.log( 'erro' )
-        console.log( e );
+        pets.forEach(pet => {
+          insertPet(pet);
+        })
+      } catch (e) {
+        console.log('erro')
+        console.log(e);
       }
     }
 
-    function renderMap(){
+    function renderMap() {
       const map = L.map('map', {
-                center: [-19.912998, -43.940933],
-                zoom: 11,
-                scrollWheelZoom: false 
-              })
+        center: [-19.912998, -43.940933],
+        zoom: 11,
+        scrollWheelZoom: false
+      })
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
       return map;
     }
 
-    function insertMapMarker(pet){
+    function insertMapMarker(pet) {
 
       const address = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`;
 
@@ -134,19 +134,19 @@
       fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
         .then(res => res.json())
         .then((addressInfo) => {
-            addressInfo = addressInfo[0]
-            console.log(addressInfo)
-            const marker = L.marker([addressInfo.lat, addressInfo.lon])
-                            .addTo(map)
-                            .bindPopup(
-                              `<a href="details.html?id=${pet.id}">${pet.name}</a>
+          addressInfo = addressInfo[0]
+          console.log(addressInfo)
+          const marker = L.marker([addressInfo.lat, addressInfo.lon])
+            .addTo(map)
+            .bindPopup(
+              `<a href="details.html?id=${pet.id}">${pet.name}</a>
                               <br>
                               Espécie: ${pet.species}
                               <br>
                               ${pet.street}, ${pet.neighborhood}
                               `)
-            })
-      }
+        })
+    }
 
     const map = renderMap();
     fetchPets();

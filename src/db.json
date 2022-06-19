@@ -17,7 +17,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/PvIgSjc.jpg",
-      "id": 1
+      "id": 1,
+      "returned": false
     },
     {
       "name": "Amora",
@@ -36,7 +37,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/RnAPaM7.jpg",
-      "id": 2
+      "id": 2,
+      "returned": false
     },
     {
       "name": "Pernalonga",
@@ -55,7 +57,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/qD11LWG.jpg",
-      "id": 3
+      "id": 3,
+      "returned": false
     },
     {
       "name": "Frajola",
@@ -74,7 +77,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/fLGGyas.jpg",
-      "id": 4
+      "id": 4,
+      "returned": false
     }
   ],
   "adoption-pets": [
@@ -95,7 +99,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/nTpgwoP.jpg",
-      "id": 1
+      "id": 1,
+      "adopted": false
     },
     {
       "name": "Peludo",
@@ -114,7 +119,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/8AhXI3U.jpg",
-      "id": 2
+      "id": 2,
+      "adopted": false
     },
     {
       "name": "Acerola",
@@ -133,7 +139,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/jF7Az6I.jpg",
-      "id": 3
+      "id": 3,
+      "adopted": false
     },
     {
       "name": "Filhote",
@@ -152,7 +159,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/za3REry.jpg",
-      "id": 4
+      "id": 4,
+      "adopted": false
     }
   ],
   "found-pets": []

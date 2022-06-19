@@ -85,7 +85,7 @@
         const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets` : `${protocol}//${host}/api/adoption-pets`
+        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?adopted=false` : `${protocol}//${host}/api/adoption-pets?adopted=false`
 
         const response = await fetch(url);
         const pets = await response.json();

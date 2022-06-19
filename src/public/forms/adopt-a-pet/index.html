@@ -197,7 +197,7 @@
                         <label>Imagem:</label>
                     </div>
                     <div class="form-input">
-                        <input type="file" accept="image/png, image/jpeg" name="imgFile" id="imgFile"/>
+                        <input type="file" accept="image/png, image/jpeg" name="imgFile" id="imgFile" />
                     </div>
                 </div>
 
@@ -272,25 +272,25 @@
     </div>
     <div class="grey-bar"></div>
     <script>
-        
-        function validateBody ( body ) {
-            for ( field of Object.keys( body ) ) {
-                if ( body[ field ] == "" ) {
-                    alert( "Preencha todos os campos" );
+
+        function validateBody(body) {
+            for (field of Object.keys(body)) {
+                if (body[field] == "") {
+                    alert("Preencha todos os campos");
                     return false;
                 }
             }
             return true
         }
 
-        function setLoadingBtn(opt){
-				sendBtnImg = document.getElementById("sendBtnImg");
-				if(opt === false){
-					sendBtnImg.src = "/assets/enviar.png";
-				}else {
-					sendBtnImg.src = "/assets/loading.svg";
-				}
-			}
+        function setLoadingBtn(opt) {
+            sendBtnImg = document.getElementById("sendBtnImg");
+            if (opt === false) {
+                sendBtnImg.src = "/assets/enviar.png";
+            } else {
+                sendBtnImg.src = "/assets/loading.svg";
+            }
+        }
 
         async function hostImage(imgFile) {
             const imgurToken = await fetch("/imgur-token").then((res) => res.text());
@@ -313,27 +313,27 @@
             return json.success === true ? json.data.link : false;
         }
 
-        async function submitForm ( e ) {
+        async function submitForm(e) {
             e.preventDefault();
             setLoadingBtn();
 
-            const form = document.getElementById( 'adoptPet' )
+            const form = document.getElementById('adoptPet')
 
-            const name = document.getElementById( 'name' ).value
-            const species = document.getElementById( 'species' ).value
-            const race = document.getElementById( 'race' ).value
-            const color = document.getElementById( 'color' ).value
-            const foundDate = document.getElementById( 'foundDate' ).value
-            const cep = document.getElementById( 'cep' ).value
-            const street = document.getElementById( 'rua' ).value
-            const neighborhood = document.getElementById( 'bairro' ).value
-            const city = document.getElementById( 'cidade' ).value
-            const state = document.getElementById( 'uf' ).value
-            const observations = document.getElementById( 'observations' ).value
-            const tutorName = document.getElementById( 'tutorName' ).value
-            const tutorPhone = document.getElementById( 'tutorPhone' ).value
-            const tutorEmail = document.getElementById( 'tutorEmail' ).value
-            const tutorObservations = document.getElementById( 'tutorObservations' ).value
+            const name = document.getElementById('name').value
+            const species = document.getElementById('species').value
+            const race = document.getElementById('race').value
+            const color = document.getElementById('color').value
+            const foundDate = document.getElementById('foundDate').value
+            const cep = document.getElementById('cep').value
+            const street = document.getElementById('rua').value
+            const neighborhood = document.getElementById('bairro').value
+            const city = document.getElementById('cidade').value
+            const state = document.getElementById('uf').value
+            const observations = document.getElementById('observations').value
+            const tutorName = document.getElementById('tutorName').value
+            const tutorPhone = document.getElementById('tutorPhone').value
+            const tutorEmail = document.getElementById('tutorEmail').value
+            const tutorObservations = document.getElementById('tutorObservations').value
 
             const body = {
                 name,
@@ -351,25 +351,26 @@
                 neighborhood,
                 city,
                 state,
+                adopted: false
             }
 
-            if ( validateBody( body ) ) {
+            if (validateBody(body)) {
 
                 let imgFile = document.getElementById("imgFile").files[0];
                 let imageUrl;
 
-                if (imgFile){
+                if (imgFile) {
                     imageUrl = await hostImage(imgFile);
-                    if(!imageUrl){
+                    if (!imageUrl) {
                         setLoadingBtn(false);
                         alert("Erro ao enviar imagem. Por favor, tente novamente.\nCaso o erro persista, entre em contato conosco.");
                         return;
                     }
-                    } else {
-                        setLoadingBtn(false);
-                        alert('Por favor, selecione uma imagem do pet para enviar.')
-                        return;
-                    }
+                } else {
+                    setLoadingBtn(false);
+                    alert('Por favor, selecione uma imagem do pet para enviar.')
+                    return;
+                }
 
                 body["imageUrl"] = imageUrl;
 
@@ -378,83 +379,83 @@
                 const port = window.location.port
                 const url = port ? `${protocol}//${host}:${port}/api/adoption-pets` : `${protocol}//${host}/api/adoption-pets`
 
-                fetch( url, {
+                fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify( body )
-                } )
-                    .then( response => response.json() )
-                    .then( data => {
-                        console.log( data )
+                    body: JSON.stringify(body)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
                         setLoadingBtn(false);
-                        alert( 'Pet cadastrado com sucesso!' )
+                        alert('Pet cadastrado com sucesso!')
                         form.reset()
-                    } )
+                    })
             }
 
         }
-        document.getElementById( 'adoptPet' ).addEventListener( "submit", submitForm );
+        document.getElementById('adoptPet').addEventListener("submit", submitForm);
     </script>
     <script>
-        function limpa_formulário_cep () {
+        function limpa_formulário_cep() {
             //Limpa valores do formulário de cep.
-            document.getElementById( 'rua' ).value = ( "" );
-            document.getElementById( 'bairro' ).value = ( "" );
-            document.getElementById( 'cidade' ).value = ( "" );
-            document.getElementById( 'uf' ).value = ( "" );
+            document.getElementById('rua').value = ("");
+            document.getElementById('bairro').value = ("");
+            document.getElementById('cidade').value = ("");
+            document.getElementById('uf').value = ("");
         }
 
-        function meu_callback ( conteudo ) {
-            if ( !( "erro" in conteudo ) ) {
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
                 //Atualiza os campos com os valores.
-                document.getElementById( 'rua' ).value = ( conteudo.logradouro );
-                document.getElementById( 'bairro' ).value = ( conteudo.bairro );
-                document.getElementById( 'cidade' ).value = ( conteudo.localidade );
-                document.getElementById( 'uf' ).value = ( conteudo.uf );
+                document.getElementById('rua').value = (conteudo.logradouro);
+                document.getElementById('bairro').value = (conteudo.bairro);
+                document.getElementById('cidade').value = (conteudo.localidade);
+                document.getElementById('uf').value = (conteudo.uf);
             } //end if.
             else {
                 //CEP não Encontrado.
                 limpa_formulário_cep();
-                alert( "CEP não encontrado." );
+                alert("CEP não encontrado.");
             }
         }
 
-        function pesquisacep ( valor ) {
+        function pesquisacep(valor) {
 
             //Nova variável "cep" somente com dígitos.
-            var cep = valor.replace( /\D/g, '' );
+            var cep = valor.replace(/\D/g, '');
 
             //Verifica se campo cep possui valor informado.
-            if ( cep != "" ) {
+            if (cep != "") {
 
                 //Expressão regular para validar o CEP.
                 var validacep = /^[0-9]{8}$/;
 
                 //Valida o formato do CEP.
-                if ( validacep.test( cep ) ) {
+                if (validacep.test(cep)) {
 
                     //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById( 'rua' ).value = "...";
-                    document.getElementById( 'bairro' ).value = "...";
-                    document.getElementById( 'cidade' ).value = "...";
-                    document.getElementById( 'uf' ).value = "...";
+                    document.getElementById('rua').value = "...";
+                    document.getElementById('bairro').value = "...";
+                    document.getElementById('cidade').value = "...";
+                    document.getElementById('uf').value = "...";
 
                     //Cria um elemento javascript.
-                    var script = document.createElement( 'script' );
+                    var script = document.createElement('script');
 
                     //Sincroniza com o callback.
                     script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
 
                     //Insere script no documento e carrega o conteúdo.
-                    document.body.appendChild( script );
+                    document.body.appendChild(script);
 
                 } //end if.
                 else {
                     //cep é inválido.
                     limpa_formulário_cep();
-                    alert( "Formato de CEP inválido." );
+                    alert("Formato de CEP inválido.");
                 }
             } //end if.
             else {
