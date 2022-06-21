@@ -21,6 +21,10 @@
 </head>
 
 <body>
+  <!-- Carrega plugin LeafLet para renderizar mapa -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  
   <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -57,6 +61,8 @@
     <div class="row justify-content-evenly" id="pets-gallery">
     </div>
   </div>
+  <div id="map"></div>
+
   <script type="text/javascript">
     function insertPet(pet) {
       try {
@@ -73,8 +79,6 @@
             </div>
           </a>
         `);
-
-        insertMapMarker(pet);
       } catch (e) {
         console.log('erro')
         console.log(e);
@@ -107,7 +111,9 @@
     function renderPets(pets) {
       cleanPetsGallery()
       pets.forEach(pet => {
+        MapMarkersLayer.clearLayers();
         insertPet(pet);
+        insertMapMarker(pet);
       })
     }
 
@@ -127,6 +133,44 @@
         }
       });
     }
+
+    function renderMap() {
+      const map = L.map('map', {
+        center: [-19.912998, -43.940933],
+        zoom: 11,
+        scrollWheelZoom: false
+      })
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      return map;
+    }
+
+    function insertMapMarker(pet) {
+
+      const address = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`;
+
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
+        .then(res => res.json())
+        .then((addressInfo) => {
+          addressInfo = addressInfo[0]
+          const marker = L.marker([addressInfo.lat, addressInfo.lon])
+            .addTo(MapMarkersLayer)
+            .bindPopup(
+              `<a href="lost-details.html?id=${pet.id}">${pet.name}</a>
+                              <br>
+                              Espécie: ${pet.species}
+                              <br>
+                              ${pet.street}, ${pet.neighborhood}
+                              `)
+                            })
+      }
+
+      const map = renderMap();
+      let MapMarkersLayer = L.layerGroup().addTo(map);
+
     main()
   </script>
 </body>
