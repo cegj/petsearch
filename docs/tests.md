@@ -19,7 +19,7 @@
 |TF-013| Cadastro | Ao clicar em “perdi meu pet”, é esperado que o usuário seja direcionado para a página de cadastro do pet perdido. |
 |TF-014| Cadastro | Ao clicar em “encontrei um pet”, é esperado que o usuário seja direcionado para a página de cadastro do pet encontrado. |
 |TF-015| Cadastro | Ao preencher o “CEP”, os dados de “Rua”, “Bairro”, “Cidade” e “Estado” são automaticamente preenchidos. |
-|TF-016| Cadastro | Ao preencher o formulário, o usuário deve ter a opção de tornar privado o e-mail e telefone
+|TF-016| Cadastro | Ao preencher o formulário, o usuário deve ter a opção de tornar privado o e-mail e telefone.
 |TF-017| Cadastro | Ao enviar o formulário, é esperado que o site apresente a mensagem de " Pet cadastrado com sucesso!" e, após apertar OK, retorne à página de cadastro de pet perdido. |
 |TF-018| Cadastro | Ao clicar em “Doar um pet”, é esperado que o usuário seja direcionado para a página de cadastro de adoção. |
 |TF-019| Cadastro | Ao preencher o “CEP”, os dados de “Rua”, “Bairro”, “Cidade” e “Estado” são automaticamente preenchidos. |
@@ -45,7 +45,7 @@
 |RTF-012| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-013| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-014| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
-|RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP. | NÃO |
 |RTF-016| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
 |RTF-017| Cadastro | A página apresente a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
 |RTF-018| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
