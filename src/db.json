@@ -181,6 +181,26 @@
       "imageUrl": "https://i.imgur.com/za3REry.jpg",
       "id": 4,
       "adopted": false
+    },
+    {
+      "name": "Papagaio",
+      "species": "aves",
+      "race": "Desconhecida",
+      "color": "Vermelho",
+      "foundDate": "2022-06-01",
+      "observations": "Está com aproximadamente 6 meses de vida",
+      "tutorName": "ONG Resgate Animal",
+      "tutorPhone": "31 3000-3001",
+      "tutorEmail": "ongresgateanimal10@email.com",
+      "tutorObservations": "Para tirar dúvidas favor entrar em contato",
+      "cep": "30441-130",
+      "street": "Rua Eduardo Prado",
+      "neighborhood": "Gutierrez",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/L7yqEAU.jpg",
+      "adopted": false,
+      "id": 5
     }
   ],
   "found-pets": [
