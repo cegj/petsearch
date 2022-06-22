@@ -45,7 +45,7 @@
 |RTF-012| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-013| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-014| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
-|RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEPO botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-016| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
 |RTF-017| Cadastro | A página apresente a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
 |RTF-018| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
