@@ -16,7 +16,15 @@
 |TF-010| Perdidos | Ao clicar em "encontrei um pet", é esperado que o usuário seja direcionado para a página contendo formulário para cadastro dos dados do animal encontrado. |
 |TF-011| Perdidos | Ao clicar em sobre algum dos "cards" de anuncios de animais, é esperado que o usuário seja direcionado para a página contendo às informações do mesmo. |
 |TF-012| Perdidos | Ao clicar em "ver galeria completa", é esperado que o usuário seja direcionado para a página contendo todos os cards de pets perdidos. |
-
+|TF-013| Cadastro | Ao clicar em “perdi meu pet”, é esperado que o usuário seja direcionado para a página de cadastro do pet perdido. |
+|TF-014| Cadastro | Ao clicar em “encontrei um pet”, é esperado que o usuário seja direcionado para a página de cadastro do pet encontrado. |
+|TF-015| Cadastro | Ao preencher o “CEP”, os dados de “Rua”, “Bairro”, “Cidade” e “Estado” são automaticamente preenchidos. |
+|TF-016| Cadastro | Ao preencher o formulário, o usuário deve ter a opção de tornar privado o e-mail e telefone
+|TF-017| Cadastro | Ao enviar o formulário, é esperado que o site apresente a mensagem de " Pet cadastrado com sucesso!" e, após apertar OK, retorne à página de cadastro de pet perdido. |
+|TF-018| Cadastro | Ao clicar em “Doar um pet”, é esperado que o usuário seja direcionado para a página de cadastro de adoção. |
+|TF-019| Cadastro | Ao preencher o “CEP”, os dados de “Rua”, “Bairro”, “Cidade” e “Estado” são automaticamente preenchidos. |
+|TF-020| Cadastro | Ao preencher o formulário, o usuário deve ter a opção de tornar privado o e-mail e telefone. |
+|TF-021| Cadastro | Ao enviar o formulário, é esperado que o site apresente a mensagem de " Pet cadastrado com sucesso!" e, após apertar OK, retorne à página de cadastro de pet para adoção.  | 
 # Registro de Testes de Software
 
 ## Resultados Obtidos
@@ -35,7 +43,15 @@
 |RTF-010| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-011| Perdidos | O usuário é direciona corretamente para a página esperada em todos os cards. | NÃO |
 |RTF-012| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
-
+|RTF-013| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-014| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEPO botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-016| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
+|RTF-017| Cadastro | A página apresente a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
+|RTF-018| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-019| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP. | NÃO |
+|RTF-020| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
+|RTF-021| Cadastro | A página apresenta a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
 
 |RTF-005| Adoção - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
 |RTF-005| Perdidos - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
