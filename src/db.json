@@ -79,6 +79,26 @@
       "imageUrl": "https://i.imgur.com/fLGGyas.jpg",
       "id": 4,
       "returned": false
+    },
+    {
+      "name": "Galileu",
+      "species": "felino",
+      "race": "SRD",
+      "color": "Amarelo/branco",
+      "lostDate": "2022-06-20",
+      "observations": "Fugiu pelo portão de casa",
+      "tutorName": "José Marcos Aragão",
+      "tutorPhone": "31 30000-3000",
+      "tutorEmail": "jmaragao@email.com",
+      "tutorObservations": "Pode ligar a qualquer hora",
+      "cep": "30830-482",
+      "street": "Avenida Abílio Machado",
+      "neighborhood": "Alípio de Melo",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/GHREUsK.jpg",
+      "returned": false,
+      "id": 5
     }
   ],
   "adoption-pets": [
