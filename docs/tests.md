@@ -51,7 +51,7 @@
 |RTF-018| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-019| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP. | NÃO |
 |RTF-020| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
-|RTF-021| Cadastro | A página apresente a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
+|RTF-021| Cadastro | A página apresenta a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
 
 |RTF-005| Adoção - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
 |RTF-005| Perdidos - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
