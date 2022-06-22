@@ -163,5 +163,63 @@
       "adopted": false
     }
   ],
-  "found-pets": []
+  "found-pets": [
+    {
+      "name": "Cão",
+      "species": "canino",
+      "race": "Pitbull",
+      "color": "Preto",
+      "foundDate": "2022-06-21",
+      "observations": "Encontrei vagando pela rua sozinho",
+      "tutorName": "José Marcos Aragão",
+      "tutorPhone": "31 91234-5678",
+      "tutorEmail": "jmaragao@email.com",
+      "tutorObservations": "O animal está sob meus cuidados",
+      "cep": "30130-913",
+      "street": "Rua Alagoas",
+      "neighborhood": "Funcionários",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/UA3yof3.jpg",
+      "id": 1
+    },
+    {
+      "name": "Brincalhão",
+      "species": "canino",
+      "race": "Vira-lata",
+      "color": "Marrom",
+      "foundDate": "2022-06-15",
+      "observations": "Está saudável e seguro sob meus cuidados",
+      "tutorName": "Maria Cristina Guimarães",
+      "tutorPhone": "31 30000-3000",
+      "tutorEmail": "mcg@email.com",
+      "tutorObservations": "Favor ligar após o horário comercial",
+      "cep": "30535-590",
+      "street": "Rua Craveiro Lopes",
+      "neighborhood": "Coração Eucarístico",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/7l8XRbd.jpg",
+      "id": 2
+    },
+    {
+      "name": "Gatinho",
+      "species": "felino",
+      "race": "SRD",
+      "color": "Mesclado",
+      "foundDate": "2022-06-02",
+      "observations": "Encontrei assustado embaixo de um carro",
+      "tutorName": "Rogério da Silva",
+      "tutorPhone": "31 5003-55838",
+      "tutorEmail": "rsilva27@email.com",
+      "tutorObservations": "Preferencialmente por ligação ou whatsapp",
+      "cep": "31130-150",
+      "street": "Rua Adriano Modesto",
+      "neighborhood": "Cachoeirinha",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/cBr8Cax.jpg",
+      "id": 3
+    }
+  ]
 }
