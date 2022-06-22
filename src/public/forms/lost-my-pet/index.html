@@ -106,36 +106,6 @@
 
 				<div class="form-input-line">
 					<div class="form-label">
-						<label>Local da perda:</label>
-					</div>
-
-					<div class="form-input">
-						<input name="localperda" type="text" />
-					</div>
-				</div>
-
-				<!-- <div class="form-input-line">
-                    <div class="form-label right">
-                        <label>CEP:</label>
-                    </div>
-
-                    <div class="form-input">
-                        <input type="text" name="cep" id="cep" />
-                    </div>
-                </div>
-
-
-                <div class="form-input-line">
-                    <div class="form-label right">
-                        <label>Cidade:</label>
-                    </div>
-
-                    <div class="form-input">
-                        <input>
-                    </div>
-                </div> -->
-				<div class="form-input-line">
-					<div class="form-label">
 						<label>Cep: </label>
 					</div>
 					<div class="form-input">
@@ -345,7 +315,6 @@
 				neighborhood,
 				city,
 				state,
-				returned: false
 			};
 
 			if (validateBody(body)) {
@@ -367,6 +336,7 @@
 				}
 
 				body["imageUrl"] = imageUrl;
+				body["returned"] = false;
 
 				const protocol = window.location.protocol;
 				const host = window.location.hostname;
