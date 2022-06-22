@@ -43,7 +43,6 @@
 |RTF-010| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-011| Perdidos | O usuário é direciona corretamente para a página esperada em todos os cards. | NÃO |
 |RTF-012| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
-
 |RTF-013| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-014| Cadastro | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-015| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEPO botão direciona corretamente o usuário para a página esperada. | NÃO |
@@ -53,7 +52,6 @@
 |RTF-019| Cadastro | Os dados são preenchidos automaticamente após a inserção do CEP. | NÃO |
 |RTF-020| Cadastro | A opção de tornar privado o e-mail e telefone está presente, conforme o desejado. | NÃO |
 |RTF-021| Cadastro | A página apresente a mensagem pop-up de êxito após envio de formulário, conforme desejado. | NÃO |
-
 
 |RTF-005| Adoção - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
 |RTF-005| Perdidos - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
