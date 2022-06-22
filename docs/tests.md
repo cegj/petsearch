@@ -4,10 +4,18 @@
 
 | Nº Teste | Página | Cenário de teste |
 |-----------|-----------------------------------------|----|
-|TF-001| Home | Ao abrir a index, é esperado que sejam carregados as faixas destinadas aos animais Perdidos, Adoção, carrossel de animais que já voltaram para casa, bem como a topbar e a footbar. |
+|TF-001| Home | Ao abrir a index, é esperado que sejam carregados as faixas destinadas aos animais Perdidos, Adoção, carrossel de animais que já voltaram para casa, bem como a topbar. |
 |TF-002| Home | Ao clicar em "PERDIDOS", no menu superior, é esperado que o usuário seja direcionado para a página "Pet Perdido?" |
 |TF-003| Home | Ao clicar em "ADOÇÃO", no menu superior, é esperado que o usuário seja direcionado para a página "Adoção de Pets" |
 |TF-004| Home | Ao clicar em "CONTATO", no menu superior, é esperado que o usuário seja direcionado para a página "Contato" |
+|TF-005| Home | Ao clicar em "Saiba Mais", na faixa azul - "Pet Perdido?", é esperado que o usuário seja direcionado para a página "Pet Perdido?" |
+|TF-006| Home | Ao clicar em "Saiba Mais", na faixa amarela - "Quer Adotar?", é esperado que o usuário seja direcionado para a página "Adoção de Pets" |
+|TF-007| Home | Ao clicar nas setas laterais do carossel, é esperado que o usuário visualize todos os animais que já foram adotados ou que retornaram ao seu lar. |
+|TF-008| Perdidos | Ao ser direcionado à página, é esperado que sejam carregados os cards com as opções de anunciar a perda do pet - "perdi meu pet" e a de "encontrei um pet", galeria com os mais recentes pets cadastrados, link para a galeria completa de anúncios de pets perdidos e por fim, mapa com localização dos bichinhos. |
+|TF-009| Perdidos | Ao clicar em "perdi meu pet", é esperado que o usuário seja direcionado para a página contendo formulário para cadastro dos dados do animal perdido. |
+|TF-010| Perdidos | Ao clicar em "encontrei um pet", é esperado que o usuário seja direcionado para a página contendo formulário para cadastro dos dados do animal encontrado. |
+|TF-011| Perdidos | Ao clicar em sobre algum dos "cards" de anuncios de animais, é esperado que o usuário seja direcionado para a página contendo às informações do mesmo. |
+|TF-012| Perdidos | Ao clicar em "ver galeria completa", é esperado que o usuário seja direcionado para a página contendo todos os cards de pets perdidos. |
 
 # Registro de Testes de Software
 
@@ -19,6 +27,15 @@
 |RTF-002| Home | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-003| Home | O botão direciona corretamente o usuário para a página esperada. | NÃO |
 |RTF-004| Home | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-005| Home | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-006| Home | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-007| Home | VERIFICAR!!!! | --- |
+|RTF-008| Perdidos | Todos os elementos previstos foram carregados na página sem atrasos ou bugs. | NÃO |
+|RTF-009| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-010| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+|RTF-011| Perdidos | O usuário é direciona corretamente para a página esperada em todos os cards. | NÃO |
+|RTF-012| Perdidos | O botão direciona corretamente o usuário para a página esperada. | NÃO |
+
 
 |RTF-005| Adoção - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
 |RTF-005| Perdidos - Galeria | O filtro apresenta corretamente as opções para o usuário e permite a sua correta filtragem pela raça. | NÃO |
