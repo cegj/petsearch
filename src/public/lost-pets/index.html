@@ -115,7 +115,7 @@
 
         pets.push(...lostPets)
 
-        url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=false&_limit=5` : `${protocol}//${host}/api/found-pets?_limit=5&returned=false`
         response = await fetch(url);
         const foundPets = await response.json();
 
