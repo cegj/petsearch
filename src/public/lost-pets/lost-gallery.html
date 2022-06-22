@@ -58,7 +58,7 @@
     </select>
   </div>
   <div class="d-flex justify-content-center px-5 py-5 bg-shadow-grey">
-    <div class="row justify-content-evenly" id="pets-gallery">
+    <div class="row justify-content-center" id="pets-gallery">
     </div>
   </div>
   <div id="map"></div>
@@ -67,9 +67,15 @@
     function insertPet(pet) {
       try {
         const petsElement = document.getElementById('pets-gallery');
+        let pageName;
+        if (pet.lostDate){
+          pageName = "lost-details" 
+        } else if (pet.foundDate){
+          pageName = "found-details" 
+        }
 
         petsElement.insertAdjacentHTML('beforeend', `
-          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="lost-details.html?id=${pet.id}">
+          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="${pageName}.html?id=${pet.id}">
             <img class="gallery-img" src="${pet.imageUrl}" />
             <div
               class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
@@ -90,10 +96,23 @@
         const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=false` : `${protocol}//${host}/api/lost-pets?returned=false`
+        let pets = []
+        let url;
+        let response;
 
-        const response = await fetch(url);
-        const pets = await response.json();
+        url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        response = await fetch(url);
+        const lostPets = await response.json();
+
+        pets.push(...lostPets)
+
+        url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        response = await fetch(url);
+        const foundPets = await response.json();
+
+        pets.push(...foundPets)
+        pets.sort((a, b) => b.id - a.id)
+
         return pets
       } catch (e) {
         console.log('erro')

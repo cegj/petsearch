@@ -49,60 +49,117 @@
       </div>
       <main class="d-flex flex-column justify-content-center mb-4">
     <div class="container-pet-photo">
-        <img src="../assets/lost-pets/dog.png" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
+        <img id="image" src="" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
     </div>
     <div class="container-pet-info text-center mb-4 bg-grey">
-        <h1 class="text-uppercase pt-4 pb-2 fw-bold">Doguinho</h1>
+        <h1 class="text-uppercase pt-4 pb-2 fw-bold"><span id="name"></span></h1>
         <ul class="pet-info list-unstyled">
-          <li class="lh-lg"><span class="fw-bold">Raça: </span>Vira Lata</li>
-          <li class="lh-lg"><span class="fw-bold">Cor: </span>Caramelo</li>
-          <li class="lh-lg"><span class="fw-bold">Sexo: </span>Macho</li>
-          <li class="lh-lg"><span class="fw-bold">Local: </span><span id="address">Rua João Arantes, Cidade Nova - Belo Horizonte/MG</span></li>
-          <li class="lh-lg"><span class="fw-bold">Encontrado em: </span>21/04/2022</li>
-          <li class="lh-lg"><span class="fw-bold">Observações: </span>Encontrado saudável, sem maus tratos</li>
+          <li class="lh-lg"><span class="fw-bold">Raça: </span><span id="race"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Cor: </span><span id="color"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Local: </span><span id="place"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Encontrado em: </span><span id="foundDate"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Observações: </span><span id="observations"></span></li>
+        </ul>
+        <hr>
+        <ul class="pet-info list-unstyled">
+          <li class="lh-lg"><span class="fw-bold">Nome do responsável: </span><span id="tutorName"></span></li>
+          <li class="lh-lg"><span class="fw-bold">Telefone: </span><span id="tutorPhone"></span></li>
+          <li class="lh-lg"><span class="fw-bold">E-mail: </span><span id="tutorEmail"></span></li>
+          <li class="lh-lg"><span id="tutorObservations"></span></li>
         </ul>
     </div>
     <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
-        <div class="option"><a class="main-option fw-bold text-decoration-none" href="../contact/lost-contact-tutor.html">Sou o dono</a></div>
+        <div class="option"><a class="main-option fw-bold text-decoration-none" id="foundBtn" href="">Sou o dono</a></div>
         <div class="option"><a class="contact-option text-decoration-none text-secondary" href="../contact/">Contato</a></div>
-        <div class="option"><a class="report-problem-option text-decoration-none text-secondary" href="../contact/lost-contact-pst.html">Algum problema?</a></div>
+        <div class="option"><a class="report-problem-option text-decoration-none text-secondary" id="troubleBtn" href="">Algum problema?</a></div>
     </section>    
     <div id="map"></div>
   </main>
 
   <script>
-    function renderMap(){
-            const address = document.getElementById("address").innerText;
+    function renderMap(address){
 
-            fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
-                .then(res => res.json())
-                .then((addressInfo) => {
-                    addressInfo = addressInfo[0]
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
+          .then(res => res.json())
+          .then((addressInfo) => {
+              addressInfo = addressInfo[0]
 
-                    console.log(addressInfo)
+              const map = L.map('map', {
+                center: [addressInfo.lat, addressInfo.lon],
+                zoom: 17,
+                scrollWheelZoom: false 
+              })
+            
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
 
-                    var map = L.map('map', {
-                      center: [addressInfo.lat, addressInfo.lon],
-                      zoom: 17,
-                      scrollWheelZoom: false 
-                    })
-                  
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    }).addTo(map);
+              L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
+                  .bindPopup(address)
+                  .openPopup();
 
-                    L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
-                        .bindPopup(address)
-                        .openPopup();
-
-                        setTimeout(function () {
-                            map.invalidateSize(true);
-                        }, 100);
-             })
-
-             document.scrol
+                  setTimeout(function () {
+                      map.invalidateSize(true);
+                  }, 100);
+        })
         }
-        renderMap();
+
+    async function fetchPet () {
+      try {
+        const id = window.location.search.split("?id=")[1]
+        const protocol = window.location.protocol
+        const host = window.location.hostname
+        const port = window.location.port
+        const url = port ? `${protocol}//${host}:${port}/api/found-pets?id=${id}` : `${protocol}//${host}/api/lost-pets?id=${id}`
+
+        const response = await fetch( url );
+        const pets = await response.json();
+        pets.forEach( pet => {
+          insertPetData(pet);
+        } )
+      } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+      }
+    }
+
+    function insertPetData(pet){
+      console.log(pet)
+      const name = document.getElementById("name");
+      const race = document.getElementById("race");
+      const color = document.getElementById("color");
+      const place = document.getElementById("place") 
+      const foundDate = document.getElementById("foundDate");
+      const observations = document.getElementById("observations");
+      const image = document.getElementById("image");
+      const tutorName = document.getElementById("tutorName");
+      const tutorPhone = document.getElementById("tutorPhone");
+      const tutorEmail = document.getElementById("tutorEmail");
+      const tutorObservations = document.getElementById("tutorObservations");
+      const foundBtn = document.getElementById("foundBtn");
+      const troubleBtn = document.getElementById("troubleBtn");
+
+      const date = new Date(pet.foundDate);
+
+      image.src = pet.imageUrl;
+      name.innerText = pet.name;
+      race.innerText = pet.race;
+      color.innerText = pet.color;
+      place.innerHTML = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state} (CEP: ${pet.cep})`
+      foundDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      observations.innerText = pet.observations;
+      tutorName.innerText = pet.tutorName;
+      tutorPhone.innerText = pet.tutorPhone;
+      tutorEmail.innerText = pet.tutorEmail;
+      tutorObservations.innerText = pet.tutorObservations;
+
+      foundBtn.href = `../contact/lost-contact.html?id=${pet.id}&name=${pet.name}&d=${pet.tutorEmail}`
+      troubleBtn.href = `../contact/lost-contact-pst.html?id=${pet.id}&name=${pet.name}`
+
+      renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
+    }
+
+    fetchPet();
   </script>
 
 </body>

@@ -74,8 +74,15 @@
       try {
         const petsElement = document.getElementById('pets-gallery');
 
+        let pageName;
+        if (pet.lostDate){
+          pageName = "lost-details" 
+        } else if (pet.foundDate){
+          pageName = "found-details" 
+        }
+
         petsElement.insertAdjacentHTML('beforeend', `
-          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="lost-details.html?id=${pet.id}">
+          <a class="col-12 col-lg-2 d-flex flex-column justify-content-center grid-picture" href="${pageName}.html?id=${pet.id}">
             <img class="gallery-img" src="${pet.imageUrl}" />
             <div
               class="d-flex flex-column align-items-center justify-content-center bg-strong-grey grid-picture-description">
@@ -98,11 +105,24 @@
         const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        let pets = []
+        let url;
+        let response;
 
-        const response = await fetch(url);
-        const pets = await response.json();
-        pets.forEach(pet => {
+        url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        response = await fetch(url);
+        const lostPets = await response.json();
+
+        pets.push(...lostPets)
+
+        url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+        response = await fetch(url);
+        const foundPets = await response.json();
+
+        pets.push(...foundPets)
+        pets.sort((a, b) => b.id - a.id)
+
+        pets.slice(0,5).forEach(pet => {
           insertPet(pet);
         })
       } catch (e) {
