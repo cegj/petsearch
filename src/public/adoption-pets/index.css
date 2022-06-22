@@ -39,6 +39,10 @@ a.see-gallery-text {
   text-align: center;
   text-decoration: none;
   color: #727171;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 .gallery-img {
