@@ -59,14 +59,14 @@ a {
   height: 400px;
 }
 
-p.btn.btn-outline-secondary.mt-4{
+button.btn.btn-outline-secondary.mt-4{
   background-color: #3886ad;
   color: #fff;
   border-color: transparent;
   margin: 5px;
 }
 
-p.btn.btn-outline-secondary.mt-4:hover{
+button.btn.btn-outline-secondary.mt-4:hover{
   background-color: #f8f8f7;
   color:#3886ad;
   border-color: transparent;
