@@ -57,3 +57,16 @@ a {
 #map {
   height: 400px;
 }
+
+p.btn.btn-outline-secondary.mt-4{
+  background-color: #e5ab04;
+  color: #fff;
+  border-color: transparent;
+  margin: 5px;
+}
+
+p.btn.btn-outline-secondary.mt-4:hover{
+  background-color: #f8f8f7;
+  color:#e5ab04;
+  border-color: transparent;
+}
