@@ -24,7 +24,7 @@
   <!-- Carrega plugin LeafLet para renderizar mapa -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  
+
   <nav class="navbar navbar-expand-lg navbar-light bg-blue text-uppercase">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -49,10 +49,11 @@
     </div>
   </div>
   <div class="d-flex justify-content-center bg-shadow-grey" name="species">
-    <button class="btn btn-outline-secondary mt-4" onclick="main()" id="species" value="canino">Cachorro</button>
-    <button class="btn btn-outline-secondary mt-4" onclick="main()" id="species" value="felino">Gato</button>
-    <button class="btn btn-outline-secondary mt-4" onclick="main()" id="species" value="aves">Ave</button>
-    <button class="btn btn-outline-secondary mt-4" onclick="main()" id="species" value="outro">Outro</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('canino')">Cachorro</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('felino')">Gato</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('aves')">Ave</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('outro')">Outro</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets(null)">Todos</button>
   </div>
 
   <div class="d-flex justify-content-center px-5 py-5 bg-shadow-grey">
@@ -63,14 +64,15 @@
   <div id="map"></div>
 
   <script type="text/javascript">
+    let persistedFilter
     function insertPet(pet) {
       try {
         const petsElement = document.getElementById('pets-gallery');
         let pageName;
-        if (pet.lostDate){
-          pageName = "lost-details" 
-        } else if (pet.foundDate){
-          pageName = "found-details" 
+        if (pet.lostDate) {
+          pageName = "lost-details"
+        } else if (pet.foundDate) {
+          pageName = "found-details"
         }
 
         petsElement.insertAdjacentHTML('beforeend', `
@@ -90,7 +92,7 @@
       }
     }
 
-    async function fetchPets() {
+    async function fetchPets(filter) {
       try {
         const protocol = window.location.protocol
         const host = window.location.hostname
@@ -100,12 +102,21 @@
         let response;
 
         url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=false&_limit=5` : `${protocol}//${host}/api/lost-pets?_limit=5&returned=false`
+
+        if (filter) {
+          url += `&species=${filter}`
+        }
         response = await fetch(url);
         const lostPets = await response.json();
 
         pets.push(...lostPets)
 
         url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=false&_limit=5` : `${protocol}//${host}/api/found-pets?_limit=5&returned=false`
+
+        if (filter) {
+          url += `&species=${filter}`
+        }
+
         response = await fetch(url);
         const foundPets = await response.json();
 
@@ -129,27 +140,10 @@
     function renderPets(pets) {
       cleanPetsGallery()
       pets.forEach(pet => {
-        MapMarkersLayer.clearLayers();
+        // MapMarkersLayer.clearLayers();
         insertPet(pet);
-        insertMapMarker(pet);
+        // insertMapMarker(pet);
       })
-    }
-
-    async function main() {
-      const pets = await fetchPets();
-      renderPets(pets)
-
-      const species = document.getElementById('species')
-      species.addEventListener('click', function () {
-        if (this.value) {
-          console.log(this.value)
-          renderPets(pets.filter((pet) => {
-            return pet.species === this.value
-          }))
-        } else {
-          renderPets(pets)
-        }
-      });
     }
 
     function renderMap() {
@@ -183,11 +177,24 @@
                               <br>
                               ${pet.street}, ${pet.neighborhood}
                               `)
-                            })
-      }
+        })
+    }
 
-      const map = renderMap();
-      let MapMarkersLayer = L.layerGroup().addTo(map);
+    const map = renderMap();
+    let MapMarkersLayer = L.layerGroup().addTo(map);
+
+    async function filterPets(filter) {
+      if (persistedFilter !== filter) {
+        persistedFilter = filter;
+        const pets = await fetchPets(filter);
+        renderPets(pets);
+      }
+    }
+
+    async function main() {
+      const pets = await fetchPets();
+      renderPets(pets)
+    }
 
     main()
   </script>
