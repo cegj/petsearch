@@ -37,19 +37,19 @@ Para atender aos requisitos RF-001 e RF-002 foi desenvolvido os formulários de 
 
 Para atender aos requisitos RF-003 e RF-004 foi desenvolvido o botão **INFORMAR ADOÇÃO** _(fig. 01)_ para os animais de adoção  e **INFORMAR DEVOLUÇÃO** _(fig. 02)_ para os animais perdidos, ao clicar no botão será exibido um modal de confirmação _(fig. 03)_, solicitando o e-mail para validar a marcação do pet _(fig. 04)_. Os animais encontrados e adotados com a marcação, automaticamente alimentaram o carrossel na home page _(fig. 05)_. 
 
-**Fig.01**
+**Fig.01** <br>
 ![INFORMAR ADOÇÃO](img/development/informar-adocao.jpg)<br>
 
-**Fig.02**
+**Fig.02** <br>
 ![INFORMAR DEVOLUÇÃO](img/development/informar-devolucao.jpg)<br>
 
-**Fig.03**
+**Fig.03** <br>
 ![modal de confirmação](img/development/modal-confirmacao.jpg)<br>
 
-**Fig.04**
+**Fig.04** <br>
 ![marcação do pet](img/development/marcacao-pet-encontrado.jpg)<br>
 
-**Fig.05**
+**Fig.05** <br>
 ![carrossel](img/development/corrossel-home.jpg)<br>
 
 
