@@ -120,7 +120,8 @@
       "state": "MG",
       "imageUrl": "https://i.imgur.com/nTpgwoP.jpg",
       "id": 1,
-      "adopted": false
+      "adopted": true,
+      "returned": true
     },
     {
       "name": "Peludo",
@@ -222,7 +223,7 @@
       "state": "MG",
       "imageUrl": "https://i.imgur.com/UA3yof3.jpg",
       "id": 1,
-      "returned": false
+      "returned": true
     },
     {
       "name": "Brincalhão",
