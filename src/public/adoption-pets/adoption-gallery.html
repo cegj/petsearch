@@ -155,7 +155,7 @@
   let MapMarkersLayer = L.layerGroup().addTo(map);
 
   async function filterPets(filter) {
-    if (persistedFilter == filter) {
+    if (persistedFilter !== filter) {
       persistedFilter = filter;
       const pets = await fetchPets(filter);
       renderPets(pets);
