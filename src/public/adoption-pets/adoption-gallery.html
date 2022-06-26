@@ -46,11 +46,12 @@
       <span class="header-title text-white text-uppercase text-center">Adoção de pets</span>
     </div>
   </div>
-  <div class="d-flex justify-content-center bg-shadow-grey">
-      <p class="btn btn-outline-secondary mt-4" value="canino">Cachorro</p>
-      <p class="btn btn-outline-secondary mt-4" value="felino">Gato</p>
-      <p class="btn btn-outline-secondary mt-4" value="aves">Ave</p>
-      <p class="btn btn-outline-secondary mt-4" value="outro">Outro</p>
+  <div class="d-flex justify-content-center bg-shadow-grey" name="species">
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('canino')">Cachorro</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('felino')">Gato</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('aves')">Ave</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets('outro')">Outro</button>
+    <button class="btn btn-outline-secondary mt-4" onclick="filterPets(null)">Todos</button>
   </div>
   <div class="d-flex justify-content-center px-5 py-5 bg-shadow-grey">
     <div class="row justify-content-center" id="pets-gallery">
@@ -58,6 +59,7 @@
   </div>
   <div id="map"></div>
   <script type="text/javascript">
+    let persistedFilter;
     function insertPet(pet) {
       try {
         const petsElement = document.getElementById('pets-gallery');
@@ -79,12 +81,16 @@
       }
     }
 
-    async function fetchPets() {
+    async function fetchPets(filter) {
       try {
         const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
         const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?adopted=false` : `${protocol}//${host}/api/adoption-pets?adopted=false`
+
+        if (filter) {
+          url += `&species=${filter}`
+        }
 
         const response = await fetch(url);
         const pets = await response.json();
@@ -105,40 +111,23 @@
     function renderPets(pets) {
       cleanPetsGallery()
       pets.forEach(pet => {
-        MapMarkersLayer.clearLayers();
+        // MapMarkersLayer.clearLayers();
         insertPet(pet);
-        insertMapMarker(pet);
+        // insertMapMarker(pet);
       })
     }
 
-    async function main() {
-      const pets = await fetchPets();
-      renderPets(pets)
-
-      const species = document.getElementById('species')
-      species.addEventListener('change', function () {
-        if (this.value) {
-          console.log(this.value)
-          renderPets(pets.filter((pet) => {
-            return pet.species === this.value
-          }))
-        } else {
-          renderPets(pets)
-        }
-      });
-    }
-
-  function renderMap() {
-    const map = L.map('map', {
-      center: [-19.912998, -43.940933],
-      zoom: 11,
-      scrollWheelZoom: false
-    })
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
+    function renderMap() {
+      const map = L.map('map', {
+        center: [-19.912998, -43.940933],
+        zoom: 11,
+        scrollWheelZoom: false
+      })
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
     return map;
   }
 
@@ -154,17 +143,30 @@
               .addTo(MapMarkersLayer)
               .bindPopup(
                 `<a href="lost-details.html?id=${pet.id}">${pet.name}</a>
-                                <br>
-                                Espécie: ${pet.species}
-                                <br>
-                                ${pet.street}, ${pet.neighborhood}
-                                `)
-                              })
+                <br>
+                Espécie: ${pet.species}
+                <br>
+                ${pet.street}, ${pet.neighborhood}
+                `)
+              })
+  }
+            
+  const map = renderMap();
+  let MapMarkersLayer = L.layerGroup().addTo(map);
+
+  async function filterPets(filter) {
+    if (persistedFilter !== filter) {
+      persistedFilter = filter;
+      const pets = await fetchPets(filter);
+      renderPets(pets);
     }
+  }
 
-    const map = renderMap();
-    let MapMarkersLayer = L.layerGroup().addTo(map);
-
+  async function main() {
+    const pets = await fetchPets();
+    renderPets(pets)
+  }
+  
     main()
   </script>
 </body>
