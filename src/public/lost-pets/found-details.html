@@ -64,7 +64,7 @@
         <ul class="pet-info list-unstyled">
           <li class="lh-lg"><span class="fw-bold">Nome do responsável: </span><span id="tutorName"></span></li>
           <li class="lh-lg"><span class="fw-bold">Telefone: </span><span id="tutorPhone"></span></li>
-          <li class="lh-lg"><span class="fw-bold">E-mail: </span><span id="tutorEmail"></span></li>
+          <!-- <li class="lh-lg"><span class="fw-bold">E-mail: </span><span id="tutorEmail"></span></li> -->
           <li class="lh-lg"><span id="tutorObservations"></span></li>
         </ul>
     </div>
@@ -82,19 +82,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form> 
+                <form id="setReturnedForm"> 
                   <div class="row form-text">
                     <p class="col fs-6 mb-2">Confirme o e-mail utilizado ao cadastrar o pet</p>
                   </div>
                   <div class="row"> 
-                    <div class="col-3"><label for="email" class="form-label text-start">E-mail:</label></div>
-                    <div class="col-9"><input type="email" name="email" id="email" class="form-control"></div>
+                    <div class="col-3"><label for="emailForReturned" class="form-label text-start">E-mail:</label></div>
+                    <div class="col-9"><input type="email" name="emailForReturned" id="emailForReturned" class="form-control"></div>
                   </div>
+                </div>
+                  <div class="modal-footer">
+                    <input type="submit" id="setReturnedBtn" class="btn btn-success" value="Confirmar"></input>
+                  </div>    
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" id="editPetBtn" class="btn btn-success" value="edit">Confirmar</button>
-              </div>  
               </div>
             </div>
           </div>
@@ -104,9 +104,68 @@
   </main>
 
   <script>
-    function renderMap(address){
 
-      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
+    class Pet{
+      constructor(){
+        this.params = new URLSearchParams(window.location.search);
+        this.id = this.params.get('id');
+        this.init();
+      }
+
+      async fetchPet () {
+      try {
+        const protocol = window.location.protocol
+        const host = window.location.hostname
+        const port = window.location.port
+        const url = port ? `${protocol}//${host}:${port}/api/found-pets?id=${this.id}` : `${protocol}//${host}/api/found-pets?id=${this.id}`
+
+        const response = await fetch( url );
+        const pet = await response.json();
+        return pet[0];
+      } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+      }
+    }
+
+      insertPetData(){      
+        const name = document.getElementById("name");
+        const race = document.getElementById("race");
+        const color = document.getElementById("color");
+        const place = document.getElementById("place") 
+        const foundDate = document.getElementById("foundDate");
+        const observations = document.getElementById("observations");
+        const image = document.getElementById("image");
+        const tutorName = document.getElementById("tutorName");
+        const tutorPhone = document.getElementById("tutorPhone");
+        // const tutorEmail = document.getElementById("tutorEmail");
+        const tutorObservations = document.getElementById("tutorObservations");
+        const foundBtn = document.getElementById("foundBtn");
+        const troubleBtn = document.getElementById("troubleBtn");
+        const date = new Date(this.pet.foundDate);
+
+        image.src = this.pet.imageUrl;
+        name.innerText = this.pet.name;
+        race.innerText = this.pet.race;
+        color.innerText = this.pet.color;
+        place.innerHTML = `${this.pet.street} - ${this.pet.neighborhood}, ${this.pet.city}/${this.pet.state} (CEP: ${this.pet.cep})`
+        foundDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        observations.innerText = this.pet.observations;
+        tutorName.innerText = this.pet.tutorName;
+        tutorPhone.innerText = this.pet.tutorPhone;
+        tutorObservations.innerText = this.pet.tutorObservations;
+    }
+
+    insertHrefs(){
+      foundBtn.href = `../contact/lost-contact.html?id=${this.pet.id}&name=${this.pet.name}&d=${this.pet.tutorEmail}`
+      troubleBtn.href = `../contact/lost-contact-pst.html?id=${this.pet.id}&name=${this.pet.name}`
+    }
+
+    renderMap(){
+
+      this.pet.address = `${this.pet.street} - ${this.pet.neighborhood}, ${this.pet.city}/${this.pet.state}`;
+
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${this.pet.address}&format=jsonv2`)
           .then(res => res.json())
           .then((addressInfo) => {
               addressInfo = addressInfo[0]
@@ -122,71 +181,25 @@
               }).addTo(map);
 
               L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
-                  .bindPopup(address)
+                  .bindPopup(this.pet.address)
                   .openPopup();
 
                   setTimeout(function () {
                       map.invalidateSize(true);
                   }, 100);
         })
-        }
-
-    async function fetchPet () {
-      try {
-        const id = window.location.search.split("?id=")[1]
-        const protocol = window.location.protocol
-        const host = window.location.hostname
-        const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/found-pets?id=${id}` : `${protocol}//${host}/api/found-pets?id=${id}`
-
-        const response = await fetch( url );
-        const pets = await response.json();
-        pets.forEach( pet => {
-          insertPetData(pet);
-        } )
-      } catch ( e ) {
-        console.log( 'erro' )
-        console.log( e );
-      }
     }
 
-    function insertPetData(pet){
-      console.log(pet)
-      const name = document.getElementById("name");
-      const race = document.getElementById("race");
-      const color = document.getElementById("color");
-      const place = document.getElementById("place") 
-      const foundDate = document.getElementById("foundDate");
-      const observations = document.getElementById("observations");
-      const image = document.getElementById("image");
-      const tutorName = document.getElementById("tutorName");
-      const tutorPhone = document.getElementById("tutorPhone");
-      const tutorEmail = document.getElementById("tutorEmail");
-      const tutorObservations = document.getElementById("tutorObservations");
-      const foundBtn = document.getElementById("foundBtn");
-      const troubleBtn = document.getElementById("troubleBtn");
-
-      const date = new Date(pet.foundDate);
-
-      image.src = pet.imageUrl;
-      name.innerText = pet.name;
-      race.innerText = pet.race;
-      color.innerText = pet.color;
-      place.innerHTML = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state} (CEP: ${pet.cep})`
-      foundDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
-      observations.innerText = pet.observations;
-      tutorName.innerText = pet.tutorName;
-      tutorPhone.innerText = pet.tutorPhone;
-      tutorEmail.innerText = pet.tutorEmail;
-      tutorObservations.innerText = pet.tutorObservations;
-
-      foundBtn.href = `../contact/lost-contact.html?id=${pet.id}&name=${pet.name}&d=${pet.tutorEmail}`
-      troubleBtn.href = `../contact/lost-contact-pst.html?id=${pet.id}&name=${pet.name}`
-
-      renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
+    async init(){
+      this.pet = await this.fetchPet();
+      this.insertPetData();
+      this.insertHrefs();
+      this.renderMap();
     }
+  }
 
-    fetchPet();
+  const pet = new Pet();
+
   </script>
 
 </body>

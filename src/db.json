@@ -18,7 +18,7 @@
       "state": "MG",
       "imageUrl": "https://i.imgur.com/PvIgSjc.jpg",
       "id": 1,
-      "returned": false
+      "returned": true
     },
     {
       "name": "Amora",
