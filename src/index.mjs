@@ -30,8 +30,8 @@ server.get('/imgur-token', (req, res) => {
 
 //Config Mailjet to send emails
 const mailjet = new Mailjet({
-  apiKey: process.env.MJ_API_KEY,
-  apiSecret: process.env.MJ_API_SECRET
+  apiKey: process.env.MJ_API_KEY ? process.env.MJ_API_KEY : "unset",
+  apiSecret: process.env.MJ_API_SECRET ? process.env.MJ_API_KEY : "unset"
 });
 
 // Send e-mail to pet tutor
