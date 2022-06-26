@@ -62,15 +62,15 @@
                         <div class="row mb-5">
                             <p><span class="txtContato">CONTATO </span><span class="txttutor"> |Comunicar problema com anúncio</span></p>
                         </div>
-                        <form id="formulario" action="https://formspree.io/f/mayvvezr" method="POST">
+                        <form id="formulario" enctype="multipart/form-data">
                             <div class="row mb-3">
-                                <label for="inputName" class="col-lg-4 col-form-label">Id do anúncio:</label>
+                                <label for="petId" class="col-lg-4 col-form-label">Id do anúncio:</label>
                                 <div class="col-lg-8">
                                     <input type="text" name="petId" class="form-control" id="petId" disabled>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputName" class="col-lg-4 col-form-label">Nome do pet:</label>
+                                <label for="petName" class="col-lg-4 col-form-label">Nome do pet:</label>
                                 <div class="col-lg-8">
                                     <input type="text" name="petName" class="form-control" id="petName" disabled>
                                 </div>
@@ -144,6 +144,56 @@
 
             setPetInfos();
         </script>
+        <script>        
+            async function submitForm(e){
+                e.preventDefault();
+                const form = document.getElementById("formulario");
+
+                const petId = document.getElementById('petId').value;
+                const petName = document.getElementById('petName').value;
+                const name = document.getElementById('inputName').value;
+                const phone = document.getElementById('inputTelefone').value;
+                const email = document.getElementById('inputEmail').value;
+                const problem = document.getElementById('selecaoform').value;
+                const message = document.getElementById('inputComentario').value;
+
+                const body = {
+                petId,
+                petName,
+                name,
+                phone,
+                email,
+                problem,
+                message
+                };            
+
+                const protocol = window.location.protocol;
+                const host = window.location.hostname;
+                const port = window.location.port;
+                const url = port
+                    ? `${protocol}//${host}:${port}/send/trouble`
+                    : `${protocol}//${host}/send/trouble`;
+
+                    fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(body),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.Messages[0].Status === 'success'){
+                            alert("Mensagem enviada com sucesso!");
+                        } else {
+                            console.log(data)
+                            alert("Erro ao enviar a mensagem! Por favor, tente novamente")
+                        }
+                    });
+            }
+
+            document.getElementById('formulario').addEventListener('submit', submitForm);
+        </script>        
     </body>
 
     </html>

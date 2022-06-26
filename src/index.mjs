@@ -34,6 +34,7 @@ const mailjet = new Mailjet({
   apiSecret: process.env.MJ_API_SECRET
 });
 
+// Send e-mail to pet tutor
 server.post('/send/tutor', (req, res) => {
   console.log(req.body);
   const petId = req.body.petId;
@@ -43,7 +44,7 @@ server.post('/send/tutor', (req, res) => {
   const phone = req.body.phone;
   const message = req.body.message;
 
-  async function fetchPet () {
+  async function fetchAndSendEmail () {
     try {
       let api;
       if (type === 'lost'){
@@ -105,8 +106,105 @@ server.post('/send/tutor', (req, res) => {
     }
     }
 
-    fetchPet();
+    fetchAndSendEmail();
 })
+
+// Send e-mail to pet Petsearch (trouble)
+server.post('/send/trouble', (req, res) => {
+    try {
+      //SEND EMAIL
+      const request = mailjet
+        .post('send', { version: 'v3.1' })
+        .request({
+          Messages: [
+            {
+              From: {
+                Email: "petsearchpuc@gmail.com",
+                Name: `PetSearch`
+              },
+              To: [
+                {
+                  Email: 'petsearchpuc@gmail.com',
+                  Name: 'PetSearch'
+                }
+              ],
+              Subject: `Aviso de problema`,
+              HTMLPart:
+              `<h1>Um usuário enviou um aviso de problema para ${req.body.petName} (id ${req.body.petId})</h1>
+              Nome: ${req.body.name}<br>
+              Telefone: ${req.body.phone}<br>
+              E-mail: ${req.body.email}<br>
+              Problema: ${req.body.problem}<br>
+              <h2>Mensagem:</h2>
+              ${req.body.message}
+              `
+            }
+          ]
+        })
+
+  request
+      .then((result) => {
+          console.log(result)
+          res.send(result.body)
+      })
+      .catch((err) => {
+          console.log(err)
+          res.send(err.statusCode)
+      })
+    } catch ( e ) {
+        console.log( 'erro' )
+        console.log( e );
+    }
+    })
+
+
+// Send e-mail to pet Petsearch (contact)
+server.post('/send/contact', (req, res) => {
+  try {
+    //SEND EMAIL
+    const request = mailjet
+      .post('send', { version: 'v3.1' })
+      .request({
+        Messages: [
+          {
+            From: {
+              Email: "petsearchpuc@gmail.com",
+              Name: `PetSearch`
+            },
+            To: [
+              {
+                Email: 'petsearchpuc@gmail.com',
+                Name: 'PetSearch'
+              }
+            ],
+            Subject: `Nova mensagem de contato`,
+            HTMLPart:
+            `<h1>Um usuário enviou uma mensagem de contato</h1>
+            Nome: ${req.body.name}<br>
+            Telefone: ${req.body.phone}<br>
+            E-mail: ${req.body.email}<br>
+            <h2>Mensagem:</h2>
+            ${req.body.message}
+            `
+          }
+        ]
+      })
+
+request
+    .then((result) => {
+        console.log(result)
+        res.send(result.body)
+    })
+    .catch((err) => {
+        console.log(err)
+        res.send(err.statusCode)
+    })
+  } catch ( e ) {
+      console.log( 'erro' )
+      console.log( e );
+  }
+  })
+
 
 server.listen(PORT, () => {
   console.log(`JSON server running on port ${PORT}`)
