@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -114,7 +114,6 @@
 
         pets.sort((a, b) => b.id - a.id)
 
-        console.log(pets)
         fillCarousel(pets);
         return pets
       } catch (e) {
@@ -127,7 +126,6 @@
       const carouselInner = document.querySelector('#carouselInner');
 
       const totalCarouselItems = Math.ceil(pets.length/3);
-      console.log(totalCarouselItems)
 
       let m = 0;
       limit = 3;

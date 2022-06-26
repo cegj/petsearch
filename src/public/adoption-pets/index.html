@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -129,13 +129,10 @@
 
       const address = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`;
 
-      console.log(address)
-
       fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
         .then(res => res.json())
         .then((addressInfo) => {
           addressInfo = addressInfo[0]
-          console.log(addressInfo)
           const marker = L.marker([addressInfo.lat, addressInfo.lon])
             .addTo(map)
             .bindPopup(
