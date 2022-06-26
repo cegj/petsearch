@@ -66,14 +66,148 @@
     <h2 class="mx-2 my-4 text-uppercase text-center">
       Olha só quem já voltou pra casa
     </h2>
-    <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-lg-evenly px-4">
+    <!-- <div class="carousel container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-lg-evenly px-4">
       <img width="30" class="carousel-icon" src="assets/home/back-icon.png" />
       <img class="carousel-img" src="assets/home/carrousel-1.png" />
       <img class="carousel-img" src="assets/home/carrousel-2.png" />
       <img class="carousel-img" src="assets/home/carrousel-3.png" />
       <img width="30" class="carousel-icon" src="assets/home/forward-icon.png" />
+    </div> -->
+
+    <div id="carousel" class="carousel slide w-100 carousel-dark" data-bs-ride="carousel">
+      <div id="carouselInner" class="carousel-inner">
+        <!-- <div class="carousel-item active">
+          <div class="carousel-imgs-container">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-imgs-container">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-imgs-container">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+            <img src="https://i.imgur.com/PvIgSjc.jpg" class="carousel-img" alt="...">
+          </div>
+        </div> -->
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </body>
+
+<script>
+  async function fetchPets(){
+      try {
+        const protocol = window.location.protocol
+        const host = window.location.hostname
+        const port = window.location.port
+        let pets = []
+        let url;
+        let response;
+
+        url = port ? `${protocol}//${host}:${port}/api/lost-pets?returned=true&_limit=5` : `${protocol}//${host}/api/lost-pets?returned=true&_limit=5`
+        
+        response = await fetch(url);
+        const lostPets = await response.json();
+
+        pets.push(...lostPets)
+
+        url = port ? `${protocol}//${host}:${port}/api/found-pets?returned=true&_limit=5` : `${protocol}//${host}/api/found-pets?returned=true&_limit=5`
+
+        response = await fetch(url);
+        const foundPets = await response.json();
+
+        pets.push(...foundPets)
+
+        url = port ? `${protocol}//${host}:${port}/api/adoption-pets?adopted=true&_limit=5` : `${protocol}//${host}/api/adoption-pets?adopted=true&_limit=5`
+
+        response = await fetch(url);
+        const adoptedPets = await response.json();
+
+        pets.push(...adoptedPets)
+
+        pets.sort((a, b) => b.id - a.id)
+
+        console.log(pets)
+        fillCarousel(pets);
+        return pets
+      } catch (e) {
+        console.log('erro')
+        console.log(e);
+      }
+    } 
+
+    function fillCarousel(pets){
+      const carouselInner = document.querySelector('#carouselInner');
+
+      const totalCarouselItems = Math.ceil(pets.length/3);
+      console.log(totalCarouselItems)
+
+      let m = 0;
+      limit = 3;
+      let element = "";
+
+      for (let i = 1; i <= totalCarouselItems; i++){
+        if (i === 1) {
+          elementClass = 'carousel-item active';
+        } else {
+          elementClass = 'carousel-item';
+        }
+
+        //Create flex container for 3 images
+        element += `
+          <div class="${elementClass}">
+            <div class="carousel-imgs-container">
+        `
+        //Insert each pet at container (until limit of 3)
+        for (m; m < limit; m++){
+          if (pets[m]){
+            let pageName;
+            if (pets[m].lostDate){
+              pageName = ["lost-pets", "lost-details"];
+            } else if (pets[m].foundDate){
+              if ((pets[m].adopted)) {
+                pageName = ["adoption-pets", "details"];
+              } else {
+              pageName = ["lost-pets", "found-details"];
+              }
+            }
+
+            element += `
+            <a href="/${pageName[0]}/${pageName[1]}.html?id=${pets[m].id}">
+              <img src="${pets[m].imageUrl}" class="carousel-img" alt="${pets[m].name}">
+            </a>
+          `
+          }
+        }
+
+        element += `
+          </div>
+        </div>
+
+        `
+        limit += 3;
+      }
+
+      carouselInner.innerHTML = element;
+    }
+
+  fetchPets();
+</script>
 
 </html>

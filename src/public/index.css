@@ -22,7 +22,16 @@
 }
 
 .carousel-img {
-  max-width: 500px;
+  display: inline-block;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.carousel-imgs-container{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .btn {
@@ -40,6 +49,6 @@
 .btn.btn-outline-secondary.mt-4:hover{
   background-color: #ffffff;
   color: #e5ab04;
-  border-color: transparent;
+  border-color: transparent;max-
  
 }

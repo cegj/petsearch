@@ -97,7 +97,7 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/GHREUsK.jpg",
-      "returned": false,
+      "returned": true,
       "id": 5
     }
   ],
@@ -221,7 +221,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/UA3yof3.jpg",
-      "id": 1
+      "id": 1,
+      "returned": false
     },
     {
       "name": "Brincalhão",
@@ -240,7 +241,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/7l8XRbd.jpg",
-      "id": 2
+      "id": 2,
+      "returned": true
     },
     {
       "name": "Gatinho",
@@ -259,7 +261,8 @@
       "city": "Belo Horizonte",
       "state": "MG",
       "imageUrl": "https://i.imgur.com/cBr8Cax.jpg",
-      "id": 3
+      "id": 3,
+      "returned": false
     }
   ]
 }
