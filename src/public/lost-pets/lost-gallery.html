@@ -139,10 +139,10 @@
 
     function renderPets(pets) {
       cleanPetsGallery()
+      MapMarkersLayer.clearLayers();
       pets.forEach(pet => {
-        // MapMarkersLayer.clearLayers();
         insertPet(pet);
-        // insertMapMarker(pet);
+        insertMapMarker(pet);
       })
     }
 

@@ -61,7 +61,7 @@
           <li class="lh-lg"><span class="fw-bold">Cor: </span><span id="color"></span></li>
           <li class="lh-lg"><span class="fw-bold">Local: </span><span id="place"></span></li>
           <li class="lh-lg"><span class="fw-bold">Data em que encontrou: </span><span id="foundDate"></span></li>
-          <li class="lh-lg"><span id="observations"></span></li>
+          <li data-ifreturned="remove" class="lh-lg"><span id="observations"></span></li>
         </ul>
         <hr data-ifreturned="remove">
         <ul data-ifreturned="remove" class="tutor-info list-unstyled">
@@ -157,7 +157,7 @@
         }
 
         insertHrefs(){
-          adoptBtn.href = `../contact/adoption-contact.html?id=${this.pet.id}&name=${this.pet.name}&d=${this.pet.tutorEmail}`
+          adoptBtn.href = `../contact/adoption-contact.html?id=${this.pet.id}`
           troubleBtn.href = `../contact/adoption-contact-pst.html?id=${this.pet.id}&name=${this.pet.name}`
         }
 
