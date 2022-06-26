@@ -86,7 +86,7 @@
         const protocol = window.location.protocol
         const host = window.location.hostname
         const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?adopted=false` : `${protocol}//${host}/api/adoption-pets?adopted=false`
+        let url = port ? `${protocol}//${host}:${port}/api/adoption-pets?adopted=false` : `${protocol}//${host}/api/adoption-pets?adopted=false`
 
         if (filter) {
           url += `&species=${filter}`
@@ -155,7 +155,7 @@
   let MapMarkersLayer = L.layerGroup().addTo(map);
 
   async function filterPets(filter) {
-    if (persistedFilter !== filter) {
+    if (persistedFilter == filter) {
       persistedFilter = filter;
       const pets = await fetchPets(filter);
       renderPets(pets);
