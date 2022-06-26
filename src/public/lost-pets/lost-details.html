@@ -50,7 +50,7 @@
       <main class="d-flex flex-column justify-content-center mb-4">
         <!-- Alerta de pet já devolvido -->
         <div data-ifreturned="show" class="alert alert-success w-50 mx-auto text-center" style="display:none" role="alert">
-          Este pet já foi encontrado e devolvido ao seu lar! ❤️
+          Este pet foi devolvido ao seu lar! ❤️
         </div>
     <div class="container-pet-photo">
         <img id="image" src="" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
@@ -140,7 +140,6 @@
         const image = document.getElementById("image");
         const tutorName = document.getElementById("tutorName");
         const tutorPhone = document.getElementById("tutorPhone");
-        // const tutorEmail = document.getElementById("tutorEmail");
         const tutorObservations = document.getElementById("tutorObservations");
         const foundBtn = document.getElementById("foundBtn");
         const troubleBtn = document.getElementById("troubleBtn");
@@ -215,12 +214,12 @@
 				})
 					.then((response) => response.json())
 					.then((data) => {
-						console.log(data);
+						alert("Que boa notícia! O pet foi marcado como devolvido para o seu lar!")
             location.reload();
 					});
 
       } else {
-        console.log(false)
+        alert("E-mail incorreto. Por favor, tente novamente!")
       }
     }
 
@@ -237,7 +236,8 @@
     setElementsIfReturned(){
       const elements = document.querySelectorAll("[data-ifReturned]");
 
-      elements.forEach((element) => {
+      if(this.pet.returned){
+        elements.forEach((element) => {
         console.log(elements)
         if (element.dataset.ifreturned === 'remove'){
           element.remove();
@@ -245,6 +245,7 @@
           element.style.display = 'block';
         }
       })
+      }
     }
       
     async init(){

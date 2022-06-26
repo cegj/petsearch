@@ -48,6 +48,9 @@
     </div>
   </div>
   <main class="d-flex flex-column justify-content-center mb-4">
+    <div data-ifreturned="show" class="alert alert-success w-50 mx-auto text-center" style="display:none" role="alert">
+      Este pet foi adotado e já tem um novo lar! ❤️
+    </div>        
     <div class="container-pet-photo">
         <img id="image" src="" class="pet-photo d-block rounded mx-auto" alt="Foto do pet">
     </div>
@@ -60,132 +63,202 @@
           <li class="lh-lg"><span class="fw-bold">Data em que encontrou: </span><span id="foundDate"></span></li>
           <li class="lh-lg"><span id="observations"></span></li>
         </ul>
-        <hr>
-        <ul class="tutor-info list-unstyled">
+        <hr data-ifreturned="remove">
+        <ul data-ifreturned="remove" class="tutor-info list-unstyled">
           <li class="lh-lg"><span class="fw-bold">Tutor: </span><span id="tutorName"></span></li>
           <li class="lh-lg"><span class="fw-bold">Telefone: </span><span id="tutorPhone"></span></li>
-          <li class="lh-lg"><span class="fw-bold">E-mail: </span><span id="address"><span id="tutorEmail"></span></span></li>
-          <li class="lh-lg"><span id="tutorObservations"></span></li>
+          <li class="lh-lg" data-ifreturned="remove"><span id="tutorObservations"></span></li>
         </ul>
     </div>
-    <section class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
+    <section data-ifreturned="remove" class="d-flex flex-wrap justify-content-center gap-5 fs-5 text-center mb-4">
         <div class="option"><a id="adoptBtn" class="main-option fw-bold text-decoration-none" href="">Quero adotar</a></div>
         <div class="option"><a id="returnedBtn" data-bs-toggle="modal" data-bs-target="#editPetModal" class="returned-adopted-option text-decoration-none text-secondary" href="">Informar adoção</a></div>
         <div class="option"><a class="contact-option text-decoration-none text-secondary" href="../contact/">Contato</a></div>
         <div class="option"><a id="troubleBtn" class="report-problem-option text-decoration-none text-secondary" href="">Algum problema?</a></div>
-        <!-- Edit Pet Modal -->
-        <div class="modal fade" id="editPetModal" tabindex="-1" aria-labelledby="editPetModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered"">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="editPetModalLabel">Informar que o pet foi adotado</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form> 
-                  <div class="row form-text">
-                    <p class="col fs-6 mb-2">Confirme o e-mail utilizado ao cadastrar o pet</p>
+            <!-- Edit Pet Modal -->
+            <div class="modal fade" id="editPetModal" tabindex="-1" aria-labelledby="editPetModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered"">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editPetModalLabel">Informar que o pet foi adotado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="row"> 
-                    <div class="col-3"><label for="email" class="form-label text-start">E-mail:</label></div>
-                    <div class="col-9"><input type="email" name="email" id="email" class="form-control"></div>
+                  <div class="modal-body">
+                    <form id="returnedForm"> 
+                      <div class="row form-text">
+                        <p class="col fs-6 mb-2">Confirme o e-mail utilizado ao cadastrar o pet</p>
+                      </div>
+                      <div class="row"> 
+                        <div class="col-3"><label for="emailForReturned" class="form-label text-start">E-mail:</label></div>
+                        <div class="col-9"><input type="email" name="emailForReturned" id="emailForReturned" class="form-control"></div>
+                      </div>
+                    </div>
+                      <div class="modal-footer">
+                        <input type="submit" id="setReturnedBtn" class="btn btn-success" value="Confirmar"></input>
+                      </div>    
+                    </form>
                   </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" id="editPetBtn" class="btn btn-success" value="edit">Confirmar</button>
-              </div>  
+                </div>
               </div>
             </div>
-          </div>
-        </div> 
-    </section>    
+          </section>    
     <div id="map"></div>
   </main>
 
   <script>
-    function renderMap(address){
+        class Pet{
+          constructor(){
+            this.params = new URLSearchParams(window.location.search);
+            this.id = this.params.get('id');
+            this.init();
+          }
 
-      fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
-          .then(res => res.json())
-          .then((addressInfo) => {
-              addressInfo = addressInfo[0]
+          async fetchPet () {
+          try {
+            const protocol = window.location.protocol
+            const host = window.location.hostname
+            const port = window.location.port
+            const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?id=${this.id}` : `${protocol}//${host}/api/adoption-pets?id=${this.id}`
 
-              const map = L.map('map', {
-                center: [addressInfo.lat, addressInfo.lon],
-                zoom: 17,
-                scrollWheelZoom: false 
-              })
-            
-              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              }).addTo(map);
-
-              L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
-                  .bindPopup(address)
-                  .openPopup();
-
-                  setTimeout(function () {
-                      map.invalidateSize(true);
-                  }, 100);
-        })
+            const response = await fetch( url );
+            const pet = await response.json();
+            return pet[0];
+          } catch ( e ) {
+            console.log( 'erro' )
+            console.log( e );
+          }
         }
 
-    async function fetchPet () {
-      try {
-        const id = window.location.search.split("?id=")[1]
-        const protocol = window.location.protocol
-        const host = window.location.hostname
-        const port = window.location.port
-        const url = port ? `${protocol}//${host}:${port}/api/adoption-pets?id=${id}` : `${protocol}//${host}/api/adoption-pets?id=${id}`
+          insertPetData(){      
+            const name = document.getElementById("name");
+            const race = document.getElementById("race");
+            const color = document.getElementById("color");
+            const place = document.getElementById("place") 
+            const foundDate = document.getElementById("foundDate");
+            const observations = document.getElementById("observations");
+            const image = document.getElementById("image");
+            const tutorName = document.getElementById("tutorName");
+            const tutorPhone = document.getElementById("tutorPhone");
+            const tutorObservations = document.getElementById("tutorObservations");
+            const adoptBtn = document.getElementById("adoptBtn");
+            const troubleBtn = document.getElementById("troubleBtn");
+            const date = new Date(this.pet.foundDate);
 
-        const response = await fetch( url );
-        const pets = await response.json();
-        pets.forEach( pet => {
-          insertPetData(pet);
-        } )
-      } catch ( e ) {
-        console.log( 'erro' )
-        console.log( e );
+            image.src = this.pet.imageUrl;
+            name.innerText = this.pet.name;
+            race.innerText = this.pet.race;
+            color.innerText = this.pet.color;
+            place.innerHTML = `${this.pet.street} - ${this.pet.neighborhood}, ${this.pet.city}/${this.pet.state} (CEP: ${this.pet.cep})`
+            foundDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+            observations.innerText = this.pet.observations;
+            tutorName.innerText = this.pet.tutorName;
+            tutorPhone.innerText = this.pet.tutorPhone;
+            tutorObservations.innerText = this.pet.tutorObservations;
+        }
+
+        insertHrefs(){
+          adoptBtn.href = `../contact/adoption-contact.html?id=${this.pet.id}&name=${this.pet.name}&d=${this.pet.tutorEmail}`
+          troubleBtn.href = `../contact/adoption-contact-pst.html?id=${this.pet.id}&name=${this.pet.name}`
+        }
+
+        renderMap(){
+
+          this.pet.address = `${this.pet.street} - ${this.pet.neighborhood}, ${this.pet.city}/${this.pet.state}`;
+
+          fetch(`https://nominatim.openstreetmap.org/search.php?q=${this.pet.address}&format=jsonv2`)
+              .then(res => res.json())
+              .then((addressInfo) => {
+                  addressInfo = addressInfo[0]
+
+                  const map = L.map('map', {
+                    center: [addressInfo.lat, addressInfo.lon],
+                    zoom: 17,
+                    scrollWheelZoom: false 
+                  })
+                
+                  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  }).addTo(map);
+
+                  L.marker([addressInfo.lat, addressInfo.lon]).addTo(map)
+                      .bindPopup(this.pet.address)
+                      .openPopup();
+
+                      setTimeout(function () {
+                          map.invalidateSize(true);
+                      }, 100);
+            })
+        }
+
+        setAsReturned(e){
+          
+          e.preventDefault();
+          console.log(this.pet.tutorEmail)
+          if (e.target.emailForReturned.value === this.pet.tutorEmail){
+
+            const protocol = window.location.protocol;
+            const host = window.location.hostname;
+            const port = window.location.port;
+            const url = port
+              ? `${protocol}//${host}:${port}/api/adoption-pets/${this.id}`
+              : `${protocol}//${host}/api/adoption-pets/${this.id}`;
+
+            fetch(url, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({adopted: true}),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                alert("Que boa notícia! O pet foi marcado como adotado!")
+                location.reload();
+              });
+
+          } else {
+            alert("E-mail incorreto. Por favor, tente novamente!")
+          }
+        }
+
+        addEventToReturnedForm(){
+          this.returnedForm = document.querySelector('#returnedForm');
+
+          this.returnedForm.addEventListener('submit', this.setAsReturned)
+        }
+
+        bindEvents(){
+          this.setAsReturned = this.setAsReturned.bind(this);
+        }
+
+        setElementsIfReturned(){
+          const elements = document.querySelectorAll("[data-ifReturned]");
+          if(this.pet.adopted){
+            elements.forEach((element) => {
+            console.log(elements)
+            if (element.dataset.ifreturned === 'remove'){
+              element.remove();
+            } else if (element.dataset.ifreturned === 'show'){
+              element.style.display = 'block';
+            }
+          })
+          }
+        }
+          
+        async init(){
+          this.bindEvents();
+          this.pet = await this.fetchPet();
+          this.insertPetData();
+          this.insertHrefs();
+          this.setElementsIfReturned();
+          this.renderMap();
+          this.addEventToReturnedForm();
+          console.log(this.pet)
+        }
       }
-    }
 
-    function insertPetData(pet){
-      const name = document.getElementById("name");
-      const race = document.getElementById("race");
-      const color = document.getElementById("color");
-      const place = document.getElementById("place") 
-      const lostDate = document.getElementById("foundDate");
-      const observations = document.getElementById("observations");
-      const image = document.getElementById("image");
-      const tutorName = document.getElementById("tutorName");
-      const tutorPhone = document.getElementById("tutorPhone");
-      const tutorEmail = document.getElementById("tutorEmail");
-      const tutorObservations = document.getElementById("tutorObservations");
-      const adoptBtn = document.getElementById("adoptBtn");
-      const troubleBtn = document.getElementById("troubleBtn");
+      const pet = new Pet();
 
-      const date = new Date(pet.foundDate);
-
-      image.src = pet.imageUrl;
-      name.innerText = pet.name;
-      race.innerText = pet.race;
-      color.innerText = pet.color;
-      place.innerHTML = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state} (CEP: ${pet.cep})`
-      lostDate.innerText = date.toLocaleString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' });
-      observations.innerText = pet.observations;
-      tutorName.innerText = pet.tutorName;
-      tutorPhone.innerText = pet.tutorPhone;
-      tutorEmail.innerText = pet.tutorEmail;
-      tutorObservations.innerText = pet.tutorObservations;
-
-      adoptBtn.href = `../contact/adoption-contact.html?id=${pet.id}&name=${pet.name}&d=${pet.tutorEmail}`
-      troubleBtn.href = `../contact/adoption-contact-pst.html?id=${pet.id}&name=${pet.name}`
-
-      renderMap(`${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`);
-    }
-
-    fetchPet();
   </script>
 
 </body>
