@@ -63,30 +63,40 @@
                             <p><span class="txtContato">CONTATO </span><span class="txttutor"> |Direto com tutor</span>
                             </p>
                         </div>
-                        <form id="formulario" action="https://formspree.io/f/mayvvezr" method="POST">
-                            <div class="row mb-3">
-                                <label for="inputName" class="col-lg-4 col-form-label">Nome:</label>
+                        <form id="formulario" enctype="multipart/form-data">
+                            <div style="display: none !important" class="row mb-3">
                                 <div class="col-lg-8">
-                                    <input type="name" name="name" class="form-control" id="inputName">
+                                    <input type="number" name="petId" class="form-control" id="petId">
+                                </div>
+                            </div>
+                            <div style="display: none !important" class="row mb-3">
+                                <div class="col-lg-8">
+                                    <input type="text" name="type" class="form-control" id="type">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputTelefone" class="col-lg-4 col-form-label">Telefone:</label>
+                                <label for="name" class="col-lg-4 col-form-label">Nome:</label>
                                 <div class="col-lg-8">
-                                    <input type="telefone" name="telefone" class="form-control" id="inputTelefone">
+                                    <input type="name" name="name" class="form-control" id="name">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputEmail" class="col-lg-4 col-form-label">Email:</label>
+                                <label for="phone" class="col-lg-4 col-form-label">Telefone:</label>
                                 <div class="col-lg-8">
-                                    <input type="email" name="email" class="form-control" id="inputEmail">
+                                    <input type="telefone" name="phone" class="form-control" id="phone">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputComentario" class="col-lg-4 col-form-label">Mensagem:</label>
+                                <label for="emailfrom" class="col-lg-4 col-form-label">Email:</label>
                                 <div class="col-lg-8">
-                                    <textarea class="form-control" type="mensagem" name="mensagem" class="form-control"
-                                        placeholder="Digite sua mensagem" id="inputComentario" rows="5"></textarea>
+                                    <input type="email" name="emailfrom" class="form-control" id="emailfrom">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="message" class="col-lg-4 col-form-label">Mensagem:</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" type="mensagem" name="message" class="form-control"
+                                        placeholder="Digite sua mensagem" id="message" rows="5"></textarea>
                                 </div>
                             </div>
                             <button type="submit" class="btn">
@@ -109,7 +119,67 @@
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
 
-    </body>
+        <script>
+            const params = new URLSearchParams(this.location.search);
+            const id = params.get('id');
+            const type = params.get('type');
+            document.querySelector("#petId").value = id;
+            document.querySelector("#type").value = type;
+
+            async function submitForm(e){
+                e.preventDefault();
+                alert('chegou aqui')
+                const form = document.getElementById("formulario");
+
+                const petId = document.getElementById('petId').value;
+                const type = document.getElementById('type').value;
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('emailfrom').value;
+                const message = document.getElementById('message').value;
+
+                const body = {
+				petId,
+                type,
+                name,
+                phone,
+                email,
+                message
+			    };            
+
+                const protocol = window.location.protocol;
+				const host = window.location.hostname;
+				const port = window.location.port;
+				const url = port
+					? `${protocol}//${host}:${port}/send/tutor`
+					: `${protocol}//${host}/send/tutor`;
+
+                    fetch(url, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(body),
+				})
+					.then((response) => response.json())
+					.then((data) => {
+                        if (data.Messages[0].Status === 'success'){
+                            alert("Mensagem enviada com sucesso!");
+                            if (type === 'lost'){
+                                window.location = `/lost-pets/lost-details.html?id=${petId}`
+                            } else if (type === 'found'){
+                                window.location = `/lost-pets/found-details.html?id=${petId}`
+                            }
+                        } else {
+                            console.log(data)
+                            alert("Erro ao enviar a mensagem! Por favor, tente novamente")
+                        }
+					});
+            }
+
+            document.getElementById('formulario').addEventListener('submit', submitForm);
+        </script>
+    </body>)
 
     </html>
 </emmet>
