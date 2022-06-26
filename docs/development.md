@@ -35,6 +35,24 @@ Para atender aos requisitos RF-001 e RF-002 foi desenvolvido os formulários de 
 - RF-003	Permitir que o usuário marque o animal como "encontrado"
 - RF-004	Permitir que o usuário marque o animal como "adotado"
 
+Para atender aos requisitos RF-003 e RF-004 foi desenvolvido o botão **INFORMAR ADOÇÃO** _(fig. 01)_ para os animais de adoção  e **INFORMAR DEVOLUÇÃO** _(fig. 02)_ para os animais perdidos, ao clicar no botão será exibido um modal de confirmação _(fig. 03)_, solicitando o e-mail para validar a marcação do pet _(fig. 04)_. Os animais encontrados e adotados com a marcação, automaticamente alimentaram o carrossel na home page _(fig. 05)_. 
+
+**Fig.01**
+![INFORMAR ADOÇÃO](img/development/informar-adocao.jpg)<br>
+
+**Fig.02**
+![INFORMAR DEVOLUÇÃO](img/development/informar-devolucao.jpg)<br>
+
+**Fig.03**
+![modal de confirmação](img/development/modal-confirmacao.jpg)<br>
+
+**Fig.04**
+![marcação do pet](img/development/marcacao-pet-encontrado.jpg)<br>
+
+**Fig.05**
+![carrossel](img/development/corrossel-home.jpg)<br>
+
+
 ---
  ## Filtro personalizado de pesquisa 
 
