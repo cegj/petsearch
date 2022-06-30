@@ -223,7 +223,7 @@
       "state": "MG",
       "imageUrl": "https://i.imgur.com/UA3yof3.jpg",
       "id": 1,
-      "returned": true
+      "returned": false
     },
     {
       "name": "Brincalhão",
