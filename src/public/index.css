@@ -13,6 +13,25 @@
   }
 }
 
+@media screen and (max-width: 870px){
+  .carousel-imgs-container {
+    gap: 10px;
+  }
+
+  .carousel-imgs-container img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .carousel-imgs-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .side-img {
   max-height: 340px;
 }
