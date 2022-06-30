@@ -162,6 +162,13 @@
 
     function insertMapMarker(pet) {
 
+      let pageName;
+      if (pet.lostDate){
+        pageName = "lost-details"
+      } else if (pet.foundDate){
+        pageName = "found-details"
+      }
+
       const address = `${pet.street} - ${pet.neighborhood}, ${pet.city}/${pet.state}`;
 
       fetch(`https://nominatim.openstreetmap.org/search.php?q=${address}&format=jsonv2`)
@@ -171,7 +178,7 @@
           const marker = L.marker([addressInfo.lat, addressInfo.lon])
             .addTo(MapMarkersLayer)
             .bindPopup(
-              `<a href="lost-details.html?id=${pet.id}">${pet.name}</a>
+              `<a href="${pageName}.html?id=${pet.id}">${pet.name}</a>
                 <br>
                 Espécie: ${pet.species}
                 <br>

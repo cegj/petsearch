@@ -29,8 +29,8 @@ server.get('/imgur-token', (req, res) => {
 
 
 //Config Mailjet to send emails
-const apiKey = process.env.MJ_API_KEY || ""
-const apiSecret = process.env.MJ_API_SECRET || ""
+const apiKey = process.env.MJ_API_KEY || "unset"
+const apiSecret = process.env.MJ_API_SECRET || "unset"
 
 const mailjet = new Mailjet({
   apiKey: apiKey,
