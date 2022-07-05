@@ -243,7 +243,7 @@
       "state": "MG",
       "imageUrl": "https://i.imgur.com/7l8XRbd.jpg",
       "id": 2,
-      "returned": true
+      "returned": false
     },
     {
       "name": "Gatinho",
@@ -254,7 +254,7 @@
       "observations": "Encontrei assustado embaixo de um carro",
       "tutorName": "Rogério da Silva",
       "tutorPhone": "31 5003-55838",
-      "tutorEmail": "kadugaspar@gmail.com",
+      "tutorEmail": "rogerio@email.com",
       "tutorObservations": "Preferencialmente por ligação ou whatsapp",
       "cep": "31130-150",
       "street": "Rua Adriano Modesto",
@@ -264,6 +264,46 @@
       "imageUrl": "https://i.imgur.com/cBr8Cax.jpg",
       "id": 3,
       "returned": false
+    },
+    {
+      "name": "Filhote",
+      "species": "canino",
+      "race": "Golden retriever",
+      "color": "caramelo",
+      "foundDate": "2022-07-05",
+      "observations": "Encontrado sozinho na rua, com coleira",
+      "tutorName": "Márcia Guimarães",
+      "tutorPhone": "31 30000-3000",
+      "tutorEmail": "marcia@email.com",
+      "tutorObservations": "Entre em contato a qualquer momento para resgate",
+      "cep": "30130-908",
+      "street": "Avenida Afonso Pena",
+      "neighborhood": "Centro",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/9r1E61U.jpg",
+      "returned": false,
+      "id": 4
+    },
+    {
+      "name": "Orelhudo",
+      "species": "outro",
+      "race": "Coelho",
+      "color": "branco e cinza",
+      "foundDate": "2022-07-01",
+      "observations": "Está assustado, mas está na nossa casa em segurança aguardando o resgate",
+      "tutorName": "Pedro Henrique da Silva",
+      "tutorPhone": "31 22213-2201",
+      "tutorEmail": "pedrosilva@email.com",
+      "tutorObservations": "Fale por whatsapp, ligação ou e-mail",
+      "cep": "31160-372",
+      "street": "Avenida Cristiano Machado",
+      "neighborhood": "União",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "imageUrl": "https://i.imgur.com/s7CJb1u.jpg",
+      "returned": false,
+      "id": 5
     }
   ]
 }
