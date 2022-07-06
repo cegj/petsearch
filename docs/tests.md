@@ -96,6 +96,7 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 5 - Ótimo            | 165 segundos                   |
 | 2       | SIM             | 5 - Ótimo            | 123 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 96 segundos                    |
+|---------|-----------------|----------------------|--------------------------------|
 | Média   | 100%            | 5                    | 128 segundos                   |
 | Tempo para conclusão pelo especialista|  |       | 45 segundos                    |
 
@@ -106,6 +107,7 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 5 - Ótimo            | 245 segundos                   |
 | 2       | SIM             | 4 - Bom              | 260 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 184 segundos                   |
+|---------|-----------------|----------------------|--------------------------------|
 | Média   | 100%            | 4,7                  | 230 segundos                   |
 | Tempo para conclusão pelo especialista |  |      | 73 segundos                    |
 
@@ -116,5 +118,14 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 4 - Bom              | 80 segundos                    |
 | 2       | SIM             | 5 - Ótimo            | 110 segundos                   |
 | 3       | SIM             | 4 - Bom              | 238 segundos                   |
+|---------|-----------------|----------------------|--------------------------------|
 | Média   | 100%            | 4,4                  | 143 segundos                   |
 | Tempo para conclusão pelo especialista|  |       | 25 segundos                    |
+
+# Avaliação dos Testes de Usabilidade
+
+De acordo com os resultados obtidos, verificamos que a aplicação web traz bons resultados quanto à taxa de sucesso dos usuários, tendo em vista que todos eles concluíram as tarefas propostas com sucesso.
+
+Da mesma forma, verificamos que a aplicação obteve uma elevada satisfação subjetiva dos usuários ao realizarem os cenários propostos, vez que a média das avaliações em todos os cenários ficou entre 4 (bom) e 5 (ótimo).
+
+Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas etc. Contudo, tendo em vista que a diferença foi relevante (por exemplo, 143 segundos — média usuários — contra 25 segundos — especialista — no cenário três), entendemos que poderia ser aplicável a elaboração de estudos mais detalhados para aprimorar a experiência do usuário com a interface.
