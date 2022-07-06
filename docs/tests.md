@@ -96,8 +96,12 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 5 - Ótimo            | 165 segundos                   |
 | 2       | SIM             | 5 - Ótimo            | 123 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 96 segundos                    |
-| Média   | 100%            | 5                    | 128 segundos                   |
+| 4       | SIM             | 4 - Bom              | 102 segundos                   |
+| Média   | 100%            | 4,75                 | 121 segundos                   |
 | Tempo para conclusão pelo especialista|  |       | 45 segundos                    |
+
+*Comentários dos usuários:*
+> 4: "Tive um pouco de confusão ao clicar em adotar e ser redirecionado para a tela de contato, fiquei confuso se o formulário era pra preenchimento dos meus dados ou da pessoa que está oferecendo o animal para adoção"
 
 **Cenário 2:** Você é um tutor que perdeu o seu pet. Divulgue o seu pet perdido no site juntamente com as suas informações de contato para localizar o seu pet.
 
@@ -106,7 +110,8 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 5 - Ótimo            | 245 segundos                   |
 | 2       | SIM             | 4 - Bom              | 260 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 184 segundos                   |
-| Média   | 100%            | 4,7                  | 230 segundos                   |
+| 4       | SIM             | 5 - Ótimo            | 84 segundos                    |
+| Média   | 100%            | 4,75                 | 193 segundos                   |
 | Tempo para conclusão pelo especialista |  |      | 73 segundos                    |
 
 **Cenário 3:** Você é uma pessoa que encontrou um pet perdido, mas o pet foi devolvido ao dono após o seu anúncio no sistema. Notifique no site que o pet PITBULL PRETO foi devolvido para informar as pessoas de que o pet não está mais perdido. Seu e-mail é jmaragao@email.com.
@@ -116,8 +121,12 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 1       | SIM             | 4 - Bom              | 80 segundos                    |
 | 2       | SIM             | 5 - Ótimo            | 110 segundos                   |
 | 3       | SIM             | 4 - Bom              | 238 segundos                   |
-| Média   | 100%            | 4,4                  | 143 segundos                   |
+| 4       | SIM             | 5 - Ótimo            | 26 segundos                    |
+| Média   | 100%            | 4,5                  | 113 segundos                   |
 | Tempo para conclusão pelo especialista|  |       | 25 segundos                    |
+
+*Comentários dos usuários:*
+> 3: Não consegui localizar o pet facilmente pois ele não estava na página inicial dos pets perdidos e não percebi, de primeira, que havia um botão para ver a galeria completa. Quando encontrei o pet na galeria, foi fácil concluir a tarefa.
 
 # Avaliação dos Testes de Usabilidade
 
@@ -125,4 +134,4 @@ De acordo com os resultados obtidos, verificamos que a aplicação web traz bons
 
 Da mesma forma, verificamos que a aplicação obteve uma elevada satisfação subjetiva dos usuários ao realizarem os cenários propostos, vez que a média das avaliações em todos os cenários ficou entre 4 (bom) e 5 (ótimo).
 
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas etc. Contudo, tendo em vista que a diferença foi relevante (por exemplo, 143 segundos — média usuários — contra 25 segundos — especialista — no cenário três), entendemos que pode ser aplicável a elaboração de estudos mais detalhados para aprimorar a experiência do usuário com a interface.
+Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas etc. Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos que há oportunidades de melhoria na usabilidade da aplicação.
