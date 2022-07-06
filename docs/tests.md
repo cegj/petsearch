@@ -126,7 +126,7 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | Tempo para conclusão pelo especialista|  |       | 25 segundos                    |
 
 *Comentários dos usuários:*
-> 3: Não consegui localizar o pet facilmente pois ele não estava na página inicial dos pets perdidos e não percebi, de primeira, que havia um botão para ver a galeria completa. Quando encontrei o pet na galeria, foi fácil concluir a tarefa.
+> 3: "Não consegui localizar o pet facilmente pois ele não estava na página inicial dos pets perdidos e não percebi, de primeira, que havia um botão para ver a galeria completa. Quando encontrei o pet na galeria, foi fácil concluir a tarefa, mas demorei para encontrá-lo."
 
 # Avaliação dos Testes de Usabilidade
 
