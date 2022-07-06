@@ -97,7 +97,7 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 2       | SIM             | 5 - Ótimo            | 123 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 96 segundos                    |
 | Média   | 100%            | 5                    | 128 segundos                   |
-| Tempo para conclusão pelo especialista           | 45 segundos                    |
+| Tempo para conclusão pelo especialista|  |       | 45 segundos                    |
 
 **Tarefa 2:** Você é um tutor que perdeu o seu pet. Divulgue o seu pet perdido no site juntamente com as suas informações de contato para localizar o seu pet.
 
@@ -107,7 +107,7 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 2       | SIM             | 4 - Bom              | 260 segundos                   |
 | 3       | SIM             | 5 - Ótimo            | 184 segundos                   |
 | Média   | 100%            | 4,7                  | 230 segundos                   |
-| Tempo para conclusão pelo especialista           | 73 segundos                    |
+| Tempo para conclusão pelo especialista |  |      | 73 segundos                    |
 
 **Tarefa 3:** Você é uma pessoa que encontrou um pet perdido, mas o pet foi devolvido ao dono após o seu anúncio no sistema. Notifique no site que o pet PITBULL PRETO foi devolvido para informar as pessoas de que o pet não está mais perdido. Seu e-mail é jmaragao@email.com.
 
@@ -117,4 +117,4 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | 2       | SIM             | 5 - Ótimo            | 110 segundos                   |
 | 3       | SIM             | 4 - Bom              | 238 segundos                   |
 | Média   | 100%            | 4,4                  | 143 segundos                   |
-| Tempo para conclusão pelo especialista           | 25 segundos                    |
+| Tempo para conclusão pelo especialista|  |       | 25 segundos                    |
