@@ -77,7 +77,7 @@ Para isso, foram elaboradas três cenários, todas baseadas nas histórias dos u
 - **Satisfação subjetiva:** responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala: 1) Péssimo; 2) Ruim; 3) Regular; 4) Bom; 5) Ótimo.
 - **Tempo para conclusão da tarefa**: em segundos, e em comparação com o tempo utilizado quando um especialista na aplicação (um desenvolvedor) realiza a mesma tarefa.
 
-Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informações dos usuários que participaram do teste não foram coletadas.
+Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
 
 ## Cenários do Teste de Usabilidade
 
