@@ -71,27 +71,27 @@ Enumere quais cenários de testes foram selecionados para teste. Neste tópico o
 
 O Plano de Testes de Usabilidade tem como objetivo obter informações quanto ao atendimento das expectativas dos usuários em relação ao site, bem como, com relação à sua facilidade de uso.
 
-Para isso, foram elaboradas três tarefas, todas baseadas nas histórias dos usuários definidas nas especificações do projeto, e solicitou-se que três usuários desempenhassem essas tarefas, com o objetivo de apurar os seguintes indicadores:
+Para isso, foram elaboradas três cenários, todas baseadas nas histórias dos usuários definidas nas especificações do projeto, e solicitou-se que três usuários desempenhassem a tarefa de cada um desses cenários, com o objetivo de apurar os seguintes indicadores:
 
-- *Taxa de sucesso:* responde se o usuário conseguiu ou não executar a tarefa proposta;
-- *Satisfação subjetiva:* responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala: 1) Péssimo; 2) Ruim; 3) Regular; 4) Bom; 5) Ótimo.
-- *Tempo para conclusão da tarefa*: em segundos, e em comparação com o tempo utilizado quando um especialista na aplicação (um desenvolvedor) realiza a mesma tarefa.
+- **Taxa de sucesso:** responde se o usuário conseguiu ou não executar a tarefa proposta;
+- **Satisfação subjetiva:** responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala: 1) Péssimo; 2) Ruim; 3) Regular; 4) Bom; 5) Ótimo.
+- **Tempo para conclusão da tarefa**: em segundos, e em comparação com o tempo utilizado quando um especialista na aplicação (um desenvolvedor) realiza a mesma tarefa.
 
 Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informações dos usuários que participaram do teste não foram coletadas.
 
-## Tarefas do Teste de Usabilidade
+## Cenários do Teste de Usabilidade
 
-| Nº Tarefa | Descrição da tarefa |
-|-----------|---------------------|
+| Nº Cenário | Descrição do cenário |
+|-----------|-----------------------|
 | 1         | Você é uma pessoa que quer adotar um pet. Encontre UM GATO para adoção e entre em contato com o tutor por formulário de contato para realizar a adoção. | 
 | 2         | Você é um tutor que perdeu o seu pet. Divulgue o seu pet perdido no site juntamente com as suas informações de contato para localizar o seu pet. |
 | 3         | Você é uma pessoa que encontrou um pet perdido, mas o pet foi devolvido ao dono após o seu anúncio no sistema. Notifique no site que o pet PITBULL PRETO foi devolvido para informar as pessoas de que o pet não está mais perdido. Seu e-mail é jmaragao@email.com. |
 
 # Registro dos Testes de Usabilidade
 
-**Tarefa 1:** Você é uma pessoa que quer adotar um pet. Encontre UM GATO para adoção e entre em contato com o tutor por formulário de contato para realizar a adoção.
+**Cenário 1:** Você é uma pessoa que quer adotar um pet. Encontre UM GATO para adoção e entre em contato com o tutor por formulário de contato para realizar a adoção.
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão da tarefa |
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|--------------------------------|
 | 1       | SIM             | 5 - Ótimo            | 165 segundos                   |
 | 2       | SIM             | 5 - Ótimo            | 123 segundos                   |
@@ -99,9 +99,9 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | Média   | 100%            | 5                    | 128 segundos                   |
 | Tempo para conclusão pelo especialista|  |       | 45 segundos                    |
 
-**Tarefa 2:** Você é um tutor que perdeu o seu pet. Divulgue o seu pet perdido no site juntamente com as suas informações de contato para localizar o seu pet.
+**Cenário 2:** Você é um tutor que perdeu o seu pet. Divulgue o seu pet perdido no site juntamente com as suas informações de contato para localizar o seu pet.
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão da tarefa |
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|--------------------------------|
 | 1       | SIM             | 5 - Ótimo            | 245 segundos                   |
 | 2       | SIM             | 4 - Bom              | 260 segundos                   |
@@ -109,9 +109,9 @@ Tendo em vista as diretrizes da Lei Geral de Proteção de Dados, as informaçõ
 | Média   | 100%            | 4,7                  | 230 segundos                   |
 | Tempo para conclusão pelo especialista |  |      | 73 segundos                    |
 
-**Tarefa 3:** Você é uma pessoa que encontrou um pet perdido, mas o pet foi devolvido ao dono após o seu anúncio no sistema. Notifique no site que o pet PITBULL PRETO foi devolvido para informar as pessoas de que o pet não está mais perdido. Seu e-mail é jmaragao@email.com.
+**Cenário 3:** Você é uma pessoa que encontrou um pet perdido, mas o pet foi devolvido ao dono após o seu anúncio no sistema. Notifique no site que o pet PITBULL PRETO foi devolvido para informar as pessoas de que o pet não está mais perdido. Seu e-mail é jmaragao@email.com.
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão da tarefa |
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|--------------------------------|
 | 1       | SIM             | 4 - Bom              | 80 segundos                    |
 | 2       | SIM             | 5 - Ótimo            | 110 segundos                   |
