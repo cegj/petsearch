@@ -37,3 +37,6 @@ Aplicativo web para divulgação de animais de estimação perdidos e disponíve
 # Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
+
+# Repositório original
+[Este repositório é um clone do repositório original disponível no github do ICEI PUC MINAS](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-1-e1-proj-web-t1-pet_search)
